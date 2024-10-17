@@ -46,7 +46,7 @@ func _physics_process(delta):
 			
 
 		# Handle jump.
-		if Input.is_action_just_pressed("springen") and is_on_floor():
+		if Input.is_action_pressed("springen") and is_on_floor():
 			velocity.y = JUMP_VELOCITY
 		
 	
