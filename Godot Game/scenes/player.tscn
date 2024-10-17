@@ -406,9 +406,9 @@ script = ExtResource("1_27tse")
 texture_filter = 1
 position = Vector2(-5, 8)
 sprite_frames = SubResource("SpriteFrames_svgcy")
-animation = &"ShootRunAtack"
+animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.717514
+frame_progress = 0.747927
 offset = Vector2(5, -8)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -421,8 +421,8 @@ texture_filter = 1
 position = Vector2(-6, 10)
 sprite_frames = SubResource("SpriteFrames_rpj8t")
 animation = &"shoot"
-frame = 2
-frame_progress = 0.34621
+frame = 5
+frame_progress = 1.0
 offset = Vector2(6, -10)
 
 [node name="BowRayCast2D" type="RayCast2D" parent="shootAnim"]
@@ -435,7 +435,8 @@ texture_filter = 1
 position = Vector2(-5, 8)
 sprite_frames = SubResource("SpriteFrames_ypfy6")
 animation = &"rundust"
-frame_progress = 0.329562
+frame = 1
+frame_progress = 0.0757916
 offset = Vector2(-8, -3)
 
 [node name="dashDuration" type="Timer" parent="."]
