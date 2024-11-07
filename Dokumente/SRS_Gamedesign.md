@@ -4,7 +4,7 @@
 
 # Level-Überblick
 
-- **Anzahl der Level:** Das Spiel wird 3 bis 5 Level haben.
+- **Anzahl der Level:** Das Spiel wird 5 Level haben.
 - **Schwierigkeitskurve:** Jedes Level wird schwieriger, mit komplexeren Plattformen, schneller werdenden Gegnern und neuen Hindernissen.
 - **Ziel jedes Levels:** Der Spieler muss bestimmte Ziele erreichen (z.B. Flagge, Endboss, Zeitlimit).
 
