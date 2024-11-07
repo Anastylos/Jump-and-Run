@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=4 uid="uid://do06jyd211cx2"]
+[gd_scene load_steps=29 format=4 uid="uid://do06jyd211cx2"]
 
 [ext_resource type="PackedScene" uid="uid://dfayifn15m681" path="res://scenes/player.tscn" id="1_65wfv"]
 [ext_resource type="Texture2D" uid="uid://dyxbbngvnbjni" path="res://assests/nature-backgrounds-pixel-art/nature_1/1.png" id="1_y7ksl"]
@@ -314,6 +314,8 @@ _data = {
 "RESET": SubResource("Animation_jru5t")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dviqc"]
+
 [node name="Game" type="Node2D"]
 
 [node name="background" type="Node" parent="."]
@@ -577,3 +579,11 @@ position = Vector2(1733, 55)
 texture = ExtResource("4_w8pn0")
 
 [node name="TutorialText" type="Node" parent="."]
+
+[node name="Fire_Totem_Area2D" type="Area2D" parent="."]
+position = Vector2(19, -120)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Fire_Totem_Area2D"]
+position = Vector2(-5, -15)
+scale = Vector2(3, 3)
+shape = SubResource("RectangleShape2D_dviqc")
