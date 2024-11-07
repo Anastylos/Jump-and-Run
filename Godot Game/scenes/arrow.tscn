@@ -1,46 +1,97 @@
-[gd_scene load_steps=10 format=3 uid="uid://c4e8sod012rkg"]
+[gd_scene load_steps=18 format=3 uid="uid://c4e8sod012rkg"]
 
 [ext_resource type="Script" path="res://scritps/arrow.gd" id="1_0ca1g"]
 [ext_resource type="Texture2D" uid="uid://duw4e3b1oe7ec" path="res://assests/tiny hero/Arrows.png" id="1_bj2ah"]
-[ext_resource type="Texture2D" uid="uid://dwvoutll2e8g3" path="res://assests/Fire_AnimatedPixel/Fire_Spreadsheet.png" id="3_3i2fb"]
+[ext_resource type="Texture2D" uid="uid://0lm2j5bf6nhu" path="res://assests/arrow animations/Fire_Spreadsheet.png" id="3_iblal"]
+[ext_resource type="Texture2D" uid="uid://ba05y2ndepur5" path="res://assests/arrow animations/Water_01.png" id="4_vb0a1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_thu02"]
 size = Vector2(14, 4)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_nn5ya"]
-atlas = ExtResource("3_3i2fb")
+[sub_resource type="AtlasTexture" id="AtlasTexture_b3j3o"]
+atlas = ExtResource("3_iblal")
 region = Rect2(0, 0, 512, 512)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_0fv4f"]
-atlas = ExtResource("3_3i2fb")
+[sub_resource type="AtlasTexture" id="AtlasTexture_ys8uf"]
+atlas = ExtResource("3_iblal")
 region = Rect2(512, 0, 512, 512)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_uh4wy"]
-atlas = ExtResource("3_3i2fb")
+[sub_resource type="AtlasTexture" id="AtlasTexture_6r6u7"]
+atlas = ExtResource("3_iblal")
 region = Rect2(0, 512, 512, 512)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_jt7vy"]
-atlas = ExtResource("3_3i2fb")
+[sub_resource type="AtlasTexture" id="AtlasTexture_0niur"]
+atlas = ExtResource("3_iblal")
 region = Rect2(512, 512, 512, 512)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_c22jg"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_nn5ya")
+"texture": SubResource("AtlasTexture_b3j3o")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_0fv4f")
+"texture": SubResource("AtlasTexture_ys8uf")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_uh4wy")
+"texture": SubResource("AtlasTexture_6r6u7")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_jt7vy")
+"texture": SubResource("AtlasTexture_0niur")
+}],
+"loop": true,
+"name": &"burn",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_75i1s"]
+atlas = ExtResource("4_vb0a1")
+region = Rect2(0, 0, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lvp7q"]
+atlas = ExtResource("4_vb0a1")
+region = Rect2(16, 0, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2fld1"]
+atlas = ExtResource("4_vb0a1")
+region = Rect2(32, 0, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cubhj"]
+atlas = ExtResource("4_vb0a1")
+region = Rect2(0, 24, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qxrkk"]
+atlas = ExtResource("4_vb0a1")
+region = Rect2(16, 24, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wexfi"]
+atlas = ExtResource("4_vb0a1")
+region = Rect2(32, 24, 16, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_btuq3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_75i1s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lvp7q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2fld1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cubhj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qxrkk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wexfi")
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 10.0
 }]
 
 [node name="Arrow" type="CharacterBody2D" groups=["projectile"]]
@@ -57,12 +108,22 @@ texture = ExtResource("1_bj2ah")
 region_enabled = true
 region_rect = Rect2(26.9618, 18.9166, 14.0614, 3.10764)
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Sprite2D"]
+[node name="fire_AnimatedSprite2D" type="AnimatedSprite2D" parent="Sprite2D"]
+visible = false
 position = Vector2(6, -6)
 scale = Vector2(0.05, 0.05)
 sprite_frames = SubResource("SpriteFrames_c22jg")
+animation = &"burn"
+autoplay = "burn"
+frame_progress = 0.574043
+
+[node name="ice_AnimatedSprite2D2" type="AnimatedSprite2D" parent="Sprite2D"]
+visible = false
+position = Vector2(5, 0)
+scale = Vector2(1.5, 1.5)
+sprite_frames = SubResource("SpriteFrames_btuq3")
 autoplay = "default"
-frame_progress = 0.0735336
+frame_progress = 0.707274
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
 position = Vector2(-6, 0)
