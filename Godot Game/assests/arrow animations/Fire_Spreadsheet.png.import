@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dwvoutll2e8g3"
-path="res://.godot/imported/Fire_Spreadsheet.png-3626f77635466a38226815699a4562a1.ctex"
+uid="uid://0lm2j5bf6nhu"
+path="res://.godot/imported/Fire_Spreadsheet.png-11e68cc06bf425878fb75417604af101.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assests/Fire_AnimatedPixel/Fire_Spreadsheet.png"
-dest_files=["res://.godot/imported/Fire_Spreadsheet.png-3626f77635466a38226815699a4562a1.ctex"]
+source_file="res://assests/arrow animations/Fire_Spreadsheet.png"
+dest_files=["res://.godot/imported/Fire_Spreadsheet.png-11e68cc06bf425878fb75417604af101.ctex"]
 
 [params]
 
