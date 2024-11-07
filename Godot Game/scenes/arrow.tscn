@@ -1,26 +1,73 @@
-[gd_scene load_steps=4 format=3 uid="uid://c4e8sod012rkg"]
+[gd_scene load_steps=10 format=3 uid="uid://c4e8sod012rkg"]
 
 [ext_resource type="Script" path="res://scritps/arrow.gd" id="1_0ca1g"]
 [ext_resource type="Texture2D" uid="uid://duw4e3b1oe7ec" path="res://assests/tiny hero/Arrows.png" id="1_bj2ah"]
+[ext_resource type="Texture2D" uid="uid://dwvoutll2e8g3" path="res://assests/Fire_AnimatedPixel/Fire_Spreadsheet.png" id="3_3i2fb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_thu02"]
-size = Vector2(9.96094, 2.85938)
+size = Vector2(14, 4)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nn5ya"]
+atlas = ExtResource("3_3i2fb")
+region = Rect2(0, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0fv4f"]
+atlas = ExtResource("3_3i2fb")
+region = Rect2(512, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uh4wy"]
+atlas = ExtResource("3_3i2fb")
+region = Rect2(0, 512, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jt7vy"]
+atlas = ExtResource("3_3i2fb")
+region = Rect2(512, 512, 512, 512)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_c22jg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nn5ya")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0fv4f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uh4wy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jt7vy")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Arrow" type="CharacterBody2D" groups=["projectile"]]
-position = Vector2(-0.014164, -0.015625)
 script = ExtResource("1_0ca1g")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(5.00444, 0.0390625)
+scale = Vector2(1.03967, 0.849275)
 shape = SubResource("RectangleShape2D_thu02")
 one_way_collision = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
 texture = ExtResource("1_bj2ah")
-offset = Vector2(7, 0)
 region_enabled = true
 region_rect = Rect2(26.9618, 18.9166, 14.0614, 3.10764)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Sprite2D"]
+position = Vector2(6, -6)
+scale = Vector2(0.05, 0.05)
+sprite_frames = SubResource("SpriteFrames_c22jg")
+autoplay = "default"
+frame_progress = 0.0735336
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2(-6, 0)
+rotation = -1.57079
+scale = Vector2(0.416097, 0.416097)
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 5.0
