@@ -225,6 +225,7 @@ sources/0 = SubResource("TileSetAtlasSource_6qk5r")
 sources/1 = SubResource("TileSetAtlasSource_mh5j3")
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ug8fe"]
+distance = 10.0
 
 [sub_resource type="Animation" id="Animation_usshu"]
 resource_name = "Platform"
@@ -517,7 +518,7 @@ limit_smoothed = true
 position = Vector2(-20, 147)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FloorBordre"]
-position = Vector2(2, 11)
+position = Vector2(6, 21)
 shape = SubResource("WorldBoundaryShape2D_ug8fe")
 
 [node name="RigthBorder" type="StaticBody2D" parent="."]
@@ -528,7 +529,7 @@ rotation = -1.5708
 shape = SubResource("WorldBoundaryShape2D_ug8fe")
 
 [node name="leftBorder" type="StaticBody2D" parent="."]
-position = Vector2(-283, 136)
+position = Vector2(-326, 136)
 rotation = 1.5708
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="leftBorder"]
