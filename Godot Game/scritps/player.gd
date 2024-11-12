@@ -3,6 +3,7 @@ extends CharacterBody2D
 
 var speed = 250.0
 const JUMP_VELOCITY = -400.0
+var totem_status = "none"
 
 var arrow = load("res://scenes/arrow.tscn")
 var input_enabled = true
@@ -104,3 +105,9 @@ func _on_shoot_anim_animation_finished():
 
 func _on_dash_timer_timeout():
 	speed = 250
+	
+func set_totemStatus(status):
+	totem_status = status
+	
+func get_totem_status():
+	return totem_status
