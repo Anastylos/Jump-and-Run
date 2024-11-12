@@ -9,7 +9,23 @@ var spawnPos: Vector2
 var is_frozen: bool = false
 var parent_body: Node = null
 
+@onready var player = get_node("/root/Game/MainPlayer")
+
+@onready var fire_animated_sprite_2d = $Sprite2D/fire_AnimatedSprite2D
+@onready var ice_animated_sprite_2d_2 = $Sprite2D/ice_AnimatedSprite2D2
+
+
+
 func _ready():
+	if player != null:
+		print("Player Status:", player.get_totem_status())
+		if player.get_totem_status() == "fire":
+			fire_animated_sprite_2d.visible = true
+		elif player.get_totem_status() == "ice":
+			ice_animated_sprite_2d_2.visible = true
+	else:
+		print("Player is null!")
+		
 	var mouse_position = get_global_mouse_position()
 	global_position = spawnPos
 	var directionToMouse = mouse_position - global_position

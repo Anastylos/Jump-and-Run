@@ -109,12 +109,13 @@ region_enabled = true
 region_rect = Rect2(26.9618, 18.9166, 14.0614, 3.10764)
 
 [node name="fire_AnimatedSprite2D" type="AnimatedSprite2D" parent="Sprite2D"]
+visible = false
 position = Vector2(6, -6)
 scale = Vector2(0.05, 0.05)
 sprite_frames = SubResource("SpriteFrames_c22jg")
 animation = &"burn"
 autoplay = "burn"
-frame_progress = 0.574043
+frame_progress = 0.542941
 
 [node name="ice_AnimatedSprite2D2" type="AnimatedSprite2D" parent="Sprite2D"]
 visible = false
@@ -122,7 +123,8 @@ position = Vector2(5, 0)
 scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_btuq3")
 autoplay = "default"
-frame_progress = 0.707274
+frame = 4
+frame_progress = 0.394111
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
 position = Vector2(-6, 0)
