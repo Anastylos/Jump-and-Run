@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=4 uid="uid://do06jyd211cx2"]
+[gd_scene load_steps=29 format=4 uid="uid://do06jyd211cx2"]
 
 [ext_resource type="PackedScene" uid="uid://dfayifn15m681" path="res://scenes/player.tscn" id="1_65wfv"]
 [ext_resource type="Texture2D" uid="uid://dyxbbngvnbjni" path="res://assests/nature-backgrounds-pixel-art/nature_1/1.png" id="1_y7ksl"]
@@ -27,6 +27,8 @@ size = Vector2(39, 72)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y4758"]
 size = Vector2(165, 66)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7jfvf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6qk5r"]
 texture = ExtResource("7_htymc")
@@ -490,6 +492,15 @@ position = Vector2(1804, 60)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KillZones/killzone5"]
 position = Vector2(82.5, 33)
 shape = SubResource("RectangleShape2D_y4758")
+
+[node name="Totems" type="Node" parent="."]
+
+[node name="fireTotem_Area2D" type="Area2D" parent="Totems"]
+
+[node name="fireTotem_CollisionShape2D" type="CollisionShape2D" parent="Totems/fireTotem_Area2D"]
+position = Vector2(15, -140)
+scale = Vector2(3, 3)
+shape = SubResource("RectangleShape2D_7jfvf")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 position = Vector2(6, 0)
