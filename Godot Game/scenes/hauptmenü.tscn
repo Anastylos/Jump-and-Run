@@ -155,7 +155,7 @@ theme_override_font_sizes/normal_font_size = 8
 theme_override_styles/normal = SubResource("StyleBoxFlat_wbqnk")
 text = "Michi: 999
 Don: 950
-Christoph: 890
+Chris: 890
 Dinis: 870
 Lukas: 850
 Sarah: 800
