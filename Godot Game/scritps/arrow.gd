@@ -8,6 +8,8 @@ var dir: float
 var spawnPos: Vector2
 var is_frozen: bool = false
 var parent_body: Node = null
+var fire: bool = false
+var ice: bool = false
 
 @onready var player = get_node("/root/Game/MainPlayer")
 
@@ -21,8 +23,10 @@ func _ready():
 		print("Player Status:", player.get_totem_status())
 		if player.get_totem_status() == "fire":
 			fire_animated_sprite_2d.visible = true
+			fire = true
 		elif player.get_totem_status() == "ice":
 			ice_animated_sprite_2d_2.visible = true
+			ice = true
 	else:
 		print("Player is null!")
 		

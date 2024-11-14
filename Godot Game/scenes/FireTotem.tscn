@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bypqyqj801t3t"]
 
 [ext_resource type="Script" path="res://scenes/fire_totem.gd" id="1_t75ro"]
-[ext_resource type="TileSet" uid="uid://cmhum7edpr41v" path="res://scenes/worldTileSet.tres" id="1_v5kjw"]
+[ext_resource type="TileSet" uid="uid://ds0uihgbfxlmd" path="res://scenes/worldTileSet.tres" id="1_v5kjw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q0li3"]
 size = Vector2(67, 56)

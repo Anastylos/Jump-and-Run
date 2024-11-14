@@ -1,11 +1,11 @@
 [gd_scene load_steps=267 format=4 uid="uid://ddjmnr2qqkfkc"]
 
 [ext_resource type="Script" path="res://scenes/goal.gd" id="1_0v45f"]
-[ext_resource type="TileSet" path="res://assests/TileSet/TilesetWorld.tres" id="1_emn1l"]
-[ext_resource type="Texture2D" path="res://assests/Fireworks/Rocket_Blue.png-sheet.png" id="2_oyd0b"]
-[ext_resource type="Texture2D" path="res://assests/Fireworks/Explosion_Crystals_Blue-sheet.png" id="3_xyj5l"]
-[ext_resource type="Texture2D" path="res://assests/Fireworks/Rocket_Orange-sheet.png" id="5_61ih6"]
-[ext_resource type="Texture2D" path="res://assests/Fireworks/Explosion_Crystals_Orange-sheet.png" id="6_6vig8"]
+[ext_resource type="TileSet" uid="uid://cd03m8vb0vool" path="res://assests/TileSet/TilesetWorld.tres" id="1_emn1l"]
+[ext_resource type="Texture2D" uid="uid://dya7wn2gd1id" path="res://assests/Fireworks/Rocket_Blue.png-sheet.png" id="2_oyd0b"]
+[ext_resource type="Texture2D" uid="uid://34mxon6hfuhe" path="res://assests/Fireworks/Explosion_Crystals_Blue-sheet.png" id="3_xyj5l"]
+[ext_resource type="Texture2D" uid="uid://4vwhjmj48sye" path="res://assests/Fireworks/Rocket_Orange-sheet.png" id="5_61ih6"]
+[ext_resource type="Texture2D" uid="uid://bjrdwkrjl3ftt" path="res://assests/Fireworks/Explosion_Crystals_Orange-sheet.png" id="6_6vig8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ewdcy"]
 size = Vector2(128, 88)

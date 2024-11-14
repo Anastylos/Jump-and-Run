@@ -214,7 +214,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_be580")
 }],
 "loop": true,
-"name": &"fire",
+"name": &"default",
 "speed": 4.0
 }]
 
@@ -264,7 +264,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_ubeci")
 }],
 "loop": true,
-"name": &"ice",
+"name": &"default",
 "speed": 5.0
 }]
 
@@ -288,18 +288,16 @@ z_index = 1
 position = Vector2(-0.660072, 0)
 scale = Vector2(0.1, 0.1)
 sprite_frames = SubResource("SpriteFrames_lsalh")
-animation = &"fire"
-autoplay = "fire"
-frame_progress = 0.169535
+autoplay = "default"
+frame_progress = 0.0637089
 
 [node name="ice_AnimatedSprite2D" type="AnimatedSprite2D" parent="enemy_AnimatedSprite2D"]
 visible = false
 position = Vector2(-0.660066, 5.28053)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_qot58")
-animation = &"ice"
-autoplay = "ice"
-frame_progress = 0.277736
+autoplay = "default"
+frame_progress = 0.88577
 
 [node name="Area2D" type="Area2D" parent="."]
 
