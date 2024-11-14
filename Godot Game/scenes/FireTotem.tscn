@@ -43,7 +43,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Area2D" type="Area2D"]
+[node name="FireTotem" type="Area2D"]
 z_index = -1
 script = ExtResource("1_t75ro")
 

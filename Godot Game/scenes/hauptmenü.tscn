@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://dmqlefq3w0swm"]
+[gd_scene load_steps=17 format=4 uid="uid://bgcah8tec6b8i"]
 
 [ext_resource type="Texture2D" uid="uid://dyxbbngvnbjni" path="res://assests/nature-backgrounds-pixel-art/nature_1/1.png" id="1_a2jr2"]
 [ext_resource type="Script" path="res://scritps/hauptmenü.gd" id="1_wmwxv"]
@@ -34,9 +34,18 @@ default_font_size = 8
 default_font = ExtResource("4_s51wv")
 default_font_size = 8
 
-[sub_resource type="Theme" id="Theme_mfkpw"]
-default_font = ExtResource("7_jy35f")
-default_font_size = 8
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wbqnk"]
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+bg_color = Color(0.34, 0.34, 0.34, 0.427451)
+border_width_left = 1
+border_width_top = 1
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
 
 [node name="Hauptmenü" type="Node2D"]
 scale = Vector2(1.11564, 1.41646)
@@ -58,7 +67,6 @@ tile_set = ExtResource("2_oak0p")
 
 [node name="TileMapLayer2" type="TileMapLayer" parent="."]
 z_index = 1
-scale = Vector2(1, 1)
 tile_map_data = PackedByteArray("AAD5/wIAAQAEAAoAAAD6/wIAAQAEAAoAAAD6/wMAAQAEAAoAAAD7/wIAAQAEAAoAAAD7/wMAAQAEAAoAAAD7/wQAAQAEAAoAAAD8/wIAAQAEAAoAAAD8/wMAAQAEAAoAAAD8/wQAAQAEAAoAAAD8/wUAAQAEAAoAAAD9/wIAAQAEAAoAAAD9/wMAAQAEAAoAAAD9/wQAAQAEAAoAAAD9/wUAAQAEAAoAAAD+/wIAAQAEAAoAAAD+/wMAAQAEAAoAAAD+/wQAAQAEAAoAAAD+/wUAAQAEAAoAAAD+/wYAAQAEAAoAAAD//wIAAQAEAAoAAAD//wMAAQAEAAoAAAD//wQAAQAEAAoAAAD//wUAAQAEAAoAAAD//wYAAQAEAAoAAAAAAAIAAQAEAAoAAAAAAAMAAQAEAAoAAAAAAAQAAQAEAAoAAAAAAAUAAQAEAAoAAAAAAAYAAQAEAAoAAAABAAIAAQAEAAoAAAABAAMAAQAEAAoAAAABAAQAAQAEAAoAAAABAAUAAQAEAAoAAAABAAYAAQAEAAoAAAACAAIAAQAEAAoAAAACAAMAAQAEAAoAAAACAAQAAQAEAAoAAAACAAUAAQAEAAoAAAADAAIAAQAEAAoAAAADAAMAAQAEAAoAAAADAAQAAQAEAAoAAAADAAUAAQAEAAoAAAAEAAIAAQAEAAoAAAAEAAMAAQAEAAoAAAAEAAQAAQAEAAoAAAAFAAIAAQAEAAoAAAAFAAMAAQAEAAoAAAAGAAIAAQAEAAoAAAD4/wEAAQAEAAkAAAD5/wEAAQAEAAkAAAD6/wEAAQAEAAkAAAD7/wEAAQAEAAkAAAD8/wEAAQAEAAkAAAD9/wEAAQAEAAkAAAD+/wEAAQAEAAkAAAD//wEAAQAEAAkAAAAAAAEAAQAEAAkAAAABAAEAAQAEAAkAAAACAAEAAQAEAAkAAAADAAEAAQAEAAkAAAAEAAEAAQAEAAkAAAAFAAEAAQAEAAkAAAAGAAEAAQAEAAkAAAAHAAEAAQAEAAkAAAD4/wIAAQAEAAoAAAD5/wMAAQAEAAoAAAAHAAIAAQAEAAoAAAAGAAMAAQAEAAoAAAD//wcAAQAEAAoAAAAAAAcAAQAEAAoAAAA=")
 tile_set = ExtResource("2_oak0p")
 
@@ -74,7 +82,6 @@ scale = Vector2(0.74704, 0.667573)
 
 [node name="killzone" parent="." instance=ExtResource("10_oj7d3")]
 position = Vector2(-63.24, 22.1618)
-scale = Vector2(1, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="killzone"]
 position = Vector2(63.24, 44.8641)
@@ -83,7 +90,6 @@ shape = SubResource("RectangleShape2D_6vs1e")
 [node name="StaticBody2D3" type="StaticBody2D" parent="."]
 position = Vector2(290.904, -49.8641)
 rotation = -1.57081
-scale = Vector2(1, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
 position = Vector2(-2.28882e-05, 121.89)
@@ -92,7 +98,6 @@ shape = SubResource("WorldBoundaryShape2D_t6t11")
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
 position = Vector2(-290.904, -55.4045)
 rotation = 1.57079
-scale = Vector2(1, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
 position = Vector2(-2.28882e-05, 121.89)
@@ -100,7 +105,6 @@ shape = SubResource("WorldBoundaryShape2D_t6t11")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(12.648, 132.971)
-scale = Vector2(1, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(-9.48599, 121.89)
@@ -136,24 +140,39 @@ theme = SubResource("Theme_4g8e6")
 icon = ExtResource("6_ok27e")
 flat = true
 
-[node name="ColorRect" type="ColorRect" parent="."]
-z_index = 1
-offset_left = -50.592
-offset_top = -22.1618
-offset_right = 49.408
-offset_bottom = 17.8382
-scale = Vector2(1.1016, 2.88544)
-color = Color(0.39, 0.39, 0.39, 0.478431)
-
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 z_index = 1
 texture_filter = 1
-offset_left = -45.849
-offset_top = -18.0065
-offset_right = 54.151
-offset_bottom = 86.9935
-theme = SubResource("Theme_mfkpw")
-text = "Michi: 999"
+offset_left = -49.2991
+offset_top = -18.3556
+offset_right = 50.7009
+offset_bottom = 86.6444
+scale = Vector2(0.983688, 0.99404)
+theme_override_constants/outline_size = 2
+theme_override_constants/line_separation = 2
+theme_override_fonts/normal_font = ExtResource("7_jy35f")
+theme_override_font_sizes/normal_font_size = 8
+theme_override_styles/normal = SubResource("StyleBoxFlat_wbqnk")
+text = "Michi: 999
+Don: 950
+Christoph: 890
+Dinis: 870
+Lukas: 850
+Sarah: 800
+Tom: 770
+Mia: 710
+Lucas: 680
+Emma: 640
+Jonas: 610
+Nina: 590
+Maxim: 570
+Jasmin: 550
+Felix: 520
+Laura: 490
+David: 460
+Sophie: 430
+Kai: 400
+Anna: 380"
 autowrap_mode = 2
 drag_and_drop_selection_enabled = false
 
