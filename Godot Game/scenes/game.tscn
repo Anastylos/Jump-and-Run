@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=4 uid="uid://do06jyd211cx2"]
+[gd_scene load_steps=28 format=4 uid="uid://do06jyd211cx2"]
 
 [ext_resource type="PackedScene" uid="uid://dfayifn15m681" path="res://scenes/player.tscn" id="1_65wfv"]
 [ext_resource type="Texture2D" uid="uid://dyxbbngvnbjni" path="res://assests/nature-backgrounds-pixel-art/nature_1/1.png" id="1_y7ksl"]
@@ -8,11 +8,13 @@
 [ext_resource type="Texture2D" uid="uid://bgrb63g7x3y4y" path="res://assests/nature-backgrounds-pixel-art/nature_1/2.png" id="5_kryxk"]
 [ext_resource type="Texture2D" uid="uid://ccgwya4pdtd7x" path="res://assests/nature-backgrounds-pixel-art/nature_1/3.png" id="5_nglb2"]
 [ext_resource type="Texture2D" uid="uid://b8865idw0j4ue" path="res://assests/InstuctionPicture-removebg-preview.png" id="6_akgxi"]
-[ext_resource type="TileSet" uid="uid://cmhum7edpr41v" path="res://scenes/worldTileSet.tres" id="8_qpi0n"]
-[ext_resource type="PackedScene" uid="uid://bc2otyvk6ohr3" path="res://scenes/Ice_Totem.tscn" id="9_dhcip"]
+[ext_resource type="PackedScene" uid="uid://ddjmnr2qqkfkc" path="res://scenes/goal.tscn" id="7_mdry6"]
+[ext_resource type="PackedScene" path="res://scenes/nahkampfGegner.tscn" id="8_3kcqr"]
+[ext_resource type="TileSet" uid="uid://ds0uihgbfxlmd" path="res://scenes/worldTileSet.tres" id="8_qpi0n"]
+[ext_resource type="PackedScene" path="res://scenes/Ice_Totem.tscn" id="9_dhcip"]
 [ext_resource type="PackedScene" uid="uid://uuylubojul0i" path="res://scenes/platform.tscn" id="10_awimq"]
 [ext_resource type="PackedScene" uid="uid://cqf4hg6nsi43d" path="res://scenes/killzone.tscn" id="11_lbcwo"]
-[ext_resource type="PackedScene" uid="uid://bypqyqj801t3t" path="res://scenes/FireTotem.tscn" id="12_ttt40"]
+[ext_resource type="PackedScene" path="res://scenes/FireTotem.tscn" id="12_ttt40"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2tclj"]
 size = Vector2(31, 11)
@@ -224,7 +226,7 @@ scale = Vector2(1.07157, 1.30473)
 texture = ExtResource("3_6008t")
 
 [node name="16" type="Sprite2D" parent="background"]
-z_index = -1
+z_index = -5
 position = Vector2(1708, 49)
 scale = Vector2(1.07157, 1.30473)
 texture = ExtResource("3_6008t")
@@ -235,6 +237,7 @@ position = Vector2(829, -134)
 texture = ExtResource("5_kryxk")
 
 [node name="21" type="Sprite2D" parent="background"]
+z_index = -5
 position = Vector2(1665, -162)
 rotation = -3.14159
 scale = Vector2(1, -1)
@@ -258,6 +261,15 @@ texture_filter = 1
 position = Vector2(-194, 76)
 scale = Vector2(0.248559, 0.242475)
 texture = ExtResource("6_akgxi")
+
+[node name="CharacterBody2D" parent="background" instance=ExtResource("8_3kcqr")]
+position = Vector2(242, 126)
+
+[node name="CharacterBody2D2" parent="background" instance=ExtResource("8_3kcqr")]
+position = Vector2(162, 0)
+
+[node name="CharacterBody2D3" parent="background" instance=ExtResource("8_3kcqr")]
+position = Vector2(462, -94)
 
 [node name="KillZones" type="Node" parent="."]
 
@@ -392,3 +404,6 @@ texture = ExtResource("4_w8pn0")
 
 [node name="Area2D" parent="." instance=ExtResource("12_ttt40")]
 position = Vector2(5, -128)
+
+[node name="Goal" parent="." instance=ExtResource("7_mdry6")]
+position = Vector2(1593, -102)
