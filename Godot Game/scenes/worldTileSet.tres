@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=5 format=3 uid="uid://cmhum7edpr41v"]
+[gd_resource type="TileSet" load_steps=5 format=3 uid="uid://ds0uihgbfxlmd"]
 
 [ext_resource type="Texture2D" uid="uid://bcvp1sws6irqq" path="res://assests/brackeys_platformer_assets/sprites/platforms.png" id="1_4dint"]
 [ext_resource type="Texture2D" uid="uid://dxqfmf235q0c6" path="res://assests/brackeys_platformer_assets/sprites/world_tileset.png" id="2_krldu"]
