@@ -11,6 +11,7 @@ var parent_body: Node = null
 var fire: bool = false
 var ice: bool = false
 
+@onready var timer: Timer = $Timer
 @onready var player = get_node("/root/Game/MainPlayer")
 
 @onready var fire_animated_sprite_2d = $Sprite2D/fire_AnimatedSprite2D
@@ -35,7 +36,7 @@ func _ready():
 	var spawnRot = directionToMouse.angle()
 	rotation = spawnRot
 	dir = spawnRot
-	$Timer.start()
+	timer.start()
 
 func _process(delta):
 	if get_rotation_degrees() >= -90 and get_rotation_degrees() <= 90:
@@ -84,5 +85,5 @@ func stick_to_body(body):
 func get_parent_attachment_point() -> Vector2:
 	return position
 
-func _on_timer_timeout():
+func _on_timer_timeout() -> void:
 	queue_free()

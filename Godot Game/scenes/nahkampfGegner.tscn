@@ -301,6 +301,10 @@ animation = &"ice"
 autoplay = "ice"
 frame_progress = 0.675638
 
+[node name="animation_Timer" type="Timer" parent="enemy_AnimatedSprite2D"]
+wait_time = 2.5
+one_shot = true
+
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
@@ -312,4 +316,5 @@ position = Vector2(2, -2)
 polygon = PackedVector2Array(-14.035, -3.695, -14.825, 1.66, 10.87, 1.825, 9.855, -0.75, 5.78, -2.505, 4.72, -6.815, 3.825, -10.225, 2.255, -13.45, 0, -15.75, -7.295, -15.75, -10.915, -10.045)
 
 [connection signal="animation_finished" from="enemy_AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="timeout" from="enemy_AnimatedSprite2D/animation_Timer" to="." method="_on_animation_timer_timeout"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
