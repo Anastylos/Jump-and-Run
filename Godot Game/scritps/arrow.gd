@@ -20,7 +20,6 @@ var ice: bool = false
 
 func _ready():
 	if player != null:
-		print("Player Status:", player.get_totem_status())
 		if player.get_totem_status() == "fire":
 			fire_animated_sprite_2d.visible = true
 			fire = true
