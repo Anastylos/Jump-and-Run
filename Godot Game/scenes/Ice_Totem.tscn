@@ -1,22 +1,80 @@
-[gd_scene load_steps=4 format=3 uid="uid://bc2otyvk6ohr3"]
+[gd_scene load_steps=12 format=3 uid="uid://bc2otyvk6ohr3"]
 
 [ext_resource type="Script" path="res://scenes/ice_totem.gd" id="1_83k7p"]
-[ext_resource type="TileSet" path="res://scenes/worldTileSet.tres" id="1_i7xgc"]
+[ext_resource type="TileSet" uid="uid://ds0uihgbfxlmd" path="res://scenes/worldTileSet.tres" id="1_i7xgc"]
+[ext_resource type="Texture2D" uid="uid://ba05y2ndepur5" path="res://assests/arrow animations/Water_01.png" id="3_gclx1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q0li3"]
-size = Vector2(67, 56)
+size = Vector2(67, 75)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aji83"]
+atlas = ExtResource("3_gclx1")
+region = Rect2(0, 0, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_30xwg"]
+atlas = ExtResource("3_gclx1")
+region = Rect2(16, 0, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0nqw8"]
+atlas = ExtResource("3_gclx1")
+region = Rect2(32, 0, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ah30a"]
+atlas = ExtResource("3_gclx1")
+region = Rect2(0, 24, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x3hvv"]
+atlas = ExtResource("3_gclx1")
+region = Rect2(16, 24, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7bayn"]
+atlas = ExtResource("3_gclx1")
+region = Rect2(32, 24, 16, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_armcu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aji83")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_30xwg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0nqw8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ah30a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x3hvv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7bayn")
+}],
+"loop": true,
+"name": &"ice",
+"speed": 5.0
+}]
 
 [node name="Area2D" type="Area2D"]
 z_index = -1
 script = ExtResource("1_83k7p")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(8.5, -12)
+position = Vector2(8.5, -21.5)
 shape = SubResource("RectangleShape2D_q0li3")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray(0, 0, 0, 0, 0, 0, 1, 0, 6, 0, 2, 0, 0, 0, 0, 0, 255, 255, 1, 0, 0, 0, 8, 0, 0, 0)
 tile_set = ExtResource("1_i7xgc")
+
+[node name="ice_totem_AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(9, -23)
+scale = Vector2(1.05, 1.05)
+sprite_frames = SubResource("SpriteFrames_armcu")
+animation = &"ice"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
