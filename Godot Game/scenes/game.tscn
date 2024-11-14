@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bgrb63g7x3y4y" path="res://assests/nature-backgrounds-pixel-art/nature_1/2.png" id="5_kryxk"]
 [ext_resource type="Texture2D" uid="uid://ccgwya4pdtd7x" path="res://assests/nature-backgrounds-pixel-art/nature_1/3.png" id="5_nglb2"]
 [ext_resource type="Texture2D" uid="uid://b8865idw0j4ue" path="res://assests/InstuctionPicture-removebg-preview.png" id="6_akgxi"]
-[ext_resource type="TileSet" path="res://scenes/worldTileSet.tres" id="8_qpi0n"]
+[ext_resource type="TileSet" uid="uid://cmhum7edpr41v" path="res://scenes/worldTileSet.tres" id="8_qpi0n"]
 [ext_resource type="PackedScene" uid="uid://bc2otyvk6ohr3" path="res://scenes/Ice_Totem.tscn" id="9_dhcip"]
 [ext_resource type="PackedScene" uid="uid://uuylubojul0i" path="res://scenes/platform.tscn" id="10_awimq"]
 [ext_resource type="PackedScene" uid="uid://cqf4hg6nsi43d" path="res://scenes/killzone.tscn" id="11_lbcwo"]
