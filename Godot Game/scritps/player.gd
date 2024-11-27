@@ -9,7 +9,7 @@ var arrow = load("res://scenes/arrow.tscn")
 var input_enabled = true
 # Der normale Zeitablauf
 const NORMAL_TIME_SCALE = 1.0
-# Der Zeitablauf während der Zeitlupe
+# Der Zeitablauf währenKid der Zeitlupe
 const SLOW_MOTION_SCALE = 0.3
 
 @onready var animated_sprite_2d = $AnimatedSprite2D
@@ -45,7 +45,7 @@ func _physics_process(delta):
 			# Stelle den normalen Zeitablauf wieder her
 			Engine.time_scale = NORMAL_TIME_SCALE
 			
-
+		
 		# Handle jump.
 		if Input.is_action_pressed("springen") and is_on_floor():
 			velocity.y = JUMP_VELOCITY
