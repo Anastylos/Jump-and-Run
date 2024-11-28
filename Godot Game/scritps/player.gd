@@ -3,12 +3,13 @@ extends CharacterBody2D
 
 var speed = 250.0
 const JUMP_VELOCITY = -400.0
+var totem_status = "none"
 
 var arrow = load("res://scenes/arrow.tscn")
 var input_enabled = true
 # Der normale Zeitablauf
 const NORMAL_TIME_SCALE = 1.0
-# Der Zeitablauf während der Zeitlupe
+# Der Zeitablauf währenKid der Zeitlupe
 const SLOW_MOTION_SCALE = 0.3
 
 @onready var animated_sprite_2d = $AnimatedSprite2D
@@ -44,9 +45,9 @@ func _physics_process(delta):
 			# Stelle den normalen Zeitablauf wieder her
 			Engine.time_scale = NORMAL_TIME_SCALE
 			
-
+		
 		# Handle jump.
-		if Input.is_action_just_pressed("springen") and is_on_floor():
+		if Input.is_action_pressed("springen") and is_on_floor():
 			velocity.y = JUMP_VELOCITY
 		
 	
@@ -104,3 +105,9 @@ func _on_shoot_anim_animation_finished():
 
 func _on_dash_timer_timeout():
 	speed = 250
+	
+func set_totemStatus(status):
+	totem_status = status
+	
+func get_totem_status():
+	return totem_status

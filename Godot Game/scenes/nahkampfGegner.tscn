@@ -177,9 +177,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_72ad8")
 }],
-"loop": true,
+"loop": false,
 "name": &"run",
-"speed": 14.0
+"speed": 10.0
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lhiku"]
@@ -279,8 +279,8 @@ texture_filter = 1
 position = Vector2(0, -24)
 scale = Vector2(1.515, 1.515)
 sprite_frames = SubResource("SpriteFrames_ewex3")
-animation = &"run"
-autoplay = "run"
+animation = &"atack"
+autoplay = "Idle"
 
 [node name="fire_AnimatedSprite2D" type="AnimatedSprite2D" parent="enemy_AnimatedSprite2D"]
 visible = false

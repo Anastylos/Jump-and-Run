@@ -8,15 +8,35 @@ var dir: float
 var spawnPos: Vector2
 var is_frozen: bool = false
 var parent_body: Node = null
+var fire: bool = false
+var ice: bool = false
+
+@onready var timer: Timer = $Timer
+@onready var player = get_node("/root/Game/MainPlayer")
+
+@onready var fire_animated_sprite_2d = $Sprite2D/fire_AnimatedSprite2D
+@onready var ice_animated_sprite_2d_2 = $Sprite2D/ice_AnimatedSprite2D2
+
+
 
 func _ready():
+	if player != null:
+		if player.get_totem_status() == "fire":
+			fire_animated_sprite_2d.visible = true
+			fire = true
+		elif player.get_totem_status() == "ice":
+			ice_animated_sprite_2d_2.visible = true
+			ice = true
+	else:
+		print("Player is null!")
+		
 	var mouse_position = get_global_mouse_position()
 	global_position = spawnPos
 	var directionToMouse = mouse_position - global_position
 	var spawnRot = directionToMouse.angle()
 	rotation = spawnRot
 	dir = spawnRot
-	$Timer.start()
+	timer.start()
 
 func _process(delta):
 	if get_rotation_degrees() >= -90 and get_rotation_degrees() <= 90:
@@ -65,5 +85,5 @@ func stick_to_body(body):
 func get_parent_attachment_point() -> Vector2:
 	return position
 
-func _on_timer_timeout():
+func _on_timer_timeout() -> void:
 	queue_free()

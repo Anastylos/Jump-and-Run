@@ -69,7 +69,7 @@ func freeze():
 func _on_animation_timer_timeout():
 	frozen = false  # Gegner ist nicht mehr eingefroren
 	burning = false  # Gegner ist nicht mehr brennend
-	animated_sprite_2d.play("run")  # Zurück zur run-Animation
+	animated_sprite_2d.play("Idle")  # Zurück zur Idle-Animation
 	update_sprite_flip()  # Richtungswechsel wieder aktivieren
 
 # Funktion zur Änderung der Sprite-Richtung basierend auf der Bewegungsrichtung
