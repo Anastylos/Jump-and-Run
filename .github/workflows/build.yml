@@ -17,11 +17,12 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v3
 
-    # 2. Godot Engine installieren
-    - name: Install Godot
-      uses: josephbmanley/setup-godot@v1
-      with:
-        godot-version: 4.3
+    # 2. Godot herunterladen und installieren
+    - name: Download Godot
+      run: |
+        curl -sSL https://downloads.tuxfamily.org/godotengine/4.3/godot-4.3-stable-linux.x86_64.zip -o godot.zip
+        unzip godot.zip -d godot
+        chmod +x godot/godot*.x86_64
 
     # 3. Projekt validieren (Syntax- und Szenenprüfung)
     - name: Validate Project
