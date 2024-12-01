@@ -20,21 +20,22 @@ jobs:
     # 2. Godot herunterladen und installieren
     - name: Download Godot
       run: |
-        curl -sSL https://godotengine.org/download/latest/stable/x11 -o godot.x86_64
-        chmod +x godot.x86_64
+        curl -sSL https://downloads.tuxfamily.org/godotengine/4.3/godot-4.3-stable-linux.x86_64.zip -o godot.zip
+        unzip godot.zip -d godot
+        chmod +x godot/godot.x86_64
 
     # 3. Projekt validieren (Syntax- und Szenenprüfung)
     - name: Validate Project
       run: |
-        ./godot.x86_64 --headless --check-syntax --path .
+        ./godot/godot.x86_64 --headless --check-syntax --path .
 
     # 4. Build für Plattformen erstellen
     - name: Export Game (Linux)
       run: |
-        ./godot.x86_64 --headless --export "Linux/X11" build/MyGame.x86_64
+        ./godot/godot.x86_64 --headless --export "Linux/X11" build/MyGame.x86_64
     - name: Export Game (Windows)
       run: |
-        ./godot.x86_64 --headless --export "Windows Desktop" build/MyGame.exe
+        ./godot/godot.x86_64 --headless --export "Windows Desktop" build/MyGame.exe
 
   deploy:
     runs-on: ubuntu-latest
