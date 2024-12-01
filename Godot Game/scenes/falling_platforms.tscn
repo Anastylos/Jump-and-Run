@@ -1,0 +1,188 @@
+[gd_scene load_steps=8 format=3 uid="uid://bi50qmnesx8p5"]
+
+[ext_resource type="Texture2D" uid="uid://bcvp1sws6irqq" path="res://assests/brackeys_platformer_assets/sprites/platforms.png" id="1_tdtsi"]
+
+[sub_resource type="GDScript" id="GDScript_ylo1w"]
+script/source = "extends AnimatableBody2D
+
+#var is_fall
+#var motion = Vector2()
+#
+#func _physics_process(delta):
+	#if is_fall == false:
+		#motion.y += 20
+	#elif is_fall ==true:
+		#motion.y = 0
+		#position.y = 0
+	#move_and_slide()
+#
+#
+#func _on_player_enter_body_entered(body):
+	#if body.is_in_group('player'):
+		#$AnimationPlatform.play('Falling_down')
+#
+#func fall():
+	#is_fall = false
+#
+#func _on_player_enter_body_exited(body):
+	#$Timer.wait_time = 5
+	#$Timer.start()
+	#
+#func _on_Timer_timeout():
+	#is_fall = true
+
+
+
+
+#onready var animation_Platform = $AnimationPlatform
+#onready var timer = $ResetTimer
+#
+#export var reset_time : float = 1.0
+#
+#onready var reset_position = gloabl_position
+#
+#var velocity = Vector2()
+#var is_triggered = false
+#
+#
+#func ready():
+	#set_physics_process(false)
+	#
+#
+#func _physics_process(delta):
+	#velocity.y += Globals.gravity * delta 
+	#position += velocity * delta
+#
+#func collide_with(collision : KinematicCollision2D, collider : CharacterBody2D):
+	#if !is_triggered:
+		#is_triggered = true
+		#animation_player.player(falling_down)
+		#velocity = Vector2.ZERO
+#
+#func _on_AnimationPlayer_animation_finished(anim_name):
+	#set_physics_process(true)
+	#timer.start(reset_time)
+#
+#
+#func _on_ResetTimer_timeout():
+	#set_physics_process(false)
+	#yield(get_tree(), \"physics_frame\")
+	#var temp = collision_layer
+	#collision_layer = 0
+	#global_position ? reset_position
+	#yield(get_tree(), \"physics_frame\")
+	#collision_layer = temp
+	#is_triggered = false
+
+
+#var is_fall
+#var motion = Vector2()
+#
+#func _physics_process(delta):
+	#motion.y +=20
+	#
+	#motion = move_and_slide(motion, Vector2.UP)
+#
+## Called when the node enters the scene tree for the first time.
+#func _ready() -> void:
+	#pass # Replace with function body.
+#
+#
+## Called every frame. 'delta' is the elapsed time since the previous frame.
+#
+##func _process(delta: float) -> void:
+##	pass
+#
+#
+#func _on_player_enter_body_entered(body: Node2D) -> void:
+	#if body.is_in_group('player'):
+		#$AnimationPlayer.play(\"falling_down\")
+		#
+#
+#func fall():
+	#is_fall = false
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6ydgo"]
+size = Vector2(32, 8)
+
+[sub_resource type="Animation" id="Animation_c0koe"]
+resource_name = "Falling_down"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.466667, 0.633333),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-8, 0), Vector2(8, 0), Vector2(0, 0)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.966667),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"fall"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_b0hti"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_e7xxd"]
+_data = {
+"Falling_down": SubResource("Animation_c0koe"),
+"RESET": SubResource("Animation_b0hti")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wu77i"]
+size = Vector2(32, 8)
+
+[node name="FallingPlatforms" type="AnimatableBody2D"]
+script = SubResource("GDScript_ylo1w")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_tdtsi")
+region_enabled = true
+region_rect = Rect2(16, 0, 32, 8)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_6ydgo")
+
+[node name="AnimationPlatform" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_e7xxd")
+}
+
+[node name="player_enter" type="Area2D" parent="." groups=["player"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player_enter"]
+shape = SubResource("RectangleShape2D_wu77i")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+
+[connection signal="body_entered" from="player_enter" to="." method="_on_player_enter_body_entered"]
