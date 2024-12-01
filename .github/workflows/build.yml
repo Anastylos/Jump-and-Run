@@ -20,7 +20,8 @@ jobs:
     # 2. Godot herunterladen und installieren
     - name: Download Godot
       run: |
-        curl -sSL https://downloads.tuxfamily.org/godotengine/4.3/godot-4.3-stable-linux.x86_64 -o godot.x86_64
+        curl -sSL https://godotengine.org/download/latest/stable/x11 -o godot.x86_64
+        file godot.x86_64  # Prüft den Inhalt der Datei
         chmod +x godot.x86_64
 
     # 3. Projekt validieren (Syntax- und Szenenprüfung)
