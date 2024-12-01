@@ -22,7 +22,8 @@ jobs:
       run: |
         curl -sSL https://github.com/godotengine/godot/releases/download/4.3-stable/Godot_v4.3-stable_win64.exe.zip -o godot.zip
         unzip godot.zip -d godot
-        chmod +x godot/Godot_v4.3-stable_win64.exe  # Wenn Sie es verwenden müssen, um Wine zu simulieren
+        ls godot  # Zeigt den Inhalt des Verzeichnisses an, um sicherzustellen, dass die Datei korrekt entpackt wurde
+        chmod +x godot/Godot_v4.3-stable_win64.exe  # Falls Sie Wine verwenden, um die exe-Datei auszuführen
 
     # 3. Projekt validieren (Syntax- und Szenenprüfung)
     - name: Validate Project
