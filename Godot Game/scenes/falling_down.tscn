@@ -1,5 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://dj1002rdgnyr0"]
+[gd_scene load_steps=8 format=3 uid="uid://dj1002rdgnyr0"]
 
+[ext_resource type="Script" path="res://scritps/falling.gd" id="1_ats68"]
 [ext_resource type="Texture2D" uid="uid://bcvp1sws6irqq" path="res://assests/brackeys_platformer_assets/sprites/platforms.png" id="1_u4ech"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m8vnt"]
@@ -60,21 +61,22 @@ _data = {
 }
 
 [node name="Falling_down" type="CharacterBody2D"]
+script = ExtResource("1_ats68")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_u4ech")
 region_enabled = true
-region_rect = Rect2(16, 0, 32, 8)
+region_rect = Rect2(16, 16, 32, 9)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_m8vnt")
 
-[node name="player_enter" type="Area2D" parent="." groups=["player"]]
+[node name="player_enterd" type="Area2D" parent="." groups=["player"]]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="player_enter"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player_enterd"]
 shape = SubResource("RectangleShape2D_bojjt")
 
-[node name="AnimationPlatform" type="AnimationPlayer" parent="." groups=["player"]]
+[node name="AnimationPlatform" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_e7xxd")
 }

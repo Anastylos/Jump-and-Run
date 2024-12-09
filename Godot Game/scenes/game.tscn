@@ -15,8 +15,8 @@
 [ext_resource type="PackedScene" uid="uid://uuylubojul0i" path="res://scenes/platform.tscn" id="10_awimq"]
 [ext_resource type="PackedScene" uid="uid://cqf4hg6nsi43d" path="res://scenes/killzone.tscn" id="11_lbcwo"]
 [ext_resource type="PackedScene" uid="uid://bypqyqj801t3t" path="res://scenes/FireTotem.tscn" id="12_ttt40"]
-[ext_resource type="Script" path="res://scritps/falling.gd" id="17_8yjso"]
 [ext_resource type="PackedScene" uid="uid://dj1002rdgnyr0" path="res://scenes/falling_down.tscn" id="17_dsp20"]
+[ext_resource type="PackedScene" uid="uid://blt4g8t1ogocn" path="res://scenes/pressure_plate.tscn" id="18_fqrek"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2tclj"]
 size = Vector2(31, 11)
@@ -221,7 +221,7 @@ position = Vector2(1413, 100)
 scale = Vector2(0.523366, 0.549032)
 texture = ExtResource("4_ut3kf")
 
-[node name="13" type="Sprite2D" parent="background"]
+[node name="13" type="Sprite2D" parent="background" groups=["player"]]
 z_index = -1
 position = Vector2(657, 49)
 scale = Vector2(1.07157, 1.30473)
@@ -414,10 +414,13 @@ position = Vector2(1593, -102)
 position = Vector2(454, 49)
 
 [node name="Falling_down" parent="Falling" instance=ExtResource("17_dsp20")]
-script = ExtResource("17_8yjso")
 
 [node name="Falling2" type="Node2D" parent="Falling"]
 position = Vector2(163, -62)
 
 [node name="Falling_down2" parent="Falling/Falling2" instance=ExtResource("17_dsp20")]
-script = ExtResource("17_8yjso")
+
+[node name="Pressure_Plate" type="Node2D" parent="."]
+position = Vector2(782, 31)
+
+[node name="PressurePlate" parent="Pressure_Plate" instance=ExtResource("18_fqrek")]

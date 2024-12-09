@@ -1,0 +1,93 @@
+[gd_scene load_steps=7 format=3 uid="uid://blt4g8t1ogocn"]
+
+[ext_resource type="Script" path="res://scritps/pressure_plate.gd" id="1_x6afy"]
+[ext_resource type="Texture2D" uid="uid://bcvp1sws6irqq" path="res://assests/brackeys_platformer_assets/sprites/platforms.png" id="2_r4612"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_628l6"]
+size = Vector2(14, 1.5)
+
+[sub_resource type="Animation" id="Animation_63glv"]
+resource_name = "pressed"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 0,
+"values": []
+}
+
+[sub_resource type="Animation" id="Animation_f5jgo"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5r34s"]
+_data = {
+"RESET": SubResource("Animation_f5jgo"),
+"pressed": SubResource("Animation_63glv")
+}
+
+[node name="PressurePlate" type="StaticBody2D" groups=["player"]]
+script = ExtResource("1_x6afy")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 1)
+texture = ExtResource("2_r4612")
+region_enabled = true
+region_rect = Rect2(16, 32, 32, 2)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(0, -0.25)
+shape = SubResource("RectangleShape2D_628l6")
+
+[node name="Area2D" type="Area2D" parent="." groups=["player"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -0.25)
+shape = SubResource("RectangleShape2D_628l6")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_5r34s")
+}
+speed_scale = 0.5
