@@ -16,7 +16,12 @@
 [ext_resource type="PackedScene" uid="uid://cqf4hg6nsi43d" path="res://scenes/killzone.tscn" id="11_lbcwo"]
 [ext_resource type="PackedScene" uid="uid://bypqyqj801t3t" path="res://scenes/FireTotem.tscn" id="12_ttt40"]
 [ext_resource type="PackedScene" uid="uid://dj1002rdgnyr0" path="res://scenes/falling_down.tscn" id="17_dsp20"]
+<<<<<<< Updated upstream
 [ext_resource type="PackedScene" uid="uid://blt4g8t1ogocn" path="res://scenes/pressure_plate.tscn" id="18_fqrek"]
+=======
+[ext_resource type="PackedScene" uid="uid://cie0w42tjyv08" path="res://scenes/kiste.tscn" id="18_6geoh"]
+[ext_resource type="PackedScene" uid="uid://blt4g8t1ogocn" path="res://scenes/pressure_plate.tscn" id="18_253c6"]
+>>>>>>> Stashed changes
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2tclj"]
 size = Vector2(31, 11)
@@ -423,4 +428,23 @@ position = Vector2(163, -62)
 [node name="Pressure_Plate" type="Node2D" parent="."]
 position = Vector2(782, 31)
 
+<<<<<<< Updated upstream
 [node name="PressurePlate" parent="Pressure_Plate" instance=ExtResource("18_fqrek")]
+=======
+[node name="CharacterBody2D3" parent="." instance=ExtResource("18_6geoh")]
+position = Vector2(78, -2)
+
+[node name="CharacterBody2D4" parent="." instance=ExtResource("18_6geoh")]
+position = Vector2(197, 125)
+
+[node name="CharacterBody2D5" parent="." instance=ExtResource("18_6geoh")]
+position = Vector2(360, 62)
+
+[node name="CharacterBody2D6" parent="." instance=ExtResource("18_6geoh")]
+position = Vector2(278, -88)
+
+[node name="Pressure_Plate" type="Node2D" parent="."]
+position = Vector2(846, 31)
+
+[node name="PressurePlate" parent="Pressure_Plate" instance=ExtResource("18_253c6")]
+>>>>>>> Stashed changes
