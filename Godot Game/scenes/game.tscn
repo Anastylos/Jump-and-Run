@@ -424,16 +424,16 @@ position = Vector2(163, -62)
 script = ExtResource("17_8yjso")
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("18_6geoh")]
-position = Vector2(11, 144)
+position = Vector2(11, 156)
 
 [node name="CharacterBody2D3" parent="." instance=ExtResource("18_6geoh")]
 position = Vector2(78, -2)
 
 [node name="CharacterBody2D4" parent="." instance=ExtResource("18_6geoh")]
-position = Vector2(197, 125)
+position = Vector2(66, -111)
 
 [node name="CharacterBody2D5" parent="." instance=ExtResource("18_6geoh")]
-position = Vector2(360, 62)
+position = Vector2(360, 75)
 
 [node name="CharacterBody2D6" parent="." instance=ExtResource("18_6geoh")]
-position = Vector2(278, -88)
+position = Vector2(278, -79)
