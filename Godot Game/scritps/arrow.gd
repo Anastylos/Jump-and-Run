@@ -81,6 +81,9 @@ func stick_to_body(body):
 	
 	# Set the arrow's position relative to its new parent
 	position = body.to_local(position)
+	
+	collision_layer = 2
+	collision_mask = 2
 
 func get_parent_attachment_point() -> Vector2:
 	return position
