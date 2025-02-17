@@ -28,8 +28,8 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("projectile") :  # Sicherstellen, dass es ein Projektil ist
 		body.remove_from_group("projectile")
 		# Berechne die Richtung basierend auf der Position des Projektils
-		var impact_direction = sign(global_position.x - body.global_position.x)
-
+		var impact_direction = body.last_direction
+		
 		# Wende die Impact-Kraft an (nach links oder rechts)
 		velocity.x += impact_direction * IMPACT_FORCE
 		is_impacting = true  # Setze das Flag, dass ein Impact stattgefunden hat
