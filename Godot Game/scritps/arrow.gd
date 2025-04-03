@@ -29,8 +29,6 @@ func _ready():
 		elif player.get_totem_status() == "ice":
 			ice_animated_sprite_2d_2.visible = true
 			ice = true
-	else:
-		print("Player is null!")
 		
 	var mouse_position = get_global_mouse_position()
 	global_position = spawnPos

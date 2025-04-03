@@ -7,8 +7,6 @@ func _on_body_entered(body):
 		body.disable_input()
 		print("you died!")
 		timer.start()
-	else:
-		print("Player is null!")
 		
 	
 
