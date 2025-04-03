@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bi50qmnesx8p5"]
+[gd_scene load_steps=8 format=3 uid="uid://dqyr1yveygpv4"]
 
 [ext_resource type="Texture2D" uid="uid://bcvp1sws6irqq" path="res://assests/brackeys_platformer_assets/sprites/platforms.png" id="1_tdtsi"]
 
@@ -173,7 +173,7 @@ shape = SubResource("RectangleShape2D_6ydgo")
 
 [node name="AnimationPlatform" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_e7xxd")
+&"": SubResource("AnimationLibrary_e7xxd")
 }
 
 [node name="player_enter" type="Area2D" parent="." groups=["player"]]
