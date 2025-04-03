@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://cie0w42tjyv08"]
 
-[ext_resource type="Script" path="res://kiste.gd" id="1_1wmkr"]
+[ext_resource type="Script" uid="uid://ce2udfifeubom" path="res://kiste.gd" id="1_1wmkr"]
 [ext_resource type="TileSet" uid="uid://ds0uihgbfxlmd" path="res://scenes/worldTileSet.tres" id="2_wkhxh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5ihha"]

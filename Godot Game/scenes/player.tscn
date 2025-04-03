@@ -1,6 +1,6 @@
 [gd_scene load_steps=62 format=3 uid="uid://dfayifn15m681"]
 
-[ext_resource type="Script" path="res://scritps/player.gd" id="1_27tse"]
+[ext_resource type="Script" uid="uid://dhqpq3vq42o1j" path="res://scritps/player.gd" id="1_27tse"]
 [ext_resource type="Texture2D" uid="uid://0cibdvijofxb" path="res://assests/tiny hero/2/Idle.png" id="1_neiha"]
 [ext_resource type="Texture2D" uid="uid://dkcxcqvuj4p1q" path="res://assests/tiny hero/2/Attack.png" id="2_8m8l3"]
 [ext_resource type="Texture2D" uid="uid://ce7g50qxne822" path="res://assests/tiny hero/2/RunAttack.png" id="2_hnwwp"]

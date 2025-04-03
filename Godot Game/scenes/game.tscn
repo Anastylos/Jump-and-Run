@@ -15,7 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://uuylubojul0i" path="res://scenes/platform.tscn" id="10_awimq"]
 [ext_resource type="PackedScene" uid="uid://cqf4hg6nsi43d" path="res://scenes/killzone.tscn" id="11_lbcwo"]
 [ext_resource type="PackedScene" uid="uid://bypqyqj801t3t" path="res://scenes/FireTotem.tscn" id="12_ttt40"]
-[ext_resource type="Script" path="res://scritps/falling.gd" id="17_8yjso"]
+[ext_resource type="Script" uid="uid://bb885tijgyowo" path="res://scritps/falling.gd" id="17_8yjso"]
 [ext_resource type="PackedScene" uid="uid://dj1002rdgnyr0" path="res://scenes/falling_down.tscn" id="17_dsp20"]
 [ext_resource type="PackedScene" uid="uid://cie0w42tjyv08" path="res://scenes/kiste.tscn" id="18_6geoh"]
 
@@ -83,8 +83,8 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_taifr"]
 _data = {
-"Platform": SubResource("Animation_usshu"),
-"RESET": SubResource("Animation_ti38u")
+&"Platform": SubResource("Animation_usshu"),
+&"RESET": SubResource("Animation_ti38u")
 }
 
 [sub_resource type="Animation" id="Animation_r48hl"]
@@ -121,8 +121,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_r3nsh"]
 _data = {
-"Platform2": SubResource("Animation_r48hl"),
-"RESET": SubResource("Animation_jru5t")
+&"Platform2": SubResource("Animation_r48hl"),
+&"RESET": SubResource("Animation_jru5t")
 }
 
 [node name="Game" type="Node2D"]

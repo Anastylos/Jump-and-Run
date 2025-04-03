@@ -55,8 +55,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_e7xxd"]
 _data = {
-"Falling_down": SubResource("Animation_c0koe"),
-"RESET": SubResource("Animation_b0hti")
+&"Falling_down": SubResource("Animation_c0koe"),
+&"RESET": SubResource("Animation_b0hti")
 }
 
 [node name="Falling_down" type="CharacterBody2D"]
