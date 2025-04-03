@@ -1,0 +1,52 @@
+name: Godot CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    # 1. Repository klonen
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    # 2. Godot herunterladen und installieren
+    - name: Download Godot
+      run: |
+        curl -sSL https://github.com/godotengine/godot/releases/download/4.3-stable/Godot_v4.3-stable_linux.x86_64.zip -o godot.zip
+        unzip godot.zip -d godot
+        ls godot  # Zeigt den Inhalt des Verzeichnisses an, um sicherzustellen, dass die Datei korrekt entpackt wurde
+        chmod +x godot/Godot_v4.3-stable_linux.x86_64  # Macht die entpackte Datei ausführbar
+
+    # 3. Projekt validieren (Syntax- und Szenenprüfung)
+    - name: Validate Project
+      run: |
+        ./godot/Godot_v4.3-stable_linux.x86_64 --headless --check-syntax --path .  # Pfad zur entpackten Linux-Version
+
+    # 4. Build für Plattformen erstellen
+    - name: Export Game (Linux)
+      run: |
+        ./godot/Godot_v4.3-stable_linux.x86_64 --headless --export "Linux/X11" build/MyGame.x86_64
+    - name: Export Game (Windows)
+      run: |
+        ./godot/Godot_v4.3-stable_linux.x86_64 --headless --export "Windows Desktop" build/MyGame.exe
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+
+    steps:
+    # 1. Artifact hochladen
+    - name: Upload Build to GitHub Releases
+      uses: softprops/action-gh-release@v1
+      with:
+        files: |
+          build/MyGame.x86_64
+          build/MyGame.exe

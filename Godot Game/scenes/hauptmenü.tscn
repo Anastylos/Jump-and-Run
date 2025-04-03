@@ -1,12 +1,12 @@
 [gd_scene load_steps=17 format=4 uid="uid://bgcah8tec6b8i"]
 
 [ext_resource type="Texture2D" uid="uid://dyxbbngvnbjni" path="res://assests/nature-backgrounds-pixel-art/nature_1/1.png" id="1_a2jr2"]
-[ext_resource type="Script" path="res://scritps/hauptmenü.gd" id="1_wmwxv"]
-[ext_resource type="TileSet" path="res://scenes/worldTileSet.tres" id="2_oak0p"]
+[ext_resource type="Script" uid="uid://bxsk4jfprhv0h" path="res://scritps/hauptmenü.gd" id="1_wmwxv"]
+[ext_resource type="TileSet" uid="uid://ds0uihgbfxlmd" path="res://scenes/worldTileSet.tres" id="2_oak0p"]
 [ext_resource type="Texture2D" uid="uid://bgrb63g7x3y4y" path="res://assests/nature-backgrounds-pixel-art/nature_1/2.png" id="3_6sxkp"]
 [ext_resource type="FontFile" uid="uid://b2if36p0hray2" path="res://assests/brackeys_platformer_assets/fonts/PixelOperator8-Bold.ttf" id="4_s51wv"]
-[ext_resource type="Texture2D" path="res://assests/buttons text pack/play.png" id="5_350nx"]
-[ext_resource type="Texture2D" path="res://assests/buttons text pack/option.png" id="6_ok27e"]
+[ext_resource type="Texture2D" uid="uid://diiiydnnfbj64" path="res://assests/buttons text pack/play.png" id="5_350nx"]
+[ext_resource type="Texture2D" uid="uid://d28651leohsfr" path="res://assests/buttons text pack/option.png" id="6_ok27e"]
 [ext_resource type="FontFile" uid="uid://ch1uofdanh1js" path="res://assests/brackeys_platformer_assets/fonts/PixelOperator8.ttf" id="7_jy35f"]
 [ext_resource type="PackedScene" uid="uid://dfayifn15m681" path="res://scenes/player.tscn" id="9_ukli8"]
 [ext_resource type="PackedScene" uid="uid://cqf4hg6nsi43d" path="res://scenes/killzone.tscn" id="10_oj7d3"]
@@ -111,10 +111,10 @@ position = Vector2(-9.48599, 121.89)
 shape = SubResource("WorldBoundaryShape2D_t6t11")
 
 [node name="Title" type="Label" parent="."]
-offset_left = -177.477
-offset_top = -118.606
-offset_right = 145.523
-offset_bottom = -88.6055
+offset_left = -177.072
+offset_top = -110.809
+offset_right = 145.928
+offset_bottom = -80.809
 text = "Jump and Run"
 label_settings = SubResource("LabelSettings_fys2s")
 
