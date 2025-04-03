@@ -50,12 +50,9 @@ func _process(delta):
 	if last_direction == null or last_direction == 0:
 		if velocity.x < 0:
 			last_direction = -1
-			print(velocity.x)
+
 		elif velocity.x > 0:
 			last_direction = 1
-			print(velocity.x)
-			
-		
 	
 	if not is_frozen:
 		velocity = Vector2(SPEED, 0).rotated(dir)

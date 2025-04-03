@@ -76,5 +76,5 @@ shape = SubResource("RectangleShape2D_bojjt")
 
 [node name="AnimationPlatform" type="AnimationPlayer" parent="." groups=["player"]]
 libraries = {
-"": SubResource("AnimationLibrary_e7xxd")
+&"": SubResource("AnimationLibrary_e7xxd")
 }
