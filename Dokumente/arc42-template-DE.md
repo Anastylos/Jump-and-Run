@@ -1,148 +1,32 @@
-# 
+# KAPITEL 1: Einführung und Ziele
 
-**Über arc42**
+Ziel des Projektes ist es ein Jump and Run Spiel zu entwickeln. Im Spiel soll man verschiedene Gegner bekämpfen und Rätsel lösen.
+Die aktuellen Mindestfeatures sind im Kanban Board hinterlegt, für die Umsetzung weiterer Features soll auf das Designdokument zugegriffen werden:  
+https://github.com/Anastylos/Jump-and-Run/blob/main/Dokumente/SRS_Gamedesign.md
+Das Erstellen von Leveln soll Priorität haben vor der Implementierung optionaler Features.
 
-arc42, das Template zur Dokumentation von Software- und
-Systemarchitekturen.
+Die verwendete Engine ist Godot 4.4
 
-Template Version 8.2 DE. (basiert auf AsciiDoc Version), Januar 2023
+## Qualitätsziele
 
-Created, maintained and © by Dr. Peter Hruschka, Dr. Gernot Starke and
-contributors. Siehe <https://arc42.org>.
-
-::: note
-Diese Version des Templates enthält Hilfen und Erläuterungen. Sie dient
-der Einarbeitung in arc42 sowie dem Verständnis der Konzepte. Für die
-Dokumentation eigener System verwenden Sie besser die *plain* Version.
-:::
-
-# KAPITEL 1: Einführung und Ziele {#section-introduction-and-goals}
-
-Beschreibt die wesentlichen Anforderungen und treibenden Kräfte, die bei
-der Umsetzung der Softwarearchitektur und Entwicklung des Systems
-berücksichtigt werden müssen.
-
-Dazu gehören:
-
--   zugrunde liegende Geschäftsziele,
-
--   wesentliche Aufgabenstellungen,
-
--   wesentliche funktionale Anforderungen,
-
--   Qualitätsziele für die Architektur und
-
--   relevante Stakeholder und deren Erwartungshaltung.
-
-## Aufgabenstellung {#_aufgabenstellung}
-
-::: formalpara-title
-**Inhalt**
-:::
-
-Kurzbeschreibung der fachlichen Aufgabenstellung, treibenden Kräfte,
-Extrakt (oder Abstract) der Anforderungen. Verweis auf (hoffentlich
-vorliegende) Anforderungsdokumente (mit Versionsbezeichnungen und
-Ablageorten).
-
-::: formalpara-title
-**Motivation**
-:::
-
-Aus Sicht der späteren Nutzung ist die Unterstützung einer fachlichen
-Aufgabe oder Verbesserung der Qualität der eigentliche Beweggrund, ein
-neues System zu schaffen oder ein bestehendes zu modifizieren.
-
-::: formalpara-title
-**Form**
-:::
-
-Kurze textuelle Beschreibung, eventuell in tabellarischer Use-Case Form.
-Sofern vorhanden, sollte die Aufgabenstellung Verweise auf die
-entsprechenden Anforderungsdokumente enthalten.
-
-Halten Sie diese Auszüge so knapp wie möglich und wägen Sie Lesbarkeit
-und Redundanzfreiheit gegeneinander ab.
-
-Siehe [Anforderungen und Ziele](https://docs.arc42.org/section-1/) in
-der online-Dokumentation (auf Englisch!).
-
-## Qualitätsziele {#_qualit_tsziele}
-
-::: formalpara-title
-**Inhalt**
-:::
-
-Die Top-3 bis Top-5 der Qualitätsanforderungen für die Architektur,
-deren Erfüllung oder Einhaltung den maßgeblichen Stakeholdern besonders
-wichtig sind. Gemeint sind hier wirklich Qualitätsziele, die nicht
-unbedingt mit den Zielen des Projekts übereinstimmen. Beachten Sie den
-Unterschied.
-
-Hier ein Überblick möglicher Themen (basierend auf dem ISO 25010
-Standard):
-
-![Kategorien von
-Qualitätsanforderungen](images/01_2_iso-25010-topics-DE.drawio.png)
-
-::: formalpara-title
-**Motivation**
-:::
-
-Weil Qualitätsziele grundlegende Architekturentscheidungen oft
-maßgeblich beeinflussen, sollten Sie die für Ihre Stakeholder relevanten
-Qualitätsziele kennen, möglichst konkret und operationalisierbar.
-
-::: formalpara-title
-**Form**
-:::
-
-Tabellarische Darstellung der Qualitätsziele mit möglichst konkreten
-Szenarien, geordnet nach Prioritäten.
+Fokus der Entwicklung soll der Spielspaß sein, insbesondere Bugs die den Spielspaß stören müssen beseitigt werden.
+Es werden explizit keine Anforderungen an die Spielzeit gestellt, Qualität ist wichtiger als Quantität.
 
 ## Stakeholder {#_stakeholder}
 
-::: formalpara-title
-**Inhalt**
-:::
 
-Expliziter Überblick über die Stakeholder des Systems -- über alle
-Personen, Rollen oder Organisationen --, die
++-----------------+-----------------+
+| Rolle           | Kontakt         |
++=================+=================+
+| Techlead        | JustMischka     | 
++-----------------+-----------------+
+| Organisator     | Anastylos       | 
++-----------------+-----------------+
+| Leveldesign     | DonKir15        | 
++-----------------+-----------------+
+| Leveldesign     | ktoffel999      | 
++-----------------+-----------------+
 
--   die Architektur kennen sollten oder
-
--   von der Architektur überzeugt werden müssen,
-
--   mit der Architektur oder dem Code arbeiten (z.B. Schnittstellen
-    nutzen),
-
--   die Dokumentation der Architektur für ihre eigene Arbeit benötigen,
-
--   Entscheidungen über das System und dessen Entwicklung treffen.
-
-::: formalpara-title
-**Motivation**
-:::
-
-Sie sollten die Projektbeteiligten und -betroffenen kennen, sonst
-erleben Sie später im Entwicklungsprozess Überraschungen. Diese
-Stakeholder bestimmen unter anderem Umfang und Detaillierungsgrad der
-von Ihnen zu leistenden Arbeit und Ergebnisse.
-
-::: formalpara-title
-**Form**
-:::
-
-Tabelle mit Rollen- oder Personennamen, sowie deren Erwartungshaltung
-bezüglich der Architektur und deren Dokumentation.
-
-+-----------------+-----------------+-----------------------------------+
-| Rolle           | Kontakt         | Erwartungshaltung                 |
-+=================+=================+===================================+
-| *\<Rolle-1>*    | *\<Kontakt-1>*  | *\<Erwartung-1>*                  |
-+-----------------+-----------------+-----------------------------------+
-| *\<Rolle-2>*    | *\<Kontakt-2>*  | *\<Erwartung-2>*                  |
-+-----------------+-----------------+-----------------------------------+
 
 # KAPITEL 2: Randbedingungen {#section-architecture-constraints}
 
