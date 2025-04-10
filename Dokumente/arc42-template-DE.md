@@ -16,7 +16,7 @@ der Einarbeitung in arc42 sowie dem Verständnis der Konzepte. Für die
 Dokumentation eigener System verwenden Sie besser die *plain* Version.
 :::
 
-# Einführung und Ziele {#section-introduction-and-goals}
+# KAPITEL 1: Einführung und Ziele {#section-introduction-and-goals}
 
 Beschreibt die wesentlichen Anforderungen und treibenden Kräfte, die bei
 der Umsetzung der Softwarearchitektur und Entwicklung des Systems
@@ -144,7 +144,7 @@ bezüglich der Architektur und deren Dokumentation.
 | *\<Rolle-2>*    | *\<Kontakt-2>*  | *\<Erwartung-2>*                  |
 +-----------------+-----------------+-----------------------------------+
 
-# Randbedingungen {#section-architecture-constraints}
+# KAPITEL 2: Randbedingungen {#section-architecture-constraints}
 
 ::: formalpara-title
 **Inhalt**
@@ -177,7 +177,7 @@ Namenskonvention).
 Siehe [Randbedingungen](https://docs.arc42.org/section-2/) in der
 online-Dokumentation (auf Englisch!).
 
-# Kontextabgrenzung {#section-context-and-scope}
+# KAPITEL 3: Kontextabgrenzung {#section-context-and-scope}
 
 ::: formalpara-title
 **Inhalt**
@@ -324,7 +324,7 @@ auf weitere Ausführungen in Folgeabschnitten.
 Siehe [Lösungsstrategie](https://docs.arc42.org/section-4/) in der
 online-Dokumentation (auf Englisch!).
 
-# Bausteinsicht {#section-building-block-view}
+# KAPITEL 5: Bausteinsicht {#section-building-block-view}
 
 ::: formalpara-title
 **Inhalt**
@@ -532,7 +532,7 @@ arc42 für die weiteren Ebenen.
 
 *\<Whitebox-Template>*
 
-# Laufzeitsicht {#section-runtime-view}
+# KAPITEL 5: Laufzeitsicht {#section-runtime-view}
 
 ::: formalpara-title
 **Inhalt**
@@ -607,7 +607,7 @@ online-Dokumentation (auf Englisch!).
 
 ...
 
-# Verteilungssicht {#section-deployment-view}
+# KAPITEL 7: Verteilungssicht {#section-deployment-view}
 
 ::: formalpara-title
 **Inhalt**
@@ -717,7 +717,7 @@ Für jedes Infrastrukturelement kopieren Sie die Struktur aus Ebene 1.
 
 *\<Diagramm + Erläuterungen>*
 
-# Querschnittliche Konzepte {#section-concepts}
+# KAPITEL 8: Querschnittliche Konzepte {#section-concepts}
 
 ::: formalpara-title
 **Inhalt**
@@ -811,7 +811,7 @@ der online-Dokumentation (auf Englisch).
 
 *\<Erklärung>*
 
-# Architekturentscheidungen {#section-design-decisions}
+# KAPITEL 9: Architekturentscheidungen {#section-design-decisions}
 
 ::: formalpara-title
 **Inhalt**
@@ -854,7 +854,7 @@ Siehe [Architekturentscheidungen](https://docs.arc42.org/section-9/) in
 der arc42 Dokumentation (auf Englisch!). Dort finden Sie Links und
 Beispiele zum Thema ADR.
 
-# Qualitätsanforderungen {#section-quality-scenarios}
+# KAPITEL 10: Qualitätsanforderungen {#section-quality-scenarios}
 
 ::: formalpara-title
 **Inhalt**
