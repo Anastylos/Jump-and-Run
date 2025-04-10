@@ -12,20 +12,17 @@ Die verwendete Engine ist Godot 4.4
 Fokus der Entwicklung soll der Spielspaß sein, insbesondere Bugs die den Spielspaß stören müssen beseitigt werden.
 Es werden explizit keine Anforderungen an die Spielzeit gestellt, Qualität ist wichtiger als Quantität.
 
+weitere Ziele siehe: https://github.com/Anastylos/Jump-and-Run/discussions/35
+
 ## Stakeholder {#_stakeholder}
 
+Die Rollen im Team sind folgende:
 
-+-----------------+-----------------+
-| Rolle           | Kontakt         |
-+=================+=================+
-| Techlead        | JustMischka     | 
-+-----------------+-----------------+
-| Organisator     | Anastylos       | 
-+-----------------+-----------------+
-| Leveldesign     | DonKir15        | 
-+-----------------+-----------------+
-| Leveldesign     | ktoffel999      | 
-+-----------------+-----------------+
+Techlead:       JustMischka      
+Organisator:    Anastylos        
+Leveldesign:    DonKir15         
+Leveldesign:    ktoffel999      
+
 
 
 # KAPITEL 2: Randbedingungen {#section-architecture-constraints}
