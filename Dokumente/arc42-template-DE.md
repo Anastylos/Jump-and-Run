@@ -73,11 +73,7 @@ Ein-/Ausgaben abbildet.
 
 **\<Mapping fachliche auf technische Schnittstellen>**
 
-# KAPITEL 4: Lösungsstrategie {#section-solution-strategy}
-
-::: formalpara-title
-**Inhalt**
-:::
+# KAPITEL 4: Lösungsstrategie 
 
 Kurzer Überblick über die grundlegenden Entscheidungen und
 Lösungsansätze, die Entwurf und Implementierung des Systems prägen.
@@ -96,26 +92,10 @@ Hierzu gehören:
     bestimmte Entwicklungsprozesse oder Delegation bestimmter Aufgaben
     an andere Stakeholder.
 
-::: formalpara-title
-**Motivation**
-:::
+- Das Spiel wird mit der Godot Engine entwickelt, für dieses Projekt wird die Version 4.4. verwendet, ein upgrade auf neue versionen ist möglich, aber nicht notwendig
+- Bei der Einbindung von Assets (Bilder, Musik, Logik etc.) muss die Lizenzbedingung im jeweiligen Ordner mit hinterlegt sein um bei einer eventuellen komerziellen Veröffentlichung die Assets entweder zu tauschen oder den Rechteinhalber bezahlen zu können
+- weitere Architekturentscheidungen finden sich unter: https://github.com/Anastylos/Jump-and-Run/tree/main/Dokumente/Architektur%20Design%20Entscheidungen
 
-Diese wichtigen Entscheidungen bilden wesentliche „Eckpfeiler" der
-Architektur. Von ihnen hängen viele weitere Entscheidungen oder
-Implementierungsregeln ab.
-
-::: formalpara-title
-**Form**
-:::
-
-Fassen Sie die zentralen Entwurfsentscheidungen **kurz** zusammen.
-Motivieren Sie, ausgehend von Aufgabenstellung, Qualitätszielen und
-Randbedingungen, was Sie entschieden haben und warum Sie so entschieden
-haben. Vermeiden Sie redundante Beschreibungen und verweisen Sie eher
-auf weitere Ausführungen in Folgeabschnitten.
-
-Siehe [Lösungsstrategie](https://docs.arc42.org/section-4/) in der
-online-Dokumentation (auf Englisch!).
 
 # KAPITEL 5: Bausteinsicht {#section-building-block-view}
 
