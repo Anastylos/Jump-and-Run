@@ -14,7 +14,7 @@ Es werden explizit keine Anforderungen an die Spielzeit gestellt, Qualität ist 
 
 weitere Ziele siehe: https://github.com/Anastylos/Jump-and-Run/discussions/35
 
-## Stakeholder {#_stakeholder}
+## Stakeholder
 
 Die Rollen im Team sind folgende:
 
@@ -25,39 +25,14 @@ Leveldesign:    ktoffel999
 
 
 
-# KAPITEL 2: Randbedingungen {#section-architecture-constraints}
+# KAPITEL 2: Randbedingungen
 
-::: formalpara-title
-**Inhalt**
-:::
+Dieses Projekt entseht im Rahmen des dualen Studiums an der DHBW und unterliegt daher folgenden Einschränkungen:
 
-Randbedingungen und Vorgaben, die ihre Freiheiten bezüglich Entwurf,
-Implementierung oder Ihres Entwicklungsprozesses einschränken. Diese
-Randbedingungen gelten manchmal organisations- oder firmenweit über die
-Grenzen einzelner Systeme hinweg.
-
-::: formalpara-title
-**Motivation**
-:::
-
-Für eine tragfähige Architektur sollten Sie genau wissen, wo Ihre
-Freiheitsgrade bezüglich der Entwurfsentscheidungen liegen und wo Sie
-Randbedingungen beachten müssen. Sie können Randbedingungen vielleicht
-noch verhandeln, zunächst sind sie aber da.
-
-::: formalpara-title
-**Form**
-:::
-
-Einfache Tabellen der Randbedingungen mit Erläuterungen. Bei Bedarf
-unterscheiden Sie technische, organisatorische und politische
-Randbedingungen oder übergreifende Konventionen (beispielsweise
-Programmier- oder Versionierungsrichtlinien, Dokumentations- oder
-Namenskonvention).
-
-Siehe [Randbedingungen](https://docs.arc42.org/section-2/) in der
-online-Dokumentation (auf Englisch!).
-
+- zeitliche Einschränkungen: Software Engineering ist nur eines von sechs Fächern wodurch der zeitliche Umfang begrenzt ist.
+- Deadline Semesterende: Mit dem Ende des Semesters muss ein fertiges Spiel präsentiert werden können.
+- Keine externe Hilfe: Im Gegensatz zu einem Unternehmen ist es nicht möglich Hilfe aus anderen Abteilungen uoder von         freelancern etc. zu erhalten
+  
 # KAPITEL 3: Kontextabgrenzung {#section-context-and-scope}
 
 ::: formalpara-title
