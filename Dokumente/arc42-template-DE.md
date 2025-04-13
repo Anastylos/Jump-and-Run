@@ -75,26 +75,13 @@ Ein-/Ausgaben abbildet.
 
 # KAPITEL 4: Lösungsstrategie 
 
-Kurzer Überblick über die grundlegenden Entscheidungen und
-Lösungsansätze, die Entwurf und Implementierung des Systems prägen.
-Hierzu gehören:
-
--   Technologieentscheidungen
-
--   Entscheidungen über die Top-Level-Zerlegung des Systems,
-    beispielsweise die Verwendung gesamthaft prägender Entwurfs- oder
-    Architekturmuster,
-
--   Entscheidungen zur Erreichung der wichtigsten Qualitätsanforderungen
-    sowie
-
--   relevante organisatorische Entscheidungen, beispielsweise für
-    bestimmte Entwicklungsprozesse oder Delegation bestimmter Aufgaben
-    an andere Stakeholder.
-
+Organisatorische Grundsätze:
 - Das Spiel wird mit der Godot Engine entwickelt, für dieses Projekt wird die Version 4.4. verwendet, ein upgrade auf neue versionen ist möglich, aber nicht notwendig
 - Bei der Einbindung von Assets (Bilder, Musik, Logik etc.) muss die Lizenzbedingung im jeweiligen Ordner mit hinterlegt sein um bei einer eventuellen komerziellen Veröffentlichung die Assets entweder zu tauschen oder den Rechteinhalber bezahlen zu können
 - weitere Architekturentscheidungen finden sich unter: https://github.com/Anastylos/Jump-and-Run/tree/main/Dokumente/Architektur%20Design%20Entscheidungen
+
+Gamedesign Entscheidungen:
+- das Spiel soll aus modularen, kurzen Leveln bestehen die zu mindestens einem großen Level kombiniert werden
 
 
 # KAPITEL 5: Bausteinsicht {#section-building-block-view}
