@@ -292,7 +292,7 @@ arc42 für die weiteren Ebenen.
 
 *\<Whitebox-Template>*
 
-# KAPITEL 5: Laufzeitsicht {#section-runtime-view}
+# KAPITEL 6: Laufzeitsicht {#section-runtime-view}
 
 ::: formalpara-title
 **Inhalt**
