@@ -1,3 +1,4 @@
+#Architektur des Projektes Jump and Run
 # KAPITEL 1: Einführung und Ziele
 
 Ziel des Projektes ist es ein Jump and Run Spiel zu entwickeln. Im Spiel soll man verschiedene Gegner bekämpfen und Rätsel lösen.
@@ -556,6 +557,7 @@ der online-Dokumentation (auf Englisch).
 # KAPITEL 9: Architekturentscheidungen
 
 Die bisEntscheidung desher beschriebenen Architekturentscheidungen wurden aus folgenden Gründen getroffen:
+- Ein 2D Spiel wurde gewählt da es einfacher ist als ein 3D Spiel und Jump and Run ist ein bekanntes und vielfältiges Genre, das es ermöglicht kreativ zu werden, und gleichzeitig mit einem klassischen Spielkonzept einen ausgereiften Prototypen erstellen zu können.
 - Eine Engine für das Spiel wurde gewählt um den Prozess zu vereinfachen und sich auf das erstellen des Spiels fokusieren zu können
 - Godot wurde als engine gewählt, da es kostenlos und open source ist und gerade auch für 2D Spiele sehr gut geeignet ist.
 - Die Entscheidung den Prototyp aus modularen Leveln zu bauen wurde getroffen, da dadurch alle parallel am Spiel arbeiten können ohne von einander abhängig zu sein.
