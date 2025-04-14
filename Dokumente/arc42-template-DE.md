@@ -580,56 +580,12 @@ Die bisEntscheidung desher beschriebenen Architekturentscheidungen wurden aus fo
 
 # KAPITEL 10: Qualitätsanforderungen {#section-quality-scenarios}
 
-::: formalpara-title
-**Inhalt**
-:::
-
-Dieser Abschnitt enthält möglichst alle Qualitätsanforderungen als
-Qualitätsbaum mit Szenarien. Die wichtigsten davon haben Sie bereits in
-Abschnitt 1.2 (Qualitätsziele) hervorgehoben.
-
-Nehmen Sie hier auch Qualitätsanforderungen geringerer Priorität auf,
-deren Nichteinhaltung oder -erreichung geringe Risiken birgt.
-
-::: formalpara-title
-**Motivation**
-:::
-
-Weil Qualitätsanforderungen die Architekturentscheidungen oft maßgeblich
-beeinflussen, sollten Sie die für Ihre Stakeholder relevanten
-Qualitätsanforderungen kennen, möglichst konkret und operationalisiert.
-
-::: formalpara-title
-**Weiterführende Informationen**
-:::
-
-Siehe [Qualitätsanforderungen](https://docs.arc42.org/section-10/) in
-der online-Dokumentation (auf Englisch!).
-
-## Qualitätsbaum {#_qualit_tsbaum}
+## Qualitätsbaum
 
 <img width="471" alt="image" src="https://github.com/user-attachments/assets/21d0eaf7-f660-4cd2-9284-897a8552a8b0" />
 
-**Motivation**
 
-Um ein robustes und nachhaltiges System zu entwickeln, müssen die Qualitätsmerkmale in greifbare Szenarien übersetzt werden. Die Methode, die wir verwenden, basiert auf dem Schema „Quelle-Auslöser-Artefakt-Umgebung-Antwort-Antwortmaß“.
-
-Der gezeigte Qualitätsbaum dient hierbei als zentraler Leitfaden, um jedem Qualitätsmerkmal klar zugeordnete Szenarien zu identifizieren:
-Spaßfaktor:
-Szenarien wie A10, A20, A30 konzentrieren sich auf Benutzererfahrungen wie Atmosphäre, Abwechslung und intuitives Design. Ziel ist es, ein immersives und ansprechendes Nutzungserlebnis zu schaffen.
-Support:
-Szenarien B10 und B20 behandeln Aspekte wie die Zugänglichkeit eines Bugreport-Systems und effektive Kontaktwege für Support.
-Verfügbarkeit:
-Szenarien wie C10 (Distributionsplattform) und C20 (Hybride Eingabetypen) fokussieren auf die technische Zugänglichkeit.
-Erweiterbarkeit:
-DLC und Customisation (D10, D20) fördern die Anpassungsfähigkeit des Systems an Benutzerwünsche.
-Wartbarkeit:
-Eine klare Struktur (E10) und einheitliche Tools (E20) sollen die langfristige Pflege und Anpassung des Systems erleichtern.
-
-## Qualitätsszenarien {#_qualit_tsszenarien}
-
-
-**Inhalt**
+## Qualitätsszenarien 
 
 Hohes Prioritätsszenario 1: A30 - Intuitives Design
 Benutzerfreundlichkeit ist ein zentraler Faktor für den Erfolg eines Spiels. Ein ansprechendes und leicht zugängliches Design sorgt dafür, dass die Spieler sich schnell zurechtfinden und eine positive Spielerfahrung haben.
@@ -637,7 +593,7 @@ Benutzerfreundlichkeit ist ein zentraler Faktor für den Erfolg eines Spiels. Ei
 Hohes Prioritätsszenario 2: C10 - Distributionsplattform
 Die Wahl einer geeigneten Plattform wie Steam oder Epic Games Store ist essenziell, um das Spiel einem breiten Publikum zugänglich zu machen. Da es sich um ein reines PC-Spiel handelt, sollte der Fokus auf Plattformen mit einer hohen Reichweite und gutem Community-Support liegen.
 
-# Risiken und technische Schulden {#section-technical-risks}
+# KAPITEL 11: Risiken und technische Schulden {#section-technical-risks}
 
 ::: formalpara-title
 **Inhalt**
@@ -666,7 +622,7 @@ Siehe [Risiken und technische
 Schulden](https://docs.arc42.org/section-11/) in der
 online-Dokumentation (auf Englisch!).
 
-# Glossar {#section-glossary}
+# KAPITEL 12: Glossar {#section-glossary}
 
 ::: formalpara-title
 **Inhalt**
