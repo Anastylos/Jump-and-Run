@@ -607,11 +607,8 @@ der online-Dokumentation (auf Englisch!).
 
 ## Qualitätsbaum {#_qualit_tsbaum}
 
-::: formalpara-title
-**Inhalt**
-:::
+<img width="471" alt="image" src="https://github.com/user-attachments/assets/21d0eaf7-f660-4cd2-9284-897a8552a8b0" />
 
-Der Qualitätsbaum (à la ATAM) mit Qualitätsszenarien an den Blättern.
 
 ::: formalpara-title
 **Motivation**
