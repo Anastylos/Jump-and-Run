@@ -610,8 +610,6 @@ der online-Dokumentation (auf Englisch!).
 
 <img width="471" alt="image" src="https://github.com/user-attachments/assets/21d0eaf7-f660-4cd2-9284-897a8552a8b0" />
 
-
-
 **Motivation**
 
 Um ein robustes und nachhaltiges System zu entwickeln, müssen die Qualitätsmerkmale in greifbare Szenarien übersetzt werden. Die Methode, die wir verwenden, basiert auf dem Schema „Quelle-Auslöser-Artefakt-Umgebung-Antwort-Antwortmaß“.
@@ -630,33 +628,14 @@ Eine klare Struktur (E10) und einheitliche Tools (E20) sollen die langfristige P
 
 ## Qualitätsszenarien {#_qualit_tsszenarien}
 
-::: formalpara-title
+
 **Inhalt**
-:::
 
 Hohes Prioritätsszenario 1: A30 - Intuitives Design
 Benutzerfreundlichkeit ist ein zentraler Faktor für den Erfolg eines Spiels. Ein ansprechendes und leicht zugängliches Design sorgt dafür, dass die Spieler sich schnell zurechtfinden und eine positive Spielerfahrung haben.
 
 Hohes Prioritätsszenario 2: C10 - Distributionsplattform
 Die Wahl einer geeigneten Plattform wie Steam oder Epic Games Store ist essenziell, um das Spiel einem breiten Publikum zugänglich zu machen. Da es sich um ein reines PC-Spiel handelt, sollte der Fokus auf Plattformen mit einer hohen Reichweite und gutem Community-Support liegen.
-
-::: formalpara-title
-**Motivation**
-:::
-
-Szenarien operationalisieren Qualitätsanforderungen und machen deren
-Erfüllung mess- oder entscheidbar.
-
-Insbesondere wenn Sie die Qualität Ihrer Architektur mit Methoden wie
-ATAM überprüfen wollen, bedürfen die in Abschnitt 1.2 genannten
-Qualitätsziele einer weiteren Präzisierung bis auf die Ebene von
-diskutierbaren und nachprüfbaren Szenarien.
-
-::: formalpara-title
-**Form**
-:::
-
-Entweder tabellarisch oder als Freitext.
 
 # Risiken und technische Schulden {#section-technical-risks}
 
