@@ -574,6 +574,7 @@ der online-Dokumentation (auf Englisch).
 # KAPITEL 9: Architekturentscheidungen
 
 Die bisEntscheidung desher beschriebenen Architekturentscheidungen wurden aus folgenden Gründen getroffen:
+- Eine Engine für das Spiel wurde gewählt um den Prozess zu vereinfachen und sich auf das erstellen des Spiels fokusieren zu können
 - Godot wurde als engine gewählt, da es kostenlos und open source ist und gerade auch für 2D Spiele sehr gut geeignet ist.
 - Die Entscheidung den Prototyp aus modularen Leveln zu bauen wurde getroffen, da dadurch alle parallel am Spiel arbeiten können ohne von einander abhängig zu sein.
 
