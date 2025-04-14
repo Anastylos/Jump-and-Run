@@ -33,7 +33,7 @@ Dieses Projekt entseht im Rahmen des dualen Studiums an der DHBW und unterliegt 
 - Deadline Semesterende: Mit dem Ende des Semesters muss ein fertiges Spiel präsentiert werden können.
 - Keine externe Hilfe: Im Gegensatz zu einem Unternehmen ist es nicht möglich Hilfe aus anderen Abteilungen uoder von         freelancern etc. zu erhalten
   
-# KAPITEL 3: Kontextabgrenzung {#section-context-and-scope}
+# KAPITEL 3: Kontextabgrenzung 
 
 **Inhalt**
 
@@ -42,36 +42,18 @@ Verantwortlichkeit (scope)
 Ihres Systems: Welche Verantwortung trägt das System und welche
 Verantwortung übernehmen die Nachbarsysteme?
 
+Da es sich bei dem Spiel um ein reines Singleplayer Spiel handelt, mit Godot als einziger verwendeter Engine ist die Abgrenzung der Kontexte sehr simpel.
+
 ## Fachlicher Kontext
 
-Festlegung **aller** Kommunikationsbeziehungen (Nutzer, IT-Systeme, ...)
-mit Erklärung der fachlichen Ein- und Ausgabedaten oder Schnittstellen.
-Zusätzlich (bei Bedarf) fachliche Datenformate oder Protokolle der
-Kommunikation mit den Nachbarsystemen.
+###Spieler*in
+Kommunikationsbeziehung: Spielt das Spiel
+Eingabe: Schießt auf Gegner, interagiert mit Rätseln, speichert zwischenstände, wechselt Level
+Ausgabe: Speicherstände, optional Leaderboard
 
-Alle Diagrammarten, die das System als Blackbox darstellen und die
-fachlichen Schnittstellen zu den Nachbarsystemen beschreiben.
+## Technischer Kontext 
 
-Alternativ oder ergänzend können Sie eine Tabelle verwenden. Der Titel
-gibt den Namen Ihres Systems wieder; die drei Spalten sind:
-Kommunikationsbeziehung, Eingabe, Ausgabe.
-
-## Technischer Kontext {#_technischer_kontext}
-
-Technische Schnittstellen (Kanäle, Übertragungsmedien) zwischen dem
-System und seiner Umwelt. Zusätzlich eine Erklärung (*mapping*), welche
-fachlichen Ein- und Ausgaben über welche technischen Kanäle fließen.
-
-**Form**
-Beispielsweise UML Deployment-Diagramme mit den Kanälen zu
-Nachbarsystemen, begleitet von einer Tabelle, die Kanäle auf
-Ein-/Ausgaben abbildet.
-
-**\<Diagramm oder Tabelle>**
-
-**\<optional: Erläuterung der externen technischen Schnittstellen>**
-
-**\<Mapping fachliche auf technische Schnittstellen>**
+Sämtliche technischen Anforderungen sind mit Hilfe der Godot Engine umzusetzen.
 
 # KAPITEL 4: Lösungsstrategie 
 
