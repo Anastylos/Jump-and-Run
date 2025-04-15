@@ -25,7 +25,7 @@ func _physics_process(delta: float) -> void:
 
 # Wenn ein Projektil den Area2D betritt
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	if body.is_in_group("projectile") :  # Sicherstellen, dass es ein Projektil ist
+	if body.is_in_group("projectile"):  # Sicherstellen, dass es ein Projektil ist
 		body.remove_from_group("projectile")
 		# Berechne die Richtung basierend auf der Position des Projektils
 		var impact_direction = body.last_direction
@@ -33,3 +33,6 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		# Wende die Impact-Kraft an (nach links oder rechts)
 		velocity.x += impact_direction * IMPACT_FORCE
 		is_impacting = true  # Setze das Flag, dass ein Impact stattgefunden hat
+	elif body.is_in_group("player"):
+		velocity.x += 100 * body.direction
+		is_impacting = true

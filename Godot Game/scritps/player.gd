@@ -5,6 +5,7 @@ var health = 5
 var speed = 250.0
 const JUMP_VELOCITY = -400.0
 var totem_status = "none"
+var direction
 
 var arrow = load("res://scenes/arrow.tscn")
 var input_enabled = true
@@ -70,7 +71,7 @@ func _physics_process(delta):
 				
 		# Get the input direction and handle the movement/deceleration.
 		# As good practice, you should replace UI actions with custom gameplay actions.
-		var direction = Input.get_axis("left", "right")
+		direction = Input.get_axis("left", "right")
 		if direction:
 				rundust_anim.visible = true
 				animated_sprite_2d.play("ShootRunAtack")

@@ -21,7 +21,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(19.9142, 71.9232), Vector2(19.9142, 33.5259)]
+"values": [Vector2(19.9142, 71.9232), Vector2(19.9142, 34.7657)]
 }
 
 [sub_resource type="Animation" id="Animation_ohqvm"]
@@ -36,7 +36,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0, 11.8357)]
+"values": [Vector2(19.9142, 71.9232)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ohqvm"]
@@ -94,7 +94,7 @@ scale = Vector2(0.453416, 0.681433)
 
 [node name="CheckpointFlagge" type="Sprite2D" parent="Control"]
 material = SubResource("ShaderMaterial_ohqvm")
-position = Vector2(0, 11.8357)
+position = Vector2(19.9142, 71.9232)
 scale = Vector2(0.389617, 0.312563)
 texture = ExtResource("3_3cysp")
 offset = Vector2(10.9969, -49.8147)
