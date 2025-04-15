@@ -133,7 +133,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"atack",
-"speed": 8.0
+"speed": 15.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -272,6 +272,7 @@ animations = [{
 size = Vector2(23, 19)
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
+collision_mask = 7
 script = ExtResource("1_u4725")
 
 [node name="enemy_AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -281,6 +282,8 @@ scale = Vector2(1.515, 1.515)
 sprite_frames = SubResource("SpriteFrames_ewex3")
 animation = &"atack"
 autoplay = "Idle"
+frame = 5
+frame_progress = 1.0
 
 [node name="fire_AnimatedSprite2D" type="AnimatedSprite2D" parent="enemy_AnimatedSprite2D"]
 visible = false
@@ -320,6 +323,12 @@ polygon = PackedVector2Array(-14.035, -3.695, -14.825, 1.66, 10.87, 1.825, 9.855
 position = Vector2(-1, -10)
 target_position = Vector2(0, 12)
 
-[connection signal="animation_finished" from="enemy_AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[node name="Player_Detector" type="RayCast2D" parent="."]
+position = Vector2(0, -8)
+rotation = -1.5708
+scale = Vector2(0.580789, 0.39738)
+target_position = Vector2(-2.38419e-06, 53)
+
+[connection signal="animation_finished" from="enemy_AnimatedSprite2D" to="." method="_on_enemy_animated_sprite_2d_animation_finished"]
 [connection signal="timeout" from="enemy_AnimatedSprite2D/animation_Timer" to="." method="_on_animation_timer_timeout"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

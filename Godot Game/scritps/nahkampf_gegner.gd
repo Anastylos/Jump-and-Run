@@ -1,21 +1,30 @@
 extends CharacterBody2D
 
 var hp = 100
-const speed = 45
-var direction = -1
+const speed = 30
+var direction = 1
 var frozen = false  # Zustand für eingefrorenen Gegner
 var burning = false  # Zustand für brennenden Gegner
+var damagTaken = false
+var collider = null
 
+var standstill = false
+
+@onready var floor_checker = $floor_checker
+@onready var collision_shape_2d = $Area2D/CollisionShape2D
 @onready var animated_sprite_2d = $enemy_AnimatedSprite2D
 @onready var fire_animation = $enemy_AnimatedSprite2D/fire_AnimatedSprite2D
 @onready var ice_animation = $enemy_AnimatedSprite2D/ice_AnimatedSprite2D
 @onready var animation_timer: Timer = $enemy_AnimatedSprite2D/animation_Timer  # Timer für Freeze und Burn
+@onready var player_detector = $Player_Detector
+
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	if direction == 1:
-		$enemy_AnimatedSprite2D.flip_h = true
-	$floor_checker.position.x = $Area2D/CollisionShape2D.shape.size.x * direction
+		$enemy_AnimatedSprite2D.flip_h = false
+	floor_checker.position.x = collision_shape_2d.shape.size.x * direction 
 	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -35,10 +44,11 @@ func _process(delta):
 		return  # Keine weiteren Bewegungen, solange brennend
 
 	# Prüfen auf Wand oder Plattformkanten
-	if is_on_wall() or not $floor_checker.is_colliding():
+	if is_on_wall() or not floor_checker.is_colliding():
 		direction = direction * -1  # Richtung wechseln
-		$enemy_AnimatedSprite2D.flip_h = not $enemy_AnimatedSprite2D.flip_h
-		$floor_checker.position.x = $Area2D/CollisionShape2D.shape.size.x * direction 
+		update_sprite_flip();
+		floor_checker.position.x = collision_shape_2d.shape.size.x * direction 
+		
 	
 	# Gravitationslogik
 	if not is_on_floor():
@@ -48,11 +58,24 @@ func _process(delta):
 	if hp <= 0:
 		queue_free()
 
-	# Bewegung des Gegners
-	velocity.x = direction * speed
+	if player_detector.is_colliding():
+		collider = player_detector.get_collider()
+		if collider.is_in_group("player"):
+			if not damagTaken:  # Schaden nur beim ersten Eintritt in die Kollision
+				animated_sprite_2d.play("atack")
+				standstill = true
+				velocity.x = 0
+				damagTaken = true  # Schaden wurde zugefügt, also setzen wir die Variable auf true
+	else:
+		damagTaken = false  # Wenn keine Kollision mehr vorhanden ist, zurücksetzen
+		standstill = false
+		
+	if not standstill:
+		# Bewegung des Gegners
+		animated_sprite_2d.play("Idle")
+		velocity.x = direction * speed
+		position.x += direction * speed * delta
 	move_and_slide()
-
-	position.x += direction * speed * delta
 
 # Funktion, um den Freeze-Effekt zu aktivieren
 func freeze():
@@ -74,12 +97,14 @@ func _on_animation_timer_timeout():
 
 # Funktion zur Änderung der Sprite-Richtung basierend auf der Bewegungsrichtung
 func update_sprite_flip():
-	$enemy_AnimatedSprite2D.flip_h = direction == 1  # Wenn Richtung 1, Sprite nach rechts spiegeln
+	$enemy_AnimatedSprite2D.flip_h = not $enemy_AnimatedSprite2D.flip_h 
+	player_detector.target_position *= -1
 
 # Wenn der Gegner von einem "ice"-Projektil getroffen wird
 func _on_area_2d_body_entered(body):
 	if body.is_in_group("projectile"):
-		animated_sprite_2d.play("hit")
+		if not animated_sprite_2d.animation == "atack":
+			animated_sprite_2d.play("hit")
 		hp -= 50
 		if body.fire == true:
 			fire_animation.visible = true
@@ -91,3 +116,16 @@ func _on_area_2d_body_entered(body):
 			ice_animation.play("ice")
 			animation_timer.start()  # Der Timer startet auch für die "Ice"-Interaktion
 			freeze()  # Wenn der Gegner mit "ice" getroffen wird, wird er eingefroren
+			
+	
+
+
+func _on_enemy_animated_sprite_2d_animation_finished():
+	if animated_sprite_2d.animation == "atack":
+		collider.schaden_nehmen(0.5)
+		# Nach der Animation erneut prüfen, ob Spieler noch in der Zone ist
+		if player_detector.is_colliding():
+			var collider = player_detector.get_collider()
+			if collider.is_in_group("player"):
+				# Spieler ist noch da, also erneut angreifen
+				damagTaken = false  # Rücksetzen, damit Angriff erneut möglich ist

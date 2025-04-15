@@ -1882,7 +1882,7 @@ tile_set = ExtResource("1_emn1l")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_fgu43")
+&"": SubResource("AnimationLibrary_fgu43")
 }
 
 [node name="blueRocket" type="AnimatedSprite2D" parent="."]
