@@ -67,39 +67,11 @@ Gamedesign Entscheidungen:
 - das Spiel soll aus modularen, kurzen Leveln bestehen die zu mindestens einem großen Level kombiniert werden
 
 
-# KAPITEL 5: Bausteinsicht {#section-building-block-view}
+# KAPITEL 5: Bausteinsicht
 
-::: formalpara-title
-**Inhalt**
-:::
-
-Die Bausteinsicht zeigt die statische Zerlegung des Systems in Bausteine
-(Module, Komponenten, Subsysteme, Klassen, Schnittstellen, Pakete,
-Bibliotheken, Frameworks, Schichten, Partitionen, Tiers, Funktionen,
-Makros, Operationen, Datenstrukturen, ...) sowie deren Abhängigkeiten
-(Beziehungen, Assoziationen, ...)
-
-Diese Sicht sollte in jeder Architekturdokumentation vorhanden sein. In
-der Analogie zum Hausbau bildet die Bausteinsicht den *Grundrissplan*.
-
-::: formalpara-title
-**Motivation**
-:::
-
-Behalten Sie den Überblick über den Quellcode, indem Sie die statische
-Struktur des Systems durch Abstraktion verständlich machen.
-
-Damit ermöglichen Sie Kommunikation auf abstrakterer Ebene, ohne zu
-viele Implementierungsdetails offenlegen zu müssen.
-
-::: formalpara-title
-**Form**
-:::
 
 Die Bausteinsicht ist eine hierarchische Sammlung von Blackboxen und
 Whiteboxen (siehe Abbildung unten) und deren Beschreibungen.
-
-![Hierarchie in der Bausteinsicht](images/05_building_blocks-DE.png)
 
 **Ebene 1** ist die Whitebox-Beschreibung des Gesamtsystems, zusammen
 mit Blackbox-Beschreibungen der darin enthaltenen Bausteine.
@@ -111,137 +83,34 @@ Bausteine.
 
 **Ebene 3** zoomt in einige Bausteine der Ebene 2 hinein, usw.
 
-Siehe [Bausteinsicht](https://docs.arc42.org/section-5/) in der
-online-Dokumentation (auf Englisch!).
+## Whitebox Gesamtsystem
 
-## Whitebox Gesamtsystem {#_whitebox_gesamtsystem}
+Im Rahmen eines Spieles gibt es viele Elemente die mit einander Interagieren, die wichtigsten sind im folgenden Diagramm beschrieben:
 
-An dieser Stelle beschreiben Sie die Zerlegung des Gesamtsystems anhand
-des nachfolgenden Whitebox-Templates. Dieses enthält:
+![image](https://github.com/Anastylos/Jump-and-Run/blob/main/Dokumente/Bilder/2024-11-05_UML_Klassendiagramm.PNG)
 
--   Ein Übersichtsdiagramm
 
--   die Begründung dieser Zerlegung
+## Ebene 2 
 
--   Blackbox-Beschreibungen der hier enthaltenen Bausteine. Dafür haben
-    Sie verschiedene Optionen:
 
-    -   in *einer* Tabelle, gibt einen kurzen und pragmatischen
-        Überblick über die enthaltenen Bausteine sowie deren
-        Schnittstellen.
+### Whitebox Totem 
 
-    -   als Liste von Blackbox-Beschreibungen der Bausteine, gemäß dem
-        Blackbox-Template (siehe unten). Diese Liste können Sie, je nach
-        Werkzeug, etwa in Form von Unterkapiteln (Text), Unter-Seiten
-        (Wiki) oder geschachtelten Elementen (Modellierungswerkzeug)
-        darstellen.
+Das Totem ist eine spezielle Mechanik die eine Besonderheit dieses Spiels ist. Die Philosophie hinter dem Totem ist es Variation in das Spiel zu bringen oder die Komplexität zu erhöhen. Die gleiche Schussaktion die im normalen Spielablauf verwendet wird bekommt hier weitere Interaktionsmöglichkeiten.
 
--   (optional:) wichtige Schnittstellen, die nicht bereits im
-    Blackbox-Template eines der Bausteine erläutert werden, aber für das
-    Verständnis der Whitebox von zentraler Bedeutung sind. Aufgrund der
-    vielfältigen Möglichkeiten oder Ausprägungen von Schnittstellen
-    geben wir hierzu kein weiteres Template vor. Im schlimmsten Fall
-    müssen Sie Syntax, Semantik, Protokolle, Fehlerverhalten,
-    Restriktionen, Versionen, Qualitätseigenschaften, notwendige
-    Kompatibilitäten und vieles mehr spezifizieren oder beschreiben. Im
-    besten Fall kommen Sie mit Beispielen oder einfachen Signaturen
-    zurecht.
+Solange der Spieler in der Nähe eines entsprechenden Totems ist zeigt das Totem durch visuelle Effekte an das es aktiv ist. Pfeile haben zusätzliche Effekte solange das Totem aktiv ist
 
-***\<Übersichtsdiagramm>***
+### Totem der Teleportation:
+**Verhalten:** Steht der Spieler innerhalb eines Tiles um das Totem wird man beim nächsten Schuss an den Zielort des Pfeils teleportiert. Zum leichteren Zielen soll eine halb transparentes Spielsprite am Zielort erscheinen.
 
-Begründung
+### Totem des Feuers
+**Verhalten:** Solange der Spieler innerhalb eines Tiles um das Totem steht brennen die Pfeile. Diese verursachen Damage over Time (DoT) bei getroffenen Gegnern und können Kisten in Brand stecken.
 
-:   *\<Erläuternder Text>*
+### Totem des Eises
+**Verhalten:**  Solange der Spieler innerhalb eines Tiles um das Totem steht frieren Pfeile Gegner, Fallen, Wasserflächen und Plattformen ein. Eingefrorene Gegner können sich nicht bewegen, angreifen oder Spezialfähigkeiten einsetzten.
+Fallen lösen nicht aus.
+Plattformen die eingefroren sind bewegen sich nicht und lassen Spieler und NPCs über díe vereiste Fläche rutschen. Eingefrorene Wasserflächen können betreten werden und sind wie normale vereiste Plattformen rutschig.
 
-Enthaltene Bausteine
-
-:   *\<Beschreibung der enthaltenen Bausteine (Blackboxen)>*
-
-Wichtige Schnittstellen
-
-:   *\<Beschreibung wichtiger Schnittstellen>*
-
-Hier folgen jetzt Erläuterungen zu Blackboxen der Ebene 1.
-
-Falls Sie die tabellarische Beschreibung wählen, so werden Blackboxen
-darin nur mit Name und Verantwortung nach folgendem Muster beschrieben:
-
-+-----------------------+-----------------------------------------------+
-| **Name**              | **Verantwortung**                             |
-+=======================+===============================================+
-| *\<Blackbox 1>*       |  *\<Text>*                                    |
-+-----------------------+-----------------------------------------------+
-| *\<Blackbox 2>*       |  *\<Text>*                                    |
-+-----------------------+-----------------------------------------------+
-
-Falls Sie die ausführliche Liste von Blackbox-Beschreibungen wählen,
-beschreiben Sie jede wichtige Blackbox in einem eigenen
-Blackbox-Template. Dessen Überschrift ist jeweils der Namen dieser
-Blackbox.
-
-### \<Name Blackbox 1> {#__name_blackbox_1}
-
-Beschreiben Sie die \<Blackbox 1> anhand des folgenden
-Blackbox-Templates:
-
--   Zweck/Verantwortung
-
--   Schnittstelle(n), sofern diese nicht als eigenständige
-    Beschreibungen herausgezogen sind. Hierzu gehören eventuell auch
-    Qualitäts- und Leistungsmerkmale dieser Schnittstelle.
-
--   (Optional) Qualitäts-/Leistungsmerkmale der Blackbox, beispielsweise
-    Verfügbarkeit, Laufzeitverhalten o. Ä.
-
--   (Optional) Ablageort/Datei(en)
-
--   (Optional) Erfüllte Anforderungen, falls Sie Traceability zu
-    Anforderungen benötigen.
-
--   (Optional) Offene Punkte/Probleme/Risiken
-
-*\<Zweck/Verantwortung>*
-
-*\<Schnittstelle(n)>*
-
-*\<(Optional) Qualitäts-/Leistungsmerkmale>*
-
-*\<(Optional) Ablageort/Datei(en)>*
-
-*\<(Optional) Erfüllte Anforderungen>*
-
-*\<(optional) Offene Punkte/Probleme/Risiken>*
-
-### \<Name Blackbox 2> {#__name_blackbox_2}
-
-*\<Blackbox-Template>*
-
-### \<Name Blackbox n> {#__name_blackbox_n}
-
-*\<Blackbox-Template>*
-
-### \<Name Schnittstelle 1> {#__name_schnittstelle_1}
-
-...
-
-### \<Name Schnittstelle m> {#__name_schnittstelle_m}
-
-## Ebene 2 {#_ebene_2}
-
-Beschreiben Sie den inneren Aufbau (einiger) Bausteine aus Ebene 1 als
-Whitebox.
-
-Welche Bausteine Ihres Systems Sie hier beschreiben, müssen Sie selbst
-entscheiden. Bitte stellen Sie dabei Relevanz vor Vollständigkeit.
-Skizzieren Sie wichtige, überraschende, riskante, komplexe oder
-besonders volatile Bausteine. Normale, einfache oder standardisierte
-Teile sollten Sie weglassen.
-
-### Whitebox *\<Baustein 1>* {#_whitebox_emphasis_baustein_1_emphasis}
-
-...zeigt das Innenleben von *Baustein 1*.
-
-*\<Whitebox-Template>*
+![gif](https://github.com/Anastylos/Jump-and-Run/blob/main/Dokumente/Video%20Dateien/2024-11-19_Gegner_verbrennen.gif)
 
 ### Whitebox *\<Baustein 2>* {#_whitebox_emphasis_baustein_2_emphasis}
 
