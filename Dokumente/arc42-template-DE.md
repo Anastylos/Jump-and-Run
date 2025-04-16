@@ -47,10 +47,10 @@ Da es sich bei dem Spiel um ein reines Singleplayer Spiel handelt, mit Godot als
 
 ## Fachlicher Kontext
 
-###Spieler*in
-Kommunikationsbeziehung: Spielt das Spiel
-Eingabe: Schießt auf Gegner, interagiert mit Rätseln, speichert zwischenstände, wechselt Level
-Ausgabe: Speicherstände, optional Leaderboard
+### Spieler
+- Kommunikationsbeziehung: Spielt das Spiel
+- Eingabe: Schießt auf Gegner, interagiert mit Rätseln, speichert zwischenstände, wechselt Level
+- Ausgabe: Speicherstände, optional Leaderboard
 
 ## Technischer Kontext 
 
@@ -98,6 +98,7 @@ Im Rahmen eines Spieles gibt es viele Elemente die mit einander Interagieren, di
 Das Totem ist eine spezielle Mechanik die eine Besonderheit dieses Spiels ist. Die Philosophie hinter dem Totem ist es Variation in das Spiel zu bringen oder die Komplexität zu erhöhen. Die gleiche Schussaktion die im normalen Spielablauf verwendet wird bekommt hier weitere Interaktionsmöglichkeiten.
 
 Solange der Spieler in der Nähe eines entsprechenden Totems ist zeigt das Totem durch visuelle Effekte an das es aktiv ist. Pfeile haben zusätzliche Effekte solange das Totem aktiv ist
+
 ![gif](https://github.com/Anastylos/Jump-and-Run/blob/main/Dokumente/Video%20Dateien/2024-11-19_Gegner_verbrennen.gif)
 
 
