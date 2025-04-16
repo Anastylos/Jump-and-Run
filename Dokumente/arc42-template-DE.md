@@ -121,13 +121,18 @@ Plattformen die eingefroren sind bewegen sich nicht und lassen Spieler und NPCs 
 # KAPITEL 6: Laufzeitsicht
 
 Da das komplette Spiel in Godot programmiert wird gibt es keine Interaktionen zwischen verschiedener Software oder Hardware.
-Alle hier beschriebenen Abläufe beziehen sich auf die Spiellogik
+Alle hier beschriebenen Abläufe beziehen sich auf die Spiellogik.
 
 ## Spieler/Gegner interaktion
 
 Ein Ereignis das beim Spiel häufig auftritt ist das Angreifen von Gegnern, hier schematisch dargestellt
 
 ![image](https://github.com/Anastylos/Jump-and-Run/blob/main/Dokumente/Bilder/SequenceDiagrammPlayerEncountersEnemy.drawio.png)
+
+
+Ein weiteres Ereignis das beim Spiel auftretten wird, ist das Beenden des Playgrounds und der Übergang zum Level, hier schematisch dargestellt.
+
+![image](https://github.com/Anastylos/Jump-and-Run/blob/main/Dokumente/Bilder/SequenceDiagrammPlayerFinishsPlayground.drawio.png)
 
 # KAPITEL 7: Verteilungssicht {#section-deployment-view}
 
