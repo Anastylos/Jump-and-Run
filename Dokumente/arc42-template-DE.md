@@ -100,23 +100,8 @@ Das Totem ist eine spezielle Mechanik die eine Besonderheit dieses Spiels ist. D
 Solange der Spieler in der Nähe eines entsprechenden Totems ist zeigt das Totem durch visuelle Effekte an das es aktiv ist. Pfeile haben zusätzliche Effekte solange das Totem aktiv ist
 ![gif](https://github.com/Anastylos/Jump-and-Run/blob/main/Dokumente/Video%20Dateien/2024-11-19_Gegner_verbrennen.gif)
 
-### Whitebox *\<Baustein 2>* {#_whitebox_emphasis_baustein_2_emphasis}
 
-*\<Whitebox-Template>*
-
-...
-
-### Whitebox *\<Baustein m>* {#_whitebox_emphasis_baustein_m_emphasis}
-
-*\<Whitebox-Template>*
-
-## Ebene 3 {#_ebene_3}
-
-Beschreiben Sie den inneren Aufbau (einiger) Bausteine aus Ebene 2 als
-Whitebox.
-
-Bei tieferen Gliederungen der Architektur kopieren Sie diesen Teil von
-arc42 für die weiteren Ebenen.
+## Ebene 3
 
 ### Whitebox Auswirkungen der verschiedenen Totems
 
@@ -131,13 +116,6 @@ arc42 für die weiteren Ebenen.
 Fallen lösen nicht aus.
 Plattformen die eingefroren sind bewegen sich nicht und lassen Spieler und NPCs über díe vereiste Fläche rutschen. Eingefrorene Wasserflächen können betreten werden und sind wie normale vereiste Plattformen rutschig.
 
-### Whitebox \<\_Baustein x.2\_\> {#_whitebox_baustein_x_2}
-
-*\<Whitebox-Template>*
-
-### Whitebox \<\_Baustein y.1\_\> {#_whitebox_baustein_y_1}
-
-*\<Whitebox-Template>*
 
 # KAPITEL 6: Laufzeitsicht
 
