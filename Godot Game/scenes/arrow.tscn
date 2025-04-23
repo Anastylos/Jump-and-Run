@@ -143,4 +143,9 @@ collision_mask = 255
 wait_time = 5.0
 one_shot = true
 
+[node name="bounce_cooldown" type="Timer" parent="."]
+wait_time = 0.01
+one_shot = true
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="bounce_cooldown" to="." method="_on_bounce_cooldown_timeout"]

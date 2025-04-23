@@ -21,6 +21,7 @@ var last_direction : int
 
 @onready var fire_animated_sprite_2d = $Sprite2D/fire_AnimatedSprite2D
 @onready var ice_animated_sprite_2d_2 = $Sprite2D/ice_AnimatedSprite2D2
+@onready var bounce_cooldown = $bounce_cooldown
 
 
 
@@ -112,6 +113,14 @@ func do_bounce(collision):
 		rotation = velocity.angle()
 		last_direction *= -1
 		bounced = true
+		bounce_cooldown.start()
+		
+	
+
 
 func _on_timer_timeout() -> void:
 	queue_free()
+
+
+func _on_bounce_cooldown_timeout():
+	bounced = false

@@ -1,12 +1,8 @@
-[gd_scene load_steps=33 format=4 uid="uid://do06jyd211cx2"]
+[gd_scene load_steps=29 format=4 uid="uid://do06jyd211cx2"]
 
 [ext_resource type="PackedScene" uid="uid://dfayifn15m681" path="res://scenes/player.tscn" id="1_65wfv"]
-[ext_resource type="Texture2D" uid="uid://dyxbbngvnbjni" path="res://assests/nature-backgrounds-pixel-art/nature_1/1.png" id="1_y7ksl"]
-[ext_resource type="Texture2D" uid="uid://kg0i754p0t2q" path="res://assests/nature-backgrounds-pixel-art/nature_1/7.png" id="3_6008t"]
-[ext_resource type="Texture2D" uid="uid://cprfjupmlt1aa" path="res://assests/nature-backgrounds-pixel-art/nature_1/6.png" id="4_ut3kf"]
+[ext_resource type="PackedScene" uid="uid://cmh0x4bf2dbff" path="res://scenes/WorldMapScene.tscn" id="1_ca42v"]
 [ext_resource type="Texture2D" uid="uid://jftvlo51fb5r" path="res://assests/nature-backgrounds-pixel-art/nature_1/8.png" id="4_w8pn0"]
-[ext_resource type="Texture2D" uid="uid://bgrb63g7x3y4y" path="res://assests/nature-backgrounds-pixel-art/nature_1/2.png" id="5_kryxk"]
-[ext_resource type="Texture2D" uid="uid://ccgwya4pdtd7x" path="res://assests/nature-backgrounds-pixel-art/nature_1/3.png" id="5_nglb2"]
 [ext_resource type="Texture2D" uid="uid://b8865idw0j4ue" path="res://assests/InstuctionPicture-removebg-preview.png" id="6_akgxi"]
 [ext_resource type="PackedScene" uid="uid://ddjmnr2qqkfkc" path="res://scenes/goal.tscn" id="7_mdry6"]
 [ext_resource type="PackedScene" uid="uid://bigntvpsusogv" path="res://scenes/nahkampfGegner.tscn" id="8_3kcqr"]
@@ -129,126 +125,11 @@ _data = {
 
 [node name="Game" type="Node2D"]
 
-[node name="background" type="Node" parent="."]
+[node name="WorldScene" parent="." instance=ExtResource("1_ca42v")]
 
-[node name="1" type="Sprite2D" parent="background"]
-z_index = -6
-position = Vector2(581, 0)
-texture = ExtResource("1_y7ksl")
+[node name="ControllGuide" type="Node" parent="."]
 
-[node name="4" type="Sprite2D" parent="background"]
-z_index = -6
-position = Vector2(581, -321)
-rotation = 3.14159
-texture = ExtResource("1_y7ksl")
-
-[node name="18" type="Sprite2D" parent="background"]
-z_index = -6
-position = Vector2(1157, -321)
-rotation = 3.14159
-texture = ExtResource("1_y7ksl")
-
-[node name="19" type="Sprite2D" parent="background"]
-z_index = -6
-position = Vector2(1732, -321)
-rotation = 3.14159
-texture = ExtResource("1_y7ksl")
-
-[node name="17" type="Sprite2D" parent="background"]
-z_index = -6
-position = Vector2(6, -321)
-rotation = 3.14159
-texture = ExtResource("1_y7ksl")
-
-[node name="5" type="Sprite2D" parent="background"]
-z_index = -6
-position = Vector2(1157, 0)
-texture = ExtResource("1_y7ksl")
-
-[node name="2" type="Sprite2D" parent="background"]
-z_index = -6
-position = Vector2(5, 0)
-texture = ExtResource("1_y7ksl")
-
-[node name="3" type="Sprite2D" parent="background"]
-z_index = -6
-position = Vector2(1733, 0)
-texture = ExtResource("1_y7ksl")
-
-[node name="7" type="Sprite2D" parent="background"]
-z_index = -6
-position = Vector2(5, 74)
-texture = ExtResource("5_nglb2")
-
-[node name="6" type="Sprite2D" parent="background"]
-z_index = -6
-position = Vector2(581, 74)
-texture = ExtResource("5_nglb2")
-
-[node name="8" type="Sprite2D" parent="background"]
-z_index = -6
-position = Vector2(1157, 74)
-texture = ExtResource("5_nglb2")
-
-[node name="9" type="Sprite2D" parent="background"]
-z_index = -6
-position = Vector2(1733, 74)
-texture = ExtResource("5_nglb2")
-
-[node name="10" type="Sprite2D" parent="background"]
-z_index = -6
-position = Vector2(34, 55)
-texture = ExtResource("4_ut3kf")
-
-[node name="11" type="Sprite2D" parent="background"]
-z_index = -6
-position = Vector2(172, 91)
-scale = Vector2(0.680668, 0.714005)
-texture = ExtResource("4_ut3kf")
-
-[node name="12" type="Sprite2D" parent="background"]
-z_index = -6
-position = Vector2(407, 59)
-scale = Vector2(0.787569, 0.94544)
-texture = ExtResource("4_ut3kf")
-
-[node name="14" type="Sprite2D" parent="background"]
-z_index = -6
-position = Vector2(1085, 59)
-scale = Vector2(0.959554, 1.02449)
-texture = ExtResource("4_ut3kf")
-
-[node name="15" type="Sprite2D" parent="background"]
-z_index = -6
-position = Vector2(1413, 100)
-scale = Vector2(0.523366, 0.549032)
-texture = ExtResource("4_ut3kf")
-
-[node name="13" type="Sprite2D" parent="background"]
-z_index = -6
-position = Vector2(657, 49)
-scale = Vector2(1.07157, 1.30473)
-texture = ExtResource("3_6008t")
-
-[node name="16" type="Sprite2D" parent="background"]
-z_index = -6
-position = Vector2(1708, 49)
-scale = Vector2(1.07157, 1.30473)
-texture = ExtResource("3_6008t")
-
-[node name="20" type="Sprite2D" parent="background"]
-z_index = -6
-position = Vector2(829, -134)
-texture = ExtResource("5_kryxk")
-
-[node name="21" type="Sprite2D" parent="background"]
-z_index = -6
-position = Vector2(1665, -162)
-rotation = -3.14159
-scale = Vector2(1, -1)
-texture = ExtResource("5_kryxk")
-
-[node name="ColorRect" type="ColorRect" parent="background"]
+[node name="ColorRect" type="ColorRect" parent="ControllGuide"]
 modulate = Color(0.52, 0.52, 0.52, 0.478431)
 offset_left = -270.0
 offset_top = 8.0
@@ -257,7 +138,7 @@ offset_bottom = 48.0
 scale = Vector2(3.61361, 2.31511)
 color = Color(0.52, 0.52, 0.52, 0.576471)
 
-[node name="InstuctionPicture-removebg-preview" type="Sprite2D" parent="background/ColorRect"]
+[node name="InstuctionPicture-removebg-preview" type="Sprite2D" parent="ControllGuide/ColorRect"]
 modulate = Color(0, 0, 0, 1)
 self_modulate = Color(0, 0, 0, 1)
 top_level = true
@@ -267,13 +148,15 @@ position = Vector2(-194, 76)
 scale = Vector2(0.248559, 0.242475)
 texture = ExtResource("6_akgxi")
 
-[node name="CharacterBody2D" parent="background" instance=ExtResource("8_3kcqr")]
+[node name="Enemy" type="Node" parent="."]
+
+[node name="CharacterBody2D" parent="Enemy" instance=ExtResource("8_3kcqr")]
 position = Vector2(247, 129)
 
-[node name="CharacterBody2D2" parent="background" instance=ExtResource("8_3kcqr")]
+[node name="CharacterBody2D2" parent="Enemy" instance=ExtResource("8_3kcqr")]
 position = Vector2(139, 0)
 
-[node name="CharacterBody2D3" parent="background" instance=ExtResource("8_3kcqr")]
+[node name="CharacterBody2D3" parent="Enemy" instance=ExtResource("8_3kcqr")]
 position = Vector2(550, -80)
 
 [node name="KillZones" type="Node" parent="."]
@@ -334,7 +217,7 @@ tile_set = ExtResource("8_qpi0n")
 
 [node name="MainPlayer" parent="." instance=ExtResource("1_65wfv")]
 unique_name_in_owner = true
-position = Vector2(-88, 119)
+position = Vector2(140, -218)
 
 [node name="FloorBordre" type="StaticBody2D" parent="."]
 position = Vector2(-20, 147)
@@ -433,5 +316,29 @@ position = Vector2(0, -21)
 position = Vector2(366, 73)
 
 [node name="BounceBlock" parent="." instance=ExtResource("20_1kice")]
-position = Vector2(286, -51)
-scale = Vector2(3.52, 1)
+position = Vector2(303, -179)
+scale = Vector2(0.499574, 12.8835)
+
+[node name="BounceBlock2" parent="." instance=ExtResource("20_1kice")]
+position = Vector2(87, -315)
+rotation = 3.14159
+scale = Vector2(13.1809, -0.629377)
+
+[node name="BounceBlock3" parent="." instance=ExtResource("20_1kice")]
+position = Vector2(516, -182)
+scale = Vector2(4.65585, -0.589904)
+
+[node name="BounceBlock4" parent="." instance=ExtResource("20_1kice")]
+position = Vector2(419, -183)
+scale = Vector2(2.43287, 0.479784)
+
+[node name="BounceBlock5" parent="." instance=ExtResource("20_1kice")]
+position = Vector2(328, -257)
+scale = Vector2(1.84263, 0.429938)
+
+[node name="BounceBlock6" parent="." instance=ExtResource("20_1kice")]
+position = Vector2(250, -193)
+scale = Vector2(1.99021, 0.387951)
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("8_3kcqr")]
+position = Vector2(469, -202)

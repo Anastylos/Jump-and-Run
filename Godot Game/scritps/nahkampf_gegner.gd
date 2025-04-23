@@ -87,7 +87,6 @@ func freeze():
 
 # Funktion, um den Brenn-Effekt zu aktivieren
 
-
 # Funktion, die aufgerufen wird, wenn der Animation Timer abgelaufen ist
 func _on_animation_timer_timeout():
 	frozen = false  # Gegner ist nicht mehr eingefroren
@@ -103,7 +102,7 @@ func update_sprite_flip():
 # Wenn der Gegner von einem "ice"-Projektil getroffen wird
 func _on_area_2d_body_entered(body):
 	if body.is_in_group("projectile"):
-		if not animated_sprite_2d.animation == "atack":
+		if not animated_sprite_2d.animation == "atack" or animated_sprite_2d.animation == "Idle":
 			animated_sprite_2d.play("hit")
 		hp -= 50
 		if body.fire == true:
