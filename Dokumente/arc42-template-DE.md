@@ -268,22 +268,121 @@ Benutzerfreundlichkeit ist ein zentraler Faktor für den Erfolg eines Spiels. Ei
 Hohes Prioritätsszenario 2: C10 - Distributionsplattform
 Die Wahl einer geeigneten Plattform wie Steam oder Epic Games Store ist essenziell, um das Spiel einem breiten Publikum zugänglich zu machen. Da es sich um ein reines PC-Spiel handelt, sollte der Fokus auf Plattformen mit einer hohen Reichweite und gutem Community-Support liegen.
 
-# KAPITEL 11: Risiken und technische Schulden {#section-technical-risks}
+# KAPITEL 11: Risiken
+Im Folgenden Liste der identifizierten Architekturrisiken im Projekt:
 
-::: formalpara-title
-**Inhalt**
-:::
+---
+## AR1 – Enge Kopplung von Level-Logik und Spiellogik
 
-Eine nach Prioritäten geordnete Liste der erkannten Architekturrisiken
-und/oder technischen Schulden.
+**Beschreibung:**  
+Events, Gegner-Trigger und Mechaniken (z. B. Totems, Druckplatten) werden direkt in den Level-Szenen verarbeitet. Dadurch ist die Logik an einzelne Szenen gebunden und schwer wiederverwendbar.
 
-> Risikomanagement ist Projektmanagement für Erwachsene.
->
-> ---  Tim Lister Atlantic Systems Guild
+**Auswirkung:**  
+Schlechtere Wartbarkeit, hoher Aufwand bei Änderungen oder beim Einführen neuer Mechaniken.
 
-Unter diesem Motto sollten Sie Architekturrisiken und/oder technische
-Schulden gezielt ermitteln, bewerten und Ihren Management-Stakeholdern
-(z.B. Projektleitung, Product-Owner) transparent machen.
+**Wahrscheinlichkeit:** Hoch
+
+**Maßnahmen:**
+- Einführung eines zentralen Event-/State-Managers
+- Level nur als Datencontainer (Szenen + Triggerobjekte)
+- Verwendung des Godot-Signalsystems für lose Kopplung
+
+---
+
+## AR2 – Kein modulares Gegnerverhalten
+
+**Beschreibung:**  
+Gegnerverhalten wird pro Gegner direkt im jeweiligen Script implementiert, ohne Vererbung oder Kompositionsmuster.
+
+**Auswirkung:**  
+Duplizierter Code, unflexibles Design, schwierig zu testen und zu erweitern (z. B. für neue Gegnertypen oder dynamisches Verhalten).
+
+**Wahrscheinlichkeit:** Hoch
+
+**Maßnahmen:**
+- Einführung einer EnemyBase-Klasse mit virtuellen Methoden für Bewegung/Angriff
+- Optional: Verwendung von State Machines für komplexes Verhalten
+
+---
+
+## AR3 – Fehlende Trennung von Spiellogik und UI
+
+**Beschreibung:**  
+UI-Elemente (z. B. Lebensanzeige, Timer, Spezialeffekte) beziehen ihre Daten direkt von Spiellogik-Objekten.
+
+**Auswirkung:**  
+UI ist stark gekoppelt, spätere UI-Änderungen oder Debugging werden erschwert.
+
+**Wahrscheinlichkeit:** Mittel bis Hoch
+
+**Maßnahmen:**
+- Einführung eines GameState-Singletons oder Observer-Pattern
+- UI als rein „anzeigende“ Komponente ohne Spiellogikzugriff
+
+---
+
+## AR4 – Unstrukturierte Ressourcennutzung (Assets, Instanzen, Scripts)
+
+**Beschreibung:**  
+Fehlende Trennung oder nicht klare Namenskonventionen bei Ressourcen führen zu Verwirrung im Projekt und ungewollter Mehrfachverwendung.
+
+**Auswirkung:**  
+Verzögerungen im Team bei Entwicklung, fehlerhafte Szenenverknüpfungen.
+
+**Wahrscheinlichkeit:** Mittel
+
+**Maßnahmen:**
+- Standardisierte Ordnerstruktur (z. B. Scenes/, Scripts/, UI/, Enemies/)
+- Einführen eines „AssetGuide.md“ im Repository
+
+---
+
+## AR5 – Eingeschränkte Wiederverwendbarkeit von Totem-Mechaniken
+
+**Beschreibung:**  
+Totems sind auf ein bestimmtes Verhalten hin programmiert statt generisch als Effekt-Träger mit Plug-in-Logik.
+
+**Auswirkung:**  
+Neue Totems oder Kombinationseffekte schwer zu realisieren ohne viel Code-Duplikation.
+
+**Wahrscheinlichkeit:** Mittel
+
+**Maßnahmen:**
+- Einführung eines TotemBase-Skripts mit austauschbaren EffectComponents
+- Effekte als separate Ressourcen/Scripts (z. B. Feuer, Eis, Teleport)
+
+---
+
+## AR6 – Kein zentrales Zustands-/Statussystem für Spieler
+
+**Beschreibung:**  
+Effekte wie „Unbesiegbarkeit“, „Doppelter Schaden“ oder „DoT“ werden unabhängig voneinander getrackt.
+
+**Auswirkung:**  
+Kollidierende Effekte (z. B. zwei Power-Ups gleichzeitig) führen zu fehlerhaftem Verhalten.
+
+**Wahrscheinlichkeit:** Mittel
+
+**Maßnahmen:**
+- Einführung eines Zustands-Managers mit Status-Queue und Prioritäten
+- Verwendung von Timern zur zentralen Ablaufkontrolle
+
+---
+
+## AR7 – Kein einheitliches Eventsystem für Gameplay-Abläufe
+
+**Beschreibung:**  
+Mechaniken wie Rätsel, Plattformbewegung, Gegnerverhalten reagieren direkt auf Aktionen statt über ein zentrales Eventsystem.
+
+**Auswirkung:**  
+Fehlende Flexibilität, schwieriges Debugging, uneinheitliches Verhalten.
+
+**Wahrscheinlichkeit:** Niedrig bis Mittel
+
+**Maßnahmen:**
+- Einführung eines EventBus-Systems mit globalen GameEvents (z. B. signal `puzzle_solved`)
+- Mechaniken reagieren über Subscriptions
+
 
 
 Im Folgenden eine nach Priorität geordnete Liste der identifizierten Risiken im Projekt:
