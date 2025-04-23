@@ -277,15 +277,6 @@ Die Wahl einer geeigneten Plattform wie Steam oder Epic Games Store ist essenzie
 Eine nach Prioritäten geordnete Liste der erkannten Architekturrisiken
 und/oder technischen Schulden.
 
-# KAPITEL 11: Risiken und technische Schulden {#section-technical-risks}
-
-::: formalpara-title
-**Inhalt**
-:::
-
-Eine nach Prioritäten geordnete Liste der erkannten Architekturrisiken
-und/oder technischen Schulden.
-
 > Risikomanagement ist Projektmanagement für Erwachsene.
 >
 > ---  Tim Lister Atlantic Systems Guild
