@@ -1,6 +1,6 @@
 [gd_scene load_steps=89 format=3 uid="uid://3326fvs3yc3a"]
 
-[ext_resource type="Script" uid="uid://dvmobyfuix07q" path="res://scenes/heal_heart.gd" id="1_5fiqo"]
+[ext_resource type="Script" uid="uid://dvmobyfuix07q" path="res://scritps/heal_heart.gd" id="1_5fiqo"]
 [ext_resource type="Texture2D" uid="uid://b4u6wlcswjam0" path="res://assests/Pixel_Hearts_GUI_Pack_v002/hearts.png" id="1_td76g"]
 [ext_resource type="Texture2D" uid="uid://bjrdwkrjl3ftt" path="res://assests/Fireworks/Explosion_Crystals_Orange-sheet.png" id="3_26xrv"]
 
@@ -572,6 +572,21 @@ animations = [{
 "speed": 80.0
 }]
 
+[sub_resource type="Animation" id="Animation_5fiqo"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HealHeart:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2, 2)]
+}
+
 [sub_resource type="Animation" id="Animation_td76g"]
 resource_name = "turn"
 loop_mode = 2
@@ -586,21 +601,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(2, 2), Vector2(-2, 2)]
-}
-
-[sub_resource type="Animation" id="Animation_5fiqo"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("HealHeart:scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(2, 2)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_26xrv"]
@@ -635,6 +635,8 @@ libraries = {
 autoplay = "turn"
 
 [node name="Area2D" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 255
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(0, -26)
