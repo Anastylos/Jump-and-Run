@@ -269,7 +269,9 @@ Hohes Prioritätsszenario 2: C10 - Distributionsplattform
 Die Wahl einer geeigneten Plattform wie Steam oder Epic Games Store ist essenziell, um das Spiel einem breiten Publikum zugänglich zu machen. Da es sich um ein reines PC-Spiel handelt, sollte der Fokus auf Plattformen mit einer hohen Reichweite und gutem Community-Support liegen.
 
 # KAPITEL 11: Risiken
-Im Folgenden Liste der identifizierten Architekturrisiken im Projekt:
+---
+
+Im Folgenden eine Liste der identifizierten Architekturrisiken im Projekt:
 
 ---
 ## AR1 – Enge Kopplung von Level-Logik und Spiellogik
@@ -383,7 +385,7 @@ Fehlende Flexibilität, schwieriges Debugging, uneinheitliches Verhalten.
 - Einführung eines EventBus-Systems mit globalen GameEvents (z. B. signal `puzzle_solved`)
 - Mechaniken reagieren über Subscriptions
 
-
+---
 
 Im Folgenden eine nach Priorität geordnete Liste der identifizierten Risiken im Projekt:
 
