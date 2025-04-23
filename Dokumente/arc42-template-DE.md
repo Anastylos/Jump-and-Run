@@ -277,6 +277,15 @@ Die Wahl einer geeigneten Plattform wie Steam oder Epic Games Store ist essenzie
 Eine nach Prioritäten geordnete Liste der erkannten Architekturrisiken
 und/oder technischen Schulden.
 
+# KAPITEL 11: Risiken und technische Schulden {#section-technical-risks}
+
+::: formalpara-title
+**Inhalt**
+:::
+
+Eine nach Prioritäten geordnete Liste der erkannten Architekturrisiken
+und/oder technischen Schulden.
+
 > Risikomanagement ist Projektmanagement für Erwachsene.
 >
 > ---  Tim Lister Atlantic Systems Guild
@@ -289,13 +298,134 @@ Schulden gezielt ermitteln, bewerten und Ihren Management-Stakeholdern
 **Form**
 :::
 
-Liste oder Tabelle von Risiken und/oder technischen Schulden, eventuell
-mit vorgeschlagenen Maßnahmen zur Risikovermeidung, Risikominimierung
-oder dem Abbau der technischen Schulden.
+# Kapitel 11: Risiken
+Im Folgenden eine nach Priorität geordnete Liste der identifizierten Risiken im Projekt:
 
-Siehe [Risiken und technische
-Schulden](https://docs.arc42.org/section-11/) in der
-online-Dokumentation (auf Englisch!).
+---
+
+## R1 – Zeitmangel durch parallele Studieninhalte
+
+**Beschreibung:**  
+Die Teammitglieder sind durch das duale Studium stark eingebunden, wodurch sich Entwicklungszeiten stark verkürzen.
+
+**Auswirkung:**  
+Feature-Fertigstellung kann sich verzögern, Release-Termin am Semesterende ist gefährdet.
+
+**Wahrscheinlichkeit:** Hoch
+
+**Maßnahmen:**
+- Fokus auf MVP (Minimal Viable Product)
+- Frühzeitige Feature-Freeze-Termine
+- Nutzung des Kanban-Boards zur Organisation
+- Reduktion nicht kritischer Features
+
+---
+
+## R2 – Bugs durch komplexe Interaktionen (z. B. Totems, Rätsel, Gegnerverhalten)
+
+**Beschreibung:**  
+Durch die Vielzahl interaktiver Gameplay-Mechaniken (z. B. Feuerpfeile + Holzkisten + Gegner) können unerwartete Fehler auftreten.
+
+**Auswirkung:**  
+Instabilitäten, Softlocks oder Frustration beim Spieler.
+
+**Wahrscheinlichkeit:** Hoch
+
+**Maßnahmen:**
+- Modularisierung der Systeme
+- Testszenarien für jede Kombination
+- Eigenes Testlevel für Totems und Rätsel
+- Interne Playtests in jeder Sprintphase
+
+---
+
+## R3 – Unerfahrener Umgang mit Godot 4.4
+
+**Beschreibung:**  
+Einige Teammitglieder haben wenig Erfahrung mit der Engine, was die Entwicklung verlangsamen kann.
+
+**Auswirkung:**  
+Ineffizienter Code, fehlerhafte Implementierungen, Reibungsverluste.
+
+**Wahrscheinlichkeit:** Mittel bis Hoch
+
+**Maßnahmen:**
+- Verteilung der Aufgaben nach Kenntnisstand
+- Pair Programming und Code-Reviews
+- Interne Mini-Schulungen und Wissensdokumentation
+- Austausch zwischen den Teammitgliedern
+
+---
+
+## R4 – Unzureichendes Balancing von Gegnerstärke, Fallen und Power-Ups
+
+**Beschreibung:**  
+Ein unausgewogenes Spiel kann entweder zu leicht oder zu schwer sein.
+
+**Auswirkung:**  
+Spieler verlieren schnell das Interesse oder brechen ab.
+
+**Wahrscheinlichkeit:** Mittel
+
+**Maßnahmen:**
+- Testspieler aus anderen Gruppen einladen
+- Metriken für Schaden, Reichweite, Frequenz definieren
+- Kontrollierte Progression bei Gegnerfähigkeiten
+- Sichtbare Wirkung von Power-Ups und Schaden
+
+---
+
+## R5 – Unklare Aufgabenverteilung im Team
+
+**Beschreibung:**  
+Bei parallelem Arbeiten an Levels und Mechaniken besteht die Gefahr von Überschneidungen oder Lücken.
+
+**Auswirkung:**  
+Doppelte Arbeit oder nicht zueinander passende Spielbereiche.
+
+**Wahrscheinlichkeit:** Mittel
+
+**Maßnahmen:**
+- Regelmäßige Stand-ups
+- Nutzung von GitHub Issues und Projekt-Boards
+- Verantwortlichkeiten klar benennen
+- Gemeinsamer Kalender für Deadlines und Meilensteine
+
+---
+
+## R6 – Asset-Lizenzprobleme
+
+**Beschreibung:**  
+Assets ohne korrekte Lizenzangaben können eine spätere Veröffentlichung blockieren oder rechtliche Folgen haben.
+
+**Auswirkung:**  
+Assets müssen nachträglich ersetzt oder entfernt werden.
+
+**Wahrscheinlichkeit:** Mittel
+
+**Maßnahmen:**
+- Lizenzprüfung bei jedem Asset-Import
+- Verwendung nur von CC0, CC-BY oder käuflich erworbenen Assets
+- Lizenzdateien im jeweiligen Asset-Ordner speichern
+
+---
+
+## R7 – Feature Creep (ungeplante Erweiterungen)
+
+**Beschreibung:**  
+Im Laufe der Entwicklung könnten immer neue Ideen hinzukommen, die das Projekt überfrachten.
+
+**Auswirkung:**  
+Zeitliche Überlastung, MVP wird vernachlässigt, Chaos in der Projektstruktur.
+
+**Wahrscheinlichkeit:** Mittel
+
+**Maßnahmen:**
+- Feature-Freeze nach MVP
+- Zusätzliche Ideen besprechen
+- Nur Features umsetzen, die im Designdokument definiert sind
+- Designentscheidungen dokumentieren und kommunizieren
+
 
 # KAPITEL 12: Glossar {#section-glossary}
 
