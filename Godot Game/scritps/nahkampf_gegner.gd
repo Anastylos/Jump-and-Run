@@ -11,7 +11,7 @@ var collider = null
 var standstill = false
 
 @onready var floor_checker = $floor_checker
-@onready var collision_shape_2d = $Area2D/CollisionShape2D
+@onready var collision_shape_2d = $ArrowDetectArea/CollisionShape2D
 @onready var animated_sprite_2d = $enemy_AnimatedSprite2D
 @onready var fire_animation = $enemy_AnimatedSprite2D/fire_AnimatedSprite2D
 @onready var ice_animation = $enemy_AnimatedSprite2D/ice_AnimatedSprite2D

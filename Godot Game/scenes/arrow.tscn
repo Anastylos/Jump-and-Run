@@ -144,7 +144,7 @@ wait_time = 5.0
 one_shot = true
 
 [node name="bounce_cooldown" type="Timer" parent="."]
-wait_time = 0.01
+wait_time = 0.05
 one_shot = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

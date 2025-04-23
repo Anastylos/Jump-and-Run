@@ -33,6 +33,9 @@ pass_projectile=""
 projectile=""
 CheckPoint=""
 Bouncy=""
+box=""
+bruning=""
+freezing=""
 
 [input]
 

@@ -320,9 +320,9 @@ position = Vector2(303, -179)
 scale = Vector2(0.499574, 12.8835)
 
 [node name="BounceBlock2" parent="." instance=ExtResource("20_1kice")]
-position = Vector2(87, -315)
+position = Vector2(-33, -324)
 rotation = 3.14159
-scale = Vector2(13.1809, -0.629377)
+scale = Vector2(16.9009, -0.629377)
 
 [node name="BounceBlock3" parent="." instance=ExtResource("20_1kice")]
 position = Vector2(516, -182)
