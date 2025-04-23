@@ -294,11 +294,7 @@ Unter diesem Motto sollten Sie Architekturrisiken und/oder technische
 Schulden gezielt ermitteln, bewerten und Ihren Management-Stakeholdern
 (z.B. Projektleitung, Product-Owner) transparent machen.
 
-::: formalpara-title
-**Form**
-:::
 
-# Kapitel 11: Risiken
 Im Folgenden eine nach Priorität geordnete Liste der identifizierten Risiken im Projekt:
 
 ---
