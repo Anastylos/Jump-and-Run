@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=4 uid="uid://do06jyd211cx2"]
+[gd_scene load_steps=33 format=4 uid="uid://do06jyd211cx2"]
 
 [ext_resource type="PackedScene" uid="uid://dfayifn15m681" path="res://scenes/player.tscn" id="1_65wfv"]
 [ext_resource type="Texture2D" uid="uid://dyxbbngvnbjni" path="res://assests/nature-backgrounds-pixel-art/nature_1/1.png" id="1_y7ksl"]
@@ -19,6 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://cie0w42tjyv08" path="res://scenes/kiste.tscn" id="18_6geoh"]
 [ext_resource type="PackedScene" uid="uid://rummwvk5lwrs" path="res://scenes/CheckPoint.tscn" id="18_ssvqc"]
 [ext_resource type="PackedScene" uid="uid://3326fvs3yc3a" path="res://scenes/HealHeart.tscn" id="19_264po"]
+[ext_resource type="PackedScene" uid="uid://chaos83omdewl" path="res://scenes/bounce_block.tscn" id="20_1kice"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2tclj"]
 size = Vector2(31, 11)
@@ -349,13 +350,6 @@ rotation = -1.5708
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigthBorder"]
 shape = SubResource("WorldBoundaryShape2D_ug8fe")
 
-[node name="leftBorder" type="StaticBody2D" parent="."]
-position = Vector2(-326, 136)
-rotation = 1.5708
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="leftBorder"]
-shape = SubResource("WorldBoundaryShape2D_ug8fe")
-
 [node name="AnimationPlatform" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_taifr")
@@ -437,3 +431,7 @@ position = Vector2(0, -21)
 
 [node name="HealHart" parent="." instance=ExtResource("19_264po")]
 position = Vector2(366, 73)
+
+[node name="BounceBlock" parent="." instance=ExtResource("20_1kice")]
+position = Vector2(286, -51)
+scale = Vector2(3.52, 1)

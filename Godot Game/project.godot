@@ -32,6 +32,7 @@ player=""
 pass_projectile=""
 projectile=""
 CheckPoint=""
+Bouncy=""
 
 [input]
 

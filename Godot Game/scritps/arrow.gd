@@ -4,12 +4,15 @@ extends CharacterBody2D
 const SPEED = 1000
 const ARROW_LAYER = 2  # Custom layer for arrows
 
+var bounced = false
+var MIN_VELOCITY = 0.1
 var dir: float
 var spawnPos: Vector2
 var is_frozen: bool = false
 var parent_body: Node = null
 var fire: bool = false
 var ice: bool = false
+var saved_velocity
 
 var last_direction : int
 
@@ -36,10 +39,13 @@ func _ready():
 	var spawnRot = directionToMouse.angle()
 	rotation = spawnRot
 	dir = spawnRot
+	velocity = Vector2(SPEED, 0).rotated(dir)
+	
 	timer.start()
 	
 
 func _process(delta):
+	saved_velocity = velocity
 	if get_rotation_degrees() >= -90 and get_rotation_degrees() <= 90:
 		scale.y = 1
 	else:
@@ -51,17 +57,20 @@ func _process(delta):
 
 		elif velocity.x > 0:
 			last_direction = 1
-	
+
 	if not is_frozen:
-		velocity = Vector2(SPEED, 0).rotated(dir)
 		move_and_slide()
 		
 		for i in get_slide_collision_count():
 			var collision = get_slide_collision(i)
 			var collided_body = collision.get_collider()
-			if should_stick_to(collided_body):
+			if collided_body.is_in_group("Bouncy"):
+				do_bounce(collision)
+				break
+			elif should_stick_to(collided_body):
 				stick_to_body(collided_body)
 				break
+			
 	elif parent_body:
 		global_position = parent_body.to_global(get_parent_attachment_point())
 
@@ -78,17 +87,13 @@ func should_stick_to(body: Node) -> bool:
 	return true
 
 func stick_to_body(body):
-	
 	is_frozen = true
 	velocity = Vector2.ZERO
 	parent_body = body
-	
 	# Remove the arrow from its current parent
 	get_parent().remove_child(self)
-	
 	# Add the arrow as a child of the collided body
 	body.add_child(self)
-	
 	# Set the arrow's position relative to its new parent
 	position = body.to_local(position)
 	
@@ -97,6 +102,14 @@ func stick_to_body(body):
 
 func get_parent_attachment_point() -> Vector2:
 	return position
+	
+		
+func do_bounce(collision):
+	if not bounced:
+		var normal = collision.get_normal()
+		velocity = saved_velocity.bounce(normal)
+		rotation = velocity.angle()
+		bounced = true
 
 func _on_timer_timeout() -> void:
 	queue_free()

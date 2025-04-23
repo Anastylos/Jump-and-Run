@@ -33,6 +33,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		# Wende die Impact-Kraft an (nach links oder rechts)
 		velocity.x += impact_direction * IMPACT_FORCE
 		is_impacting = true  # Setze das Flag, dass ein Impact stattgefunden hat
+		
 	elif body.is_in_group("player"):
 		velocity.x += 100 * body.direction
 		is_impacting = true
