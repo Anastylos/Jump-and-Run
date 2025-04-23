@@ -110,6 +110,7 @@ func do_bounce(collision):
 		var normal = collision.get_normal()
 		velocity = saved_velocity.bounce(normal)
 		rotation = velocity.angle()
+		last_direction *= -1
 		bounced = true
 
 func _on_timer_timeout() -> void:
