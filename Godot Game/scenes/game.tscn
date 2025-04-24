@@ -156,6 +156,12 @@ position = Vector2(247, 129)
 [node name="CharacterBody2D2" parent="Enemy" instance=ExtResource("8_3kcqr")]
 position = Vector2(139, 0)
 
+[node name="CharacterBody2D2" parent="Enemy/CharacterBody2D2" instance=ExtResource("8_3kcqr")]
+position = Vector2(-215, -111)
+
+[node name="CharacterBody2D2" parent="Enemy/CharacterBody2D2/CharacterBody2D2" instance=ExtResource("8_3kcqr")]
+position = Vector2(42, 80)
+
 [node name="CharacterBody2D3" parent="Enemy" instance=ExtResource("8_3kcqr")]
 position = Vector2(550, -80)
 

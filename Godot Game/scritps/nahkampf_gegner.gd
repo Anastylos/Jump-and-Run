@@ -37,11 +37,9 @@ func _process(delta):
 		return  # Keine weiteren Bewegungen, solange eingefroren
 
 	if burning:
-		# Wenn brennend, stoppe die Bewegung und spiele die Brenn-Animation
-		velocity.x = 0
 		fire_animation.visible = true  # Zeige die Feuer-Animation
 		fire_animation.play("fire")  # Spiegle die "Fire"-Animation ab
-		return  # Keine weiteren Bewegungen, solange brennend
+		return
 
 	# Prüfen auf Wand oder Plattformkanten
 	if is_on_wall() or not floor_checker.is_colliding():
@@ -109,7 +107,7 @@ func _on_area_2d_body_entered(body):
 			fire_animation.visible = true
 			fire_animation.play("fire")
 			animation_timer.start()
-			 # Wenn der Gegner mit "fire" getroffen wird, wird er brennen
+						 # Wenn der Gegner mit "fire" getroffen wird, wird er brennen
 		elif body.ice == true:
 			ice_animation.visible = true
 			ice_animation.play("ice")
