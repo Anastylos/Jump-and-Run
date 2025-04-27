@@ -76,6 +76,7 @@ position = Vector2(9, -23)
 scale = Vector2(1.05, 1.05)
 sprite_frames = SubResource("SpriteFrames_armcu")
 animation = &"ice"
+autoplay = "ice"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

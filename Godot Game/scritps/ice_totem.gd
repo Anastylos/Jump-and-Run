@@ -6,7 +6,7 @@ func _on_body_entered(body):
 	if body.is_in_group("player"):
 		body.set_totemStatus("ice")
 		totem_ice_animation.visible = true
-		totem_ice_animation.play("ice")
+
 
 
 func _on_body_exited(body):
