@@ -1,6 +1,6 @@
 [gd_scene load_steps=267 format=4 uid="uid://ddjmnr2qqkfkc"]
 
-[ext_resource type="Script" uid="uid://c0ho24vfaik3i" path="res://scritps/goal.gd" id="1_0v45f"]
+[ext_resource type="Script" path="res://scritps/goal.gd" id="1_0v45f"]
 [ext_resource type="TileSet" uid="uid://cd03m8vb0vool" path="res://assests/TileSet/TilesetWorld.tres" id="1_emn1l"]
 [ext_resource type="Texture2D" uid="uid://dya7wn2gd1id" path="res://assests/Fireworks/Rocket_Blue.png-sheet.png" id="2_oyd0b"]
 [ext_resource type="Texture2D" uid="uid://34mxon6hfuhe" path="res://assests/Fireworks/Explosion_Crystals_Blue-sheet.png" id="3_xyj5l"]
@@ -67,8 +67,8 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_fgu43"]
 _data = {
-&"Firework": SubResource("Animation_xjqpg"),
-&"RESET": SubResource("Animation_e2bye")
+"Firework": SubResource("Animation_xjqpg"),
+"RESET": SubResource("Animation_e2bye")
 }
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5kvjv"]
@@ -1883,7 +1883,7 @@ tile_set = ExtResource("1_emn1l")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-&"": SubResource("AnimationLibrary_fgu43")
+"": SubResource("AnimationLibrary_fgu43")
 }
 
 [node name="blueRocket" type="AnimatedSprite2D" parent="."]

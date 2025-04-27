@@ -74,7 +74,7 @@ func _attack(delta: float) -> void:
 
 	if anim.animation != "atack":
 		anim.play("atack")
-		damage_dealt_this_attack = false  # Beim Start der Animation Schaden zurücksetzen
+		damage_dealt_this_attack = false  # Reset damage at the start of the attack animation
 
 func _on_player_entered(body: Node) -> void:
 	if body.is_in_group("player"):

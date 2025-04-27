@@ -1,10 +1,10 @@
-## Pfeil Projektiel des Spielers
+## Player's Arrow Projectile
 class_name Arrow
 extends CharacterBody2D
 
 const SPEED = 1000
 const ARROW_LAYER = 2  # Custom layer for arrows
-const BOX_IMPACT_FORCE = 200  # Kraft, mit der die Kiste weggeschleudert wird
+const BOX_IMPACT_FORCE = 200  # Force with which the box is thrown away
 
 var bounced = false
 var MIN_VELOCITY = 0.1
@@ -50,35 +50,34 @@ func _process(delta):
 	saved_velocity = velocity
 
 	# Flip sprite based on travel direction
-	
 	scale.y = 1 if (rotation_degrees >= -90 and rotation_degrees <= 90) else -1
-	#not moving
+
+	# Not moving
 	if not is_frozen:
-		# Eine präzise Einzelkollision abfragen
+		# Perform a precise single collision query
 		var collision = move_and_collide(velocity * delta)
 		if collision:
 			var body = collision.get_collider()
-			# Box treffen -> wegschleudern
+			# Hit box -> push away
 			if body.is_in_group("moveByArrowBox"):
-				# Falls KinematicBody2D mit velocity-Property
+				# If KinematicBody2D with velocity property
 				if body.has_method("set_velocity"):
 					body.set_velocity(body.velocity + saved_velocity.normalized() * BOX_IMPACT_FORCE)
 				elif body.has("velocity"):
 					body.velocity += saved_velocity.normalized() * BOX_IMPACT_FORCE
-				# Arrow abprallen lassen
+				# Make arrow stick to the box
 				body.is_impacting = true
 				remove_from_group("projectile")
 				stick_to_body(body)
-			# Bouncy-Flächen weiterhin wie gehabt behandeln
+			# Handle bouncy surfaces normally
 			elif body.is_in_group("Bouncy"):
 				do_bounce(collision)
-			# Sonstige Flächen -> Pfeil stecken
+			# Other surfaces -> stick the arrow
 			elif should_stick_to(body):
 				stick_to_body(body)
 	elif parent_body:
-		# Wenn festgeklebt, Position am Parent halten
+		# If stuck, keep position relative to parent
 		global_position = parent_body.to_global(get_parent_attachment_point())
-
 
 func should_stick_to(body: Node) -> bool:
 	if body is Arrow:

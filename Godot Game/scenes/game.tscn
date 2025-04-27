@@ -81,8 +81,8 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_taifr"]
 _data = {
-&"Platform": SubResource("Animation_usshu"),
-&"RESET": SubResource("Animation_ti38u")
+"Platform": SubResource("Animation_usshu"),
+"RESET": SubResource("Animation_ti38u")
 }
 
 [sub_resource type="Animation" id="Animation_r48hl"]
@@ -119,8 +119,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_r3nsh"]
 _data = {
-&"Platform2": SubResource("Animation_r48hl"),
-&"RESET": SubResource("Animation_jru5t")
+"Platform2": SubResource("Animation_r48hl"),
+"RESET": SubResource("Animation_jru5t")
 }
 
 [node name="Game" type="Node2D"]
@@ -235,7 +235,7 @@ shape = SubResource("WorldBoundaryShape2D_ug8fe")
 
 [node name="AnimationPlatform" type="AnimationPlayer" parent="."]
 libraries = {
-&"": SubResource("AnimationLibrary_taifr")
+"": SubResource("AnimationLibrary_taifr")
 }
 autoplay = "Platform"
 
@@ -245,7 +245,7 @@ position = Vector2(293, -74)
 [node name="AnimationPlatformr2" type="AnimationPlayer" parent="."]
 root_node = NodePath("../AnimationPlatform")
 libraries = {
-&"": SubResource("AnimationLibrary_r3nsh")
+"": SubResource("AnimationLibrary_r3nsh")
 }
 autoplay = "Platform2"
 

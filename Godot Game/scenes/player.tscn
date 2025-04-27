@@ -1,6 +1,6 @@
 [gd_scene load_steps=63 format=3 uid="uid://dfayifn15m681"]
 
-[ext_resource type="Script" uid="uid://dhqpq3vq42o1j" path="res://scritps/player.gd" id="1_27tse"]
+[ext_resource type="Script" path="res://scritps/player.gd" id="1_27tse"]
 [ext_resource type="Texture2D" uid="uid://0cibdvijofxb" path="res://assests/tiny hero/2/Idle.png" id="1_neiha"]
 [ext_resource type="Texture2D" uid="uid://dkcxcqvuj4p1q" path="res://assests/tiny hero/2/Attack.png" id="2_8m8l3"]
 [ext_resource type="Texture2D" uid="uid://ce7g50qxne822" path="res://assests/tiny hero/2/RunAttack.png" id="2_hnwwp"]
@@ -462,9 +462,7 @@ limit_smoothed = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="HealthBar" parent="CanvasLayer" node_paths=PackedStringArray("spieler") instance=ExtResource("2_y4r1p")]
-spieler = NodePath("../..")
+[node name="HealthBar" parent="CanvasLayer" instance=ExtResource("2_y4r1p")]
 
-[connection signal="health_geaendert" from="." to="CanvasLayer/HealthBar" method="_on_player_health_geaendert"]
 [connection signal="animation_finished" from="shootAnim" to="." method="_on_shoot_anim_animation_finished"]
 [connection signal="timeout" from="dashDuration" to="." method="_on_dash_timer_timeout"]

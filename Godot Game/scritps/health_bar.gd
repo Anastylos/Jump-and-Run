@@ -4,22 +4,22 @@ var health
 var hearts = []
 var heart_scene = load("res://scenes/HealthHeart.tscn")
 var x = 10
-@export var spieler: Node
+@export var player: Node
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	if spieler:
-		# Verbinde das Signal vom Spieler
-		spieler.connect("health_geaendert", Callable(self, "_on_health_geaendert"))
-		health = spieler.health
+	if player:
+		# Connect signal from player
+		player.connect("health_changed", Callable(self, "_on_health_changed"))
+		health = player.health
 		
-	for i in spieler.health:
-		var instanz = heart_scene.instantiate()
-		instanz.position.y = 10
-		instanz.position.x = x
+	for i in player.health:
+		var instance = heart_scene.instantiate()
+		instance.position.y = 10
+		instance.position.x = x
 		x += 10
-		hearts.append(instanz)
+		hearts.append(instance)
 	
 	for heart in hearts:
 		add_child(heart)
@@ -30,9 +30,9 @@ func _process(delta):
 	pass
 
 
-func _on_player_health_geaendert(effekttype, neue_health): 
-	health = neue_health
-	if effekttype == "heal":
+func _on_player_health_changed(effecttype, new_health): 
+	health = new_health
+	if effecttype == "heal":
 		for i in health:
 			hearts[i].play("Full")
 	else:

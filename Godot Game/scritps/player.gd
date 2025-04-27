@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-signal health_geaendert(neue_health)
+signal health_changed(new_health)
 var health = 5
 var speed = 250.0
 const JUMP_VELOCITY = -400.0
@@ -9,9 +9,9 @@ var direction
 
 var arrow = load("res://scenes/arrow.tscn")
 var input_enabled = true
-# Der normale Zeitablauf
+# Normal game time flow
 const NORMAL_TIME_SCALE = 1.0
-# Der Zeitablauf währenKid der Zeitlupe
+# Slow motion time flow
 const SLOW_MOTION_SCALE = 0.3
 
 @onready var checkPoint_Pos = global_position
@@ -27,7 +27,7 @@ func _physics_process(delta):
 	if health == 0:
 		global_position = checkPoint_Pos
 		health = 5
-		emit_signal("health_geaendert", "heal", health)
+		emit_signal("health_changed", "heal", health)
 	
 	if input_enabled:
 		if shoot_anim.get_rotation_degrees() >= -90 and shoot_anim.get_rotation_degrees() <= 90:
@@ -35,31 +35,29 @@ func _physics_process(delta):
 		else:
 			shoot_anim.scale.y = -1
 
-		 # Hole die aktuelle Position der Maus
+		# Get the current mouse position
 		var mouse_position = get_global_mouse_position()
 	
-		# Berechne den Winkel zwischen dem Sprite und der Maus
+		# Calculate the angle between the sprite and the mouse
 		var directionToMouse = mouse_position - global_position
-		shoot_anim.rotation = directionToMouse.angle();
+		shoot_anim.rotation = directionToMouse.angle()
 	
-		# Add the gravity.
+		# Add gravity
 		if not is_on_floor():
 			velocity += get_gravity() * delta
 		
-		# Prüfe, ob die Taste für Zeitlupe gedrückt ist
+		# Check if the slow motion key is pressed
 		if Input.is_action_pressed("slowmow"):
-			# Setze das Spiel in Zeitlupe
+			# Set the game into slow motion
 			Engine.time_scale = SLOW_MOTION_SCALE
 		else:
-			# Stelle den normalen Zeitablauf wieder her
+			# Restore normal time flow
 			Engine.time_scale = NORMAL_TIME_SCALE
-			
 		
-		# Handle jump.
-		if Input.is_action_pressed("springen") and is_on_floor():
+		# Handle jump
+		if Input.is_action_pressed("jump") and is_on_floor():
 			velocity.y = JUMP_VELOCITY
 		
-	
 		if Input.is_action_just_pressed("shoot"):
 			shoot()
 			
@@ -69,14 +67,13 @@ func _physics_process(delta):
 				dash_cooldown.start()
 				speed = 1000.0
 				
-		# Get the input direction and handle the movement/deceleration.
-		# As good practice, you should replace UI actions with custom gameplay actions.
+		# Get the input direction and handle movement/deceleration
 		direction = Input.get_axis("left", "right")
 		if direction:
-				rundust_anim.visible = true
-				animated_sprite_2d.play("ShootRunAtack")
-				rundust_anim.play("rundust")
-				velocity.x = direction * speed
+			rundust_anim.visible = true
+			animated_sprite_2d.play("ShootRunAtack")
+			rundust_anim.play("rundust")
+			velocity.x = direction * speed
 		else:
 			if shoot_anim.is_playing():
 				animated_sprite_2d.play("Atack")
@@ -111,22 +108,21 @@ func enable_input():
 func _on_shoot_anim_animation_finished():
 	shoot_anim.visible = false
 
-
 func _on_dash_timer_timeout():
 	speed = 250
-	
+
 func set_totemStatus(status):
 	totem_status = status
 	
 func get_totem_status():
 	return totem_status
 	
-func schaden_nehmen(damage: float ):
+func take_damage(damage: float):
 	health -= damage
 	health = clamp(health, 0, 5)
-	emit_signal("health_geaendert", "damage" , health)
+	emit_signal("health_changed", "damage", health)
 	
 func heal(healAmount: float):
 	health += 1
 	health = clamp(health, 0, 5)
-	emit_signal("health_geaendert", "heal" , health)
+	emit_signal("health_changed", "heal", health)

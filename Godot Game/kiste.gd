@@ -2,23 +2,23 @@ extends CharacterBody2D
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
-const IMPACT_FORCE = 100.0  # Stärke des Impakts
-const DECELERATION = 4.25  # Dämpfungsfaktor (wie schnell er stoppt)
+const IMPACT_FORCE = 100.0  # Strength of the impact
+const DECELERATION = 4.25  # Damping factor (how quickly it slows down)
 
-var is_impacting = false  # Flag, um zu prüfen, ob ein Impact stattgefunden hat
+var is_impacting = false  # Flag to check if an impact occurred
 
 func _physics_process(delta: float) -> void:
-	# Add the gravity.
+	# Add gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 
-	# Wenn der Charakter einen Impact hatte, langsamer werden
+	# If the character had an impact, start slowing down
 	if is_impacting:
-		# Reduziere die Geschwindigkeit mit einer Dämpfung
-		velocity.x = lerp(velocity.x, 0.0, DECELERATION * delta)  # 0.0 ist jetzt ein float
-		# Wenn die Geschwindigkeit fast 0 erreicht, stoppe den Dämpfungsprozess
+		# Reduce velocity with damping
+		velocity.x = lerp(velocity.x, 0.0, DECELERATION * delta)  # 0.0 is now a float
+		# If velocity is close to 0, stop the damping process
 		if abs(velocity.x) < 0.01:
 			velocity.x = 0
-			is_impacting = false  # Dämpfung abgeschlossen
+			is_impacting = false  # Damping complete
 
 	move_and_slide()

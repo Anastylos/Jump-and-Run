@@ -1,9 +1,10 @@
 [gd_scene load_steps=2 format=3 uid="uid://d2ywjxdem2d8r"]
 
-[ext_resource type="Script" uid="uid://5wv3076rvyce" path="res://scritps/health_bar.gd" id="1_1bvlm"]
+[ext_resource type="Script" path="res://scritps/health_bar.gd" id="1_1bvlm"]
 
-[node name="HealthBar" type="Control"]
+[node name="HealthBar" type="Control" node_paths=PackedStringArray("player")]
 layout_mode = 3
 anchors_preset = 0
 scale = Vector2(3, 3)
 script = ExtResource("1_1bvlm")
+player = NodePath(".")

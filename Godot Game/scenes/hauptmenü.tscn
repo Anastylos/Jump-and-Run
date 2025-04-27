@@ -1,7 +1,7 @@
 [gd_scene load_steps=17 format=4 uid="uid://bgcah8tec6b8i"]
 
 [ext_resource type="Texture2D" uid="uid://dyxbbngvnbjni" path="res://assests/nature-backgrounds-pixel-art/nature_1/1.png" id="1_a2jr2"]
-[ext_resource type="Script" uid="uid://bxsk4jfprhv0h" path="res://scritps/hauptmenü.gd" id="1_wmwxv"]
+[ext_resource type="Script" path="res://scritps/hauptmenü.gd" id="1_wmwxv"]
 [ext_resource type="TileSet" uid="uid://ds0uihgbfxlmd" path="res://scenes/worldTileSet.tres" id="2_oak0p"]
 [ext_resource type="Texture2D" uid="uid://bgrb63g7x3y4y" path="res://assests/nature-backgrounds-pixel-art/nature_1/2.png" id="3_6sxkp"]
 [ext_resource type="FontFile" uid="uid://b2if36p0hray2" path="res://assests/brackeys_platformer_assets/fonts/PixelOperator8-Bold.ttf" id="4_s51wv"]
