@@ -517,37 +517,29 @@ Zeitliche Überlastung, MVP wird vernachlässigt, Chaos in der Projektstruktur.
 
 # KAPITEL 12: Glossar {#section-glossary}
 
-::: formalpara-title
-**Inhalt**
-:::
+# Glossar
 
-Die wesentlichen fachlichen und technischen Begriffe, die Stakeholder im
-Zusammenhang mit dem System verwenden.
+| Begriff | Definition |
+| --- | --- |
+| Player | Das vom Spieler gesteuerte Objekt (meist eine Spielfigur), das durch das Level navigiert. |
+| Plattform | Eine feste oder bewegliche Oberfläche, auf die der Player springen oder laufen kann. |
+| Sprungmechanik | Die Logik, die das Springen des Players ermöglicht (z. B. Eingabe, Schwerkraft, Höhe). |
+| Schwerkraft | Die nach unten wirkende Kraft im Spiel, die beeinflusst, wie schnell Objekte nach unten fallen. |
+| Kollisionsabfrage | Die Überprüfung, ob der Player mit anderen Objekten im Spiel (z. B. Plattformen, Nahkampfgegnern) zusammenstößt. |
+| Level | Eine abgeschlossene Spieleinheit oder Umgebung, die der Player durchqueren muss. |
+| Nahkampfgegner | Eine Spielfigur oder ein Objekt, das den Player durch Nahkampfangriffe behindern oder besiegen kann. |
+| Checkpoint | Eine Speicherposition innerhalb eines Levels, zu der der Player nach einem Verlust zurückkehrt. |
+| Tilemap | Ein Raster aus kleinen Bildern (Tiles), das verwendet wird, um Level effizient zu erstellen. |
+| Power-Up | Ein sammelbares Objekt, das dem Player zeitweise besondere Fähigkeiten oder Vorteile verleiht. |
+| AnimatedSprite | Ein Godot-Node, der verwendet wird, um Animationen aus Einzelbildern (Frames) darzustellen. |
+| Signal | Eine Godot-eigene Methode zur Benachrichtigung zwischen Objekten über Ereignisse (z. B. "Player hat Plattform betreten"). |
+| KinematicBody2D | Ein spezieller Node-Typ in Godot, der für sich bewegende Objekte mit kontrollierter Kollision verwendet wird. |
+| Velocity | Die Geschwindigkeit und Richtung der Bewegung eines Objektes, typischerweise in einem Vektor gespeichert. |
+| Input-Handling | Verarbeitung der Eingaben des Spielers (Tastatur, Maus, Controller) zur Steuerung des Players. |
+| Respawn | Das erneute Erscheinen des Players nach einem Verlust. |
+| HUD (Heads-Up Display) | Die Benutzeroberfläche, die wichtige Spielinformationen wie Leben, Punkte oder Zeit anzeigt. |
+| Timer | Eine Funktion oder ein Node, der nach einer bestimmten Zeit ein Ereignis auslöst (z. B. Levelzeitlimit). |
+| Szene | In Godot eine strukturierte Sammlung von Nodes, die zusammen eine Einheit (z. B. ein Level, ein Gegner, ein Menü) bilden. |
+| GDScript | Eine leichtgewichtige, Python-ähnliche Programmiersprache, die speziell für die Arbeit mit Godot entwickelt wurde. |
+| Sprite | Ein Node, der ein einzelnes Bild (oder eine Textur) anzeigt, meist zur Darstellung von Figuren oder Objekten. |
 
-Nutzen Sie das Glossar ebenfalls als Übersetzungsreferenz, falls Sie in
-mehrsprachigen Teams arbeiten.
-
-::: formalpara-title
-**Motivation**
-:::
-
-Sie sollten relevante Begriffe klar definieren, so dass alle Beteiligten
-
--   diese Begriffe identisch verstehen, und
-
--   vermeiden, mehrere Begriffe für die gleiche Sache zu haben.
-
-Zweispaltige Tabelle mit \<Begriff> und \<Definition>.
-
-Eventuell weitere Spalten mit Übersetzungen, falls notwendig.
-
-Siehe [Glossar](https://docs.arc42.org/section-12/) in der
-online-Dokumentation (auf Englisch!).
-
-+-----------------------+-----------------------------------------------+
-| Begriff               | Definition                                    |
-+=======================+===============================================+
-| *\<Begriff-1>*        | *\<Definition-1>*                             |
-+-----------------------+-----------------------------------------------+
-| *\<Begriff-2*         | *\<Definition-2>*                             |
-+-----------------------+-----------------------------------------------+
