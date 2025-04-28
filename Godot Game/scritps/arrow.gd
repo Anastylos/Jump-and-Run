@@ -1,4 +1,3 @@
-## Player's Arrow Projectile
 class_name Arrow
 extends CharacterBody2D
 
@@ -52,15 +51,16 @@ func _process(delta):
 	# Flip sprite based on travel direction
 	scale.y = 1 if (rotation_degrees >= -90 and rotation_degrees <= 90) else -1
 
-	# Not moving
+
 	if not is_frozen:
 		# Perform a precise single collision query
 		var collision = move_and_collide(velocity * delta)
 		if collision:
 			var body = collision.get_collider()
-			# Hit box -> push away
-			if body.is_in_group("moveByArrowBox"):
-				# If KinematicBody2D with velocity property
+
+			# Box treffen -> wegschleudern
+			if body.is_in_group("box"):
+				# Falls KinematicBody2D mit velocity-Property
 				if body.has_method("set_velocity"):
 					body.set_velocity(body.velocity + saved_velocity.normalized() * BOX_IMPACT_FORCE)
 				elif body.has("velocity"):
