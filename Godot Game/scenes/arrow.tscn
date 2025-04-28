@@ -5,8 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://0lm2j5bf6nhu" path="res://assests/arrow animations/Fire_Spreadsheet.png" id="3_iblal"]
 [ext_resource type="Texture2D" uid="uid://ba05y2ndepur5" path="res://assests/arrow animations/Water_01.png" id="4_vb0a1"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7ckq1"]
-size = Vector2(10.7383, 3.34765)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_thu02"]
+size = Vector2(14, 4)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_b3j3o"]
 atlas = ExtResource("3_iblal")
@@ -95,57 +95,42 @@ animations = [{
 }]
 
 [node name="Arrow" type="CharacterBody2D" groups=["projectile"]]
-position = Vector2(7, 0)
-collision_layer = 8
-collision_mask = 245
 script = ExtResource("1_0ca1g")
 
-[node name="CollisionShape2DWorld" type="CollisionShape2D" parent="."]
-position = Vector2(-1.28768, 0.0801055)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(1.03967, 0.849275)
-shape = SubResource("RectangleShape2D_7ckq1")
+shape = SubResource("RectangleShape2D_thu02")
 one_way_collision = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
-position = Vector2(-7, 0)
 texture = ExtResource("1_bj2ah")
-offset = Vector2(7, 0)
 region_enabled = true
 region_rect = Rect2(26.9618, 18.9166, 14.0614, 3.10764)
 
 [node name="fire_AnimatedSprite2D" type="AnimatedSprite2D" parent="Sprite2D"]
-visible = false
-position = Vector2(2, -19)
+position = Vector2(6, -6)
 scale = Vector2(0.05, 0.05)
 sprite_frames = SubResource("SpriteFrames_c22jg")
 animation = &"burn"
 autoplay = "burn"
-frame_progress = 0.444458
-centered = false
+frame_progress = 0.574043
 
 [node name="ice_AnimatedSprite2D2" type="AnimatedSprite2D" parent="Sprite2D"]
 visible = false
-position = Vector2(13, 0)
+position = Vector2(5, 0)
 scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_btuq3")
 autoplay = "default"
-frame = 4
-frame_progress = 0.394111
+frame_progress = 0.707274
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
 position = Vector2(-6, 0)
 rotation = -1.57079
 scale = Vector2(0.416097, 0.416097)
-collision_mask = 255
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 5.0
 one_shot = true
 
-[node name="bounce_cooldown" type="Timer" parent="."]
-wait_time = 0.05
-one_shot = true
-
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
-[connection signal="timeout" from="bounce_cooldown" to="." method="_on_bounce_cooldown_timeout"]
