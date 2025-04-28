@@ -1,15 +1,20 @@
 extends CharacterBody2D
 
-
+signal health_geaendert(neue_health)
+var health = 5
 var speed = 250.0
 const JUMP_VELOCITY = -400.0
+var totem_status = "none"
+var direction
 
 var arrow = load("res://scenes/arrow.tscn")
 var input_enabled = true
 # Der normale Zeitablauf
 const NORMAL_TIME_SCALE = 1.0
-# Der Zeitablauf während der Zeitlupe
+# Der Zeitablauf währenKid der Zeitlupe
 const SLOW_MOTION_SCALE = 0.3
+
+@onready var checkPoint_Pos = global_position
 
 @onready var animated_sprite_2d = $AnimatedSprite2D
 @onready var shoot_anim = $shootAnim
@@ -19,6 +24,11 @@ const SLOW_MOTION_SCALE = 0.3
 @onready var dash_cooldown = $dashCooldown
 
 func _physics_process(delta):
+	if health == 0:
+		global_position = checkPoint_Pos
+		health = 5
+		emit_signal("health_geaendert", "heal", health)
+	
 	if input_enabled:
 		if shoot_anim.get_rotation_degrees() >= -90 and shoot_anim.get_rotation_degrees() <= 90:
 			shoot_anim.scale.y = 1
@@ -44,9 +54,9 @@ func _physics_process(delta):
 			# Stelle den normalen Zeitablauf wieder her
 			Engine.time_scale = NORMAL_TIME_SCALE
 			
-
+		
 		# Handle jump.
-		if Input.is_action_just_pressed("springen") and is_on_floor():
+		if Input.is_action_pressed("springen") and is_on_floor():
 			velocity.y = JUMP_VELOCITY
 		
 	
@@ -61,7 +71,7 @@ func _physics_process(delta):
 				
 		# Get the input direction and handle the movement/deceleration.
 		# As good practice, you should replace UI actions with custom gameplay actions.
-		var direction = Input.get_axis("left", "right")
+		direction = Input.get_axis("left", "right")
 		if direction:
 				rundust_anim.visible = true
 				animated_sprite_2d.play("ShootRunAtack")
@@ -81,7 +91,7 @@ func _physics_process(delta):
 		elif direction < 0:
 			animated_sprite_2d.scale.x = -1
 			rundust_anim.scale.x = -1
-
+	
 	move_and_slide()
 	
 func shoot():
@@ -104,3 +114,19 @@ func _on_shoot_anim_animation_finished():
 
 func _on_dash_timer_timeout():
 	speed = 250
+	
+func set_totemStatus(status):
+	totem_status = status
+	
+func get_totem_status():
+	return totem_status
+	
+func schaden_nehmen(damage: float ):
+	health -= damage
+	health = clamp(health, 0, 5)
+	emit_signal("health_geaendert", "damage" , health)
+	
+func heal(healAmount: float):
+	health += 1
+	health = clamp(health, 0, 5)
+	emit_signal("health_geaendert", "heal" , health)

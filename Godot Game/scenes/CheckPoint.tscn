@@ -1,0 +1,110 @@
+[gd_scene load_steps=14 format=3 uid="uid://rummwvk5lwrs"]
+
+[ext_resource type="Script" uid="uid://ds810vxkuft27" path="res://scritps/check_point.gd" id="1_dvq8c"]
+[ext_resource type="Shader" uid="uid://cuo15m177wwx" path="res://assests/Checkpoint/CheckPoint.gdshader" id="2_3cysp"]
+[ext_resource type="Texture2D" uid="uid://dyeos3raeayjk" path="res://assests/Checkpoint/CheckpointGras.png" id="2_4m7xe"]
+[ext_resource type="Texture2D" uid="uid://dbhb8s6fg87aa" path="res://assests/Checkpoint/CheckpointFlagge.png" id="3_3cysp"]
+[ext_resource type="Shader" uid="uid://by2h3mpwagfvn" path="res://assests/Checkpoint/CheckPointFlagge.gdshader" id="4_0rsbf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0s2lw"]
+size = Vector2(18, 27)
+
+[sub_resource type="Animation" id="Animation_0rsbf"]
+resource_name = "Flagge"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/CheckpointFlagge:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(19.9142, 71.9232), Vector2(19.9142, 34.7657)]
+}
+
+[sub_resource type="Animation" id="Animation_ohqvm"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/CheckpointFlagge:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(19.9142, 71.9232)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ohqvm"]
+_data = {
+&"Flagge": SubResource("Animation_0rsbf"),
+&"RESET": SubResource("Animation_ohqvm")
+}
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ohqvm"]
+shader = ExtResource("4_0rsbf")
+shader_parameter/outline_thickness = 1.95
+shader_parameter/outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_3cysp"]
+noise_type = 4
+fractal_octaves = 3
+fractal_gain = 2.715
+fractal_weighted_strength = 0.2
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_0rsbf"]
+noise = SubResource("FastNoiseLite_3cysp")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0rsbf"]
+shader = ExtResource("2_3cysp")
+shader_parameter/noise_map = SubResource("NoiseTexture2D_0rsbf")
+shader_parameter/color_a = Color(0.0392157, 0.439216, 0.188235, 1)
+shader_parameter/color_b = Color(0.301961, 0.741176, 0.152941, 1)
+shader_parameter/color_c = Color(0.584314, 0.847059, 0.211765, 1)
+shader_parameter/outline_thickness = 1.225
+shader_parameter/outline_color = Color(0, 0, 0, 1)
+
+[node name="CheckPoint" type="Area2D"]
+z_index = -1
+scale = Vector2(2.53724, 2.43626)
+collision_mask = 255
+script = ExtResource("1_dvq8c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["CheckPoint"]]
+position = Vector2(7.51741e-07, -13.5)
+shape = SubResource("RectangleShape2D_0s2lw")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_ohqvm")
+}
+
+[node name="Control" type="Control" parent="."]
+clip_contents = true
+layout_mode = 3
+anchors_preset = 0
+offset_left = -9.02941
+offset_top = -27.1302
+offset_right = 30.9706
+offset_bottom = 12.8698
+scale = Vector2(0.453416, 0.681433)
+
+[node name="CheckpointFlagge" type="Sprite2D" parent="Control"]
+material = SubResource("ShaderMaterial_ohqvm")
+position = Vector2(19.9142, 71.9232)
+scale = Vector2(0.389617, 0.312563)
+texture = ExtResource("3_3cysp")
+offset = Vector2(10.9969, -49.8147)
+
+[node name="CheckpointGras" type="Sprite2D" parent="Control"]
+material = SubResource("ShaderMaterial_0rsbf")
+position = Vector2(20.8709, 39.8135)
+scale = Vector2(0.558751, 0.343578)
+texture = ExtResource("2_4m7xe")
+offset = Vector2(-4.98902e-07, -49.9965)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

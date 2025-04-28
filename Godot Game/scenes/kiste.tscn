@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://cie0w42tjyv08"]
+
+[ext_resource type="Script" uid="uid://ce2udfifeubom" path="res://kiste.gd" id="1_1wmkr"]
+[ext_resource type="TileSet" uid="uid://ds0uihgbfxlmd" path="res://scenes/worldTileSet.tres" id="2_wkhxh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5ihha"]
+size = Vector2(16, 16)
+
+[node name="Kiste" type="CharacterBody2D" groups=["moveByArrowBox"]]
+collision_layer = 4
+collision_mask = 7
+script = ExtResource("1_1wmkr")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+position = Vector2(-8, 8)
+tile_map_data = PackedByteArray(0, 0, 0, 0, 255, 255, 1, 0, 7, 0, 3, 0, 0, 0)
+tile_set = ExtResource("2_wkhxh")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+offset = Vector2(-14, 8)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_5ihha")
