@@ -1,9 +1,10 @@
-[gd_scene load_steps=62 format=3 uid="uid://dfayifn15m681"]
+[gd_scene load_steps=63 format=3 uid="uid://dfayifn15m681"]
 
 [ext_resource type="Script" path="res://scritps/player.gd" id="1_27tse"]
 [ext_resource type="Texture2D" uid="uid://0cibdvijofxb" path="res://assests/tiny hero/2/Idle.png" id="1_neiha"]
 [ext_resource type="Texture2D" uid="uid://dkcxcqvuj4p1q" path="res://assests/tiny hero/2/Attack.png" id="2_8m8l3"]
 [ext_resource type="Texture2D" uid="uid://ce7g50qxne822" path="res://assests/tiny hero/2/RunAttack.png" id="2_hnwwp"]
+[ext_resource type="PackedScene" uid="uid://d2ywjxdem2d8r" path="res://scenes/health_bar.tscn" id="2_y4r1p"]
 [ext_resource type="Texture2D" uid="uid://set085i4li6b" path="res://assests/tiny hero/2/3.png" id="3_4mthq"]
 [ext_resource type="Texture2D" uid="uid://did8vbbkv8l04" path="res://assests/tiny hero/2/Jump.png" id="3_hn4q3"]
 [ext_resource type="Texture2D" uid="uid://5lich53b2dv3" path="res://assests/tiny hero/2/Run.png" id="3_lmhut"]
@@ -399,43 +400,48 @@ animations = [{
 }]
 
 [node name="player" type="CharacterBody2D" groups=["player"]]
-position = Vector2(5, -21)
+collision_layer = 2
+collision_mask = 13
 script = ExtResource("1_27tse")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-position = Vector2(-5, 8)
+position = Vector2(0, -13)
 sprite_frames = SubResource("SpriteFrames_svgcy")
-animation = &"ShootRunAtack"
+animation = &"Atack"
 autoplay = "idle"
-frame_progress = 0.717514
+frame = 5
+frame_progress = 1.0
 offset = Vector2(5, -8)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-5, 8)
+position = Vector2(0, -13)
 shape = SubResource("CapsuleShape2D_hsjml")
 
 [node name="shootAnim" type="AnimatedSprite2D" parent="."]
 visible = false
 texture_filter = 1
-position = Vector2(-6, 10)
+position = Vector2(0, -10)
+rotation = -0.00820945
 sprite_frames = SubResource("SpriteFrames_rpj8t")
 animation = &"shoot"
-frame = 2
-frame_progress = 0.34621
+frame = 5
+frame_progress = 1.0
 offset = Vector2(6, -10)
 
 [node name="BowRayCast2D" type="RayCast2D" parent="shootAnim"]
-position = Vector2(21, 4.54747e-13)
+visible = false
+position = Vector2(17.9994, 0.147768)
 rotation = -1.5708
-scale = Vector2(-0.468722, 0.22913)
+scale = Vector2(-0.318584, 0.222122)
 
 [node name="rundustAnim" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-position = Vector2(-5, 8)
+position = Vector2(0, -13)
 sprite_frames = SubResource("SpriteFrames_ypfy6")
 animation = &"rundust"
-frame_progress = 0.329562
+frame = 1
+frame_progress = 0.0757916
 offset = Vector2(-8, -3)
 
 [node name="dashDuration" type="Timer" parent="."]
@@ -444,6 +450,19 @@ wait_time = 0.1
 [node name="dashCooldown" type="Timer" parent="."]
 wait_time = 0.6
 one_shot = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(1, 1)
+zoom = Vector2(2, 2)
+limit_left = -282
+limit_top = -480
+limit_right = 2020
+limit_bottom = 210
+limit_smoothed = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HealthBar" parent="CanvasLayer" instance=ExtResource("2_y4r1p")]
 
 [connection signal="animation_finished" from="shootAnim" to="." method="_on_shoot_anim_animation_finished"]
 [connection signal="timeout" from="dashDuration" to="." method="_on_dash_timer_timeout"]

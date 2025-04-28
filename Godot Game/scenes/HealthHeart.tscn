@@ -1,0 +1,87 @@
+[gd_scene load_steps=10 format=3 uid="uid://cth1vl3bbwcr7"]
+
+[ext_resource type="Texture2D" uid="uid://b4u6wlcswjam0" path="res://assests/Pixel_Hearts_GUI_Pack_v002/hearts.png" id="1_1ktka"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1ktka"]
+atlas = ExtResource("1_1ktka")
+region = Rect2(0, 64, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dwljn"]
+atlas = ExtResource("1_1ktka")
+region = Rect2(16, 64, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wn8w4"]
+atlas = ExtResource("1_1ktka")
+region = Rect2(32, 64, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qx0gk"]
+atlas = ExtResource("1_1ktka")
+region = Rect2(0, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lsphq"]
+atlas = ExtResource("1_1ktka")
+region = Rect2(16, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l5rn0"]
+atlas = ExtResource("1_1ktka")
+region = Rect2(32, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x8h0y"]
+atlas = ExtResource("1_1ktka")
+region = Rect2(0, 48, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1ktka"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1ktka")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dwljn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1ktka")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dwljn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wn8w4")
+}],
+"loop": false,
+"name": &"DMG_Empty",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qx0gk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lsphq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qx0gk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lsphq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l5rn0")
+}],
+"loop": false,
+"name": &"DMG_To_Half",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x8h0y")
+}],
+"loop": true,
+"name": &"Full",
+"speed": 5.0
+}]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_1ktka")
+animation = &"DMG_To_Half"
+autoplay = "Full"

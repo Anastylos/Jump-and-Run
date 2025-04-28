@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://chaos83omdewl"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_a1uyf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j86bj"]
+size = Vector2(19.0668, 18.9114)
+
+[node name="leftBorder" type="StaticBody2D" groups=["Bouncy"]]
+position = Vector2(-0.197845, 0)
+rotation = 1.57175
+collision_layer = 4
+collision_mask = 7
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+position = Vector2(-16.4211, -0.395631)
+scale = Vector2(32.9643, 33.3013)
+mesh = SubResource("BoxMesh_a1uyf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-16.4318, -0.477811)
+scale = Vector2(1.72248, 1.75756)
+shape = SubResource("RectangleShape2D_j86bj")
