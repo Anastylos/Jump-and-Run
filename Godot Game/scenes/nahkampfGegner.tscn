@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://bigntvpsusogv"]
+[gd_scene load_steps=41 format=3 uid="uid://bigntvpsusogv"]
 
 [ext_resource type="Texture2D" uid="uid://col5ko2plvjjy" path="res://assests/EnemySprites/Intellect Devourer Sprites.png" id="1_hyc4y"]
 [ext_resource type="Script" path="res://scritps/nahkampf_gegner.gd" id="1_u4725"]
@@ -271,9 +271,6 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3nauj"]
 size = Vector2(23, 19)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_fl2v2"]
-size = Vector2(29, 39)
-
 [node name="CharacterBody2D" type="CharacterBody2D"]
 collision_layer = 4
 collision_mask = 7
@@ -333,26 +330,8 @@ collision_mask = 255
 position = Vector2(0, -8)
 rotation = -1.5708
 scale = Vector2(0.580789, 0.39738)
-target_position = Vector2(-0.000167847, 67.945)
+target_position = Vector2(-2.38419e-06, 53)
 collision_mask = 255
-
-[node name="Player_DEC_Area" type="Area2D" parent="."]
-position = Vector2(0, -8)
-rotation = -1.5708
-scale = Vector2(0.580789, 0.39738)
-collision_layer = 4
-collision_mask = 2
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Player_DEC_Area"]
-polygon = PackedVector2Array(-12.0525, -35.2308, -13.775, 264.231, 74.0366, 261.715, 29.2705, 22.6485, 15.4962, -22.6483)
-
-[node name="AttackHitbox" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackHitbox"]
-position = Vector2(25.5, -19.5)
-shape = SubResource("RectangleShape2D_fl2v2")
 
 [connection signal="animation_finished" from="enemy_AnimatedSprite2D" to="." method="_on_enemy_animated_sprite_2d_animation_finished"]
 [connection signal="timeout" from="enemy_AnimatedSprite2D/animation_Timer" to="." method="_on_animation_timer_timeout"]

@@ -34,9 +34,9 @@ pass_projectile=""
 projectile=""
 CheckPoint=""
 Bouncy=""
+box=""
 bruning=""
 freezing=""
-moveByArrowBox=""
 
 [input]
 

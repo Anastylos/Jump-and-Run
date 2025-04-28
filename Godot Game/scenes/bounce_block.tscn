@@ -7,7 +7,7 @@ size = Vector2(19.0668, 18.9114)
 
 [node name="leftBorder" type="StaticBody2D" groups=["Bouncy"]]
 position = Vector2(-0.197845, 0)
-rotation = 1.57175
+rotation = 1.5708
 collision_layer = 4
 collision_mask = 7
 
