@@ -38,9 +38,7 @@ func _on_player_health_changed(effekttype, new_health):
 	else:
 		if is_equal_approx(fmod(health, 1.0), 0.5)  :
 			var heart = hearts[ceil(health-1)]
-			print(health)
 			heart.play("DMG_To_Half")
 		else:
 			var heart = hearts[health]
-			print(health)
 			heart.play("DMG_Empty")

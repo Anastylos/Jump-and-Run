@@ -1,16 +1,20 @@
 extends Area2D
 
 @onready var timer = $Timer
-@onready var main_player = %MainPlayer
+var entered_body
 
 
 func _on_body_entered(body):
-	if body.is_in_group("player"):
+	entered_body = body
+	if entered_body.is_in_group("player"):
 		body.disable_input()
-		timer.start()
+	timer.start()
 		
 	
 
 func _on_timer_timeout():
-	main_player.global_position = main_player.checkPoint_Pos
-	main_player.enable_input()
+	if entered_body.is_in_group("player"):
+		entered_body.global_position = entered_body.checkPoint_Pos
+		entered_body.enable_input()
+	else:
+		entered_body.queue_free()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=4 uid="uid://do06jyd211cx2"]
+[gd_scene load_steps=30 format=4 uid="uid://do06jyd211cx2"]
 
 [ext_resource type="PackedScene" uid="uid://dfayifn15m681" path="res://scenes/player.tscn" id="1_65wfv"]
 [ext_resource type="PackedScene" uid="uid://cmh0x4bf2dbff" path="res://scenes/WorldMapScene.tscn" id="1_ca42v"]
@@ -11,7 +11,8 @@
 [ext_resource type="PackedScene" uid="uid://uuylubojul0i" path="res://scenes/platform.tscn" id="10_awimq"]
 [ext_resource type="PackedScene" uid="uid://cqf4hg6nsi43d" path="res://scenes/killzone.tscn" id="11_lbcwo"]
 [ext_resource type="PackedScene" uid="uid://bypqyqj801t3t" path="res://scenes/FireTotem.tscn" id="12_ttt40"]
-[ext_resource type="PackedScene" uid="uid://djyxu4vw7rsbf" path="res://scenes/rigid_kiste.tscn" id="14_rysoc"]
+[ext_resource type="Script" uid="uid://dapxng6qu6jef" path="res://scritps/falling_platform.gd" id="13_rysoc"]
+[ext_resource type="PackedScene" uid="uid://chyfwbm5ospvh" path="res://scenes/rigid_kiste.tscn" id="14_rysoc"]
 [ext_resource type="PackedScene" uid="uid://dj1002rdgnyr0" path="res://scenes/falling_down.tscn" id="17_dsp20"]
 [ext_resource type="PackedScene" uid="uid://rummwvk5lwrs" path="res://scenes/CheckPoint.tscn" id="18_ssvqc"]
 [ext_resource type="PackedScene" uid="uid://3326fvs3yc3a" path="res://scenes/HealHeart.tscn" id="19_264po"]
@@ -288,9 +289,11 @@ position = Vector2(454, 49)
 
 [node name="Falling_down2" parent="Falling" instance=ExtResource("17_dsp20")]
 position = Vector2(155, -63)
+script = ExtResource("13_rysoc")
 
 [node name="Falling_down" parent="Falling" instance=ExtResource("17_dsp20")]
 position = Vector2(1, -17)
+script = ExtResource("13_rysoc")
 
 [node name="Boxen" type="Node2D" parent="."]
 position = Vector2(79, -13)

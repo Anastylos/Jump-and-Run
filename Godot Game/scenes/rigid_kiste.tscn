@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://djyxu4vw7rsbf"]
+[gd_scene load_steps=3 format=3 uid="uid://chyfwbm5ospvh"]
 
 [ext_resource type="TileSet" uid="uid://ds0uihgbfxlmd" path="res://scenes/worldTileSet.tres" id="1_kra75"]
 
@@ -9,7 +9,8 @@ size = Vector2(16, 16)
 collision_layer = 4
 collision_mask = 7
 mass = 4.252
-linear_damp = 3.061
+gravity_scale = 1.5
+linear_damp = 4.0
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 position = Vector2(-8, 8)

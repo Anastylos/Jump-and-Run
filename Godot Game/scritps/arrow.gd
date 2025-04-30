@@ -5,7 +5,7 @@ extends CharacterBody2D
 const SPEED = 1000
 const ARROW_LAYER = 2  # Custom layer for arrows
 const BOX_IMPACT_FORCE = 200  # Kraft, mit der die Kiste weggeschleudert wird
-const PUSH_FORCE  = 1000.0
+const PUSH_FORCE  = 1300.0
 
 var bounced = false
 var MIN_VELOCITY = 0.1

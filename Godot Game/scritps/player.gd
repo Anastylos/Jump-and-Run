@@ -67,7 +67,7 @@ func _physics_process(delta):
 			if dash_cooldown.is_stopped():
 				dash_timer.start()
 				dash_cooldown.start()
-				speed = 1000.0
+				speed = 800.0
 				
 		# Get the input direction and handle the movement/deceleration.
 		# As good practice, you should replace UI actions with custom gameplay actions.
@@ -130,7 +130,6 @@ func get_totem_status():
 	return totem_status
 	
 func take_damage(damage: float ):
-	print("damage im player ausgeführt")
 	health -= damage
 	health = clamp(health, 0, 5)
 	emit_signal("health_changed", "damage" , health)
