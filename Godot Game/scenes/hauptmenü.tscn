@@ -77,11 +77,12 @@ scale = Vector2(0.343097, 0.387631)
 texture = ExtResource("3_6sxkp")
 
 [node name="player" parent="." instance=ExtResource("9_ukli8")]
-position = Vector2(-161.262, -55.4045)
+position = Vector2(-238.428, -57.1848)
 scale = Vector2(0.74704, 0.667573)
 
 [node name="killzone" parent="." instance=ExtResource("10_oj7d3")]
 position = Vector2(-63.24, 22.1618)
+scale = Vector2(0.91293, 0.270928)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="killzone"]
 position = Vector2(63.24, 44.8641)
