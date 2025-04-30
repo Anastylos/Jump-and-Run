@@ -151,99 +151,17 @@ In der Anwendungsschicht befindet sich das eigentliche Spiel, also die Inhalte u
 Die oberste Schicht beschreibt die Interaktion zwischen dem Spieler und dem Spiel. Eingabegeräte wie Tastatur, Maus, Gamepad oder Touchscreen gehören in diese Ebene. Der Spieler gibt über diese Geräte Befehle ein, etwa indem er eine Taste zum Springen drückt. Diese Eingaben werden von der Engine erkannt und an die Anwendungsschicht weitergeleitet, wo sie von der Spiellogik verarbeitet werden. Diese Interaktionsschicht ist essenziell dafür, dass der Spieler überhaupt Einfluss auf das Spiel nehmen kann.
 
 
-# KAPITEL 8: Querschnittliche Konzepte {#section-concepts}
+# KAPITEL 8: Querschnittliche Konzepte
 
-::: formalpara-title
-**Inhalt**
-:::
 
-Dieser Abschnitt beschreibt übergreifende, prinzipielle Regelungen und
-Lösungsansätze, die an mehreren Stellen (=*querschnittlich*) relevant
-sind.
+-   Folgende Elemente sollen während des spielens auf der Oberfläche sichtbar sein: Gesundheitsanzeige
+-   
+-   Drückt man Escape soll ein Optionsmenü erscheinen über das man Lautstärke, Auflösunf, Schwieirigkeitsgrad und andere Einstellungen einstellen kann
 
-Solche Konzepte betreffen oft mehrere Bausteine. Dazu können vielerlei
-Themen gehören, beispielsweise:
+-   das Spiel ist ein 2D Spiel, die Graphik und Spiellogik wird in Godot geschrieben 
 
--   Modelle, insbesondere fachliche Modelle
+-   Spielstände, highscore etc. sollen lokal gespeichert werden
 
--   Architektur- oder Entwurfsmuster
-
--   Regeln für den konkreten Einsatz von Technologien
-
--   prinzipielle --- meist technische --- Festlegungen übergreifender
-    Art
-
--   Implementierungsregeln
-
-::: formalpara-title
-**Motivation**
-:::
-
-Konzepte bilden die Grundlage für *konzeptionelle Integrität*
-(Konsistenz, Homogenität) der Architektur und damit eine wesentliche
-Grundlage für die innere Qualität Ihrer Systeme.
-
-Manche dieser Themen lassen sich nur schwer als Baustein in der
-Architektur unterbringen (z.B. das Thema „Sicherheit").
-
-::: formalpara-title
-**Form**
-:::
-
-Kann vielfältig sein:
-
--   Konzeptpapiere mit beliebiger Gliederung,
-
--   übergreifende Modelle/Szenarien mit Notationen, die Sie auch in den
-    Architektursichten nutzen,
-
--   beispielhafte Implementierung speziell für technische Konzepte,
-
--   Verweise auf „übliche" Nutzung von Standard-Frameworks
-    (beispielsweise die Nutzung von Hibernate als Object/Relational
-    Mapper).
-
-::: formalpara-title
-**Struktur**
-:::
-
-Eine mögliche (nicht aber notwendige!) Untergliederung dieses
-Abschnittes könnte wie folgt aussehen (wobei die Zuordnung von Themen zu
-den Gruppen nicht immer eindeutig ist):
-
--   Fachliche Konzepte
-
--   User Experience (UX)
-
--   Sicherheitskonzepte (Safety und Security)
-
--   Architektur- und Entwurfsmuster
-
--   Unter-der-Haube
-
--   Entwicklungskonzepte
-
--   Betriebskonzepte
-
-![Possible topics for crosscutting
-concepts](images/08-concepts-DE.drawio.png)
-
-Siehe [Querschnittliche Konzepte](https://docs.arc42.org/section-8/) in
-der online-Dokumentation (auf Englisch).
-
-## *\<Konzept 1>* {#__emphasis_konzept_1_emphasis}
-
-*\<Erklärung>*
-
-## *\<Konzept 2>* {#__emphasis_konzept_2_emphasis}
-
-*\<Erklärung>*
-
-...
-
-## *\<Konzept n>* {#__emphasis_konzept_n_emphasis}
-
-*\<Erklärung>*
 
 # KAPITEL 9: Architekturentscheidungen
 
