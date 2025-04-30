@@ -230,6 +230,14 @@ position = Vector2(-20, 147)
 position = Vector2(6, 21)
 shape = SubResource("WorldBoundaryShape2D_ug8fe")
 
+[node name="LeftBorder" type="StaticBody2D" parent="."]
+position = Vector2(-305, -1)
+rotation = 1.57079
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftBorder"]
+position = Vector2(6, 21)
+shape = SubResource("WorldBoundaryShape2D_ug8fe")
+
 [node name="RigthBorder" type="StaticBody2D" parent="."]
 position = Vector2(2021, 162)
 rotation = -1.5708
