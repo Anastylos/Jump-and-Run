@@ -1,0 +1,102 @@
+[gd_scene load_steps=9 format=3 uid="uid://dhyn4ff5jylg5"]
+
+[ext_resource type="Script" uid="uid://cbtwbf6w85glj" path="res://scritps/druckplatte.gd" id="1_21j1b"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tkm0j"]
+size = Vector2(2.4682, 1.40448)
+
+[sub_resource type="QuadMesh" id="QuadMesh_mhqvr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_21j1b"]
+size = Vector2(1.00497, 1.03286)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mhqvr"]
+size = Vector2(1.00894, 0.982641)
+
+[sub_resource type="Animation" id="Animation_21j1b"]
+resource_name = "Button_Move"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("StaticBody2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 0.884011)]
+}
+
+[sub_resource type="Animation" id="Animation_mhqvr"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("StaticBody2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tkm0j"]
+_data = {
+&"Button_Move": SubResource("Animation_21j1b"),
+&"RESET": SubResource("Animation_mhqvr")
+}
+
+[node name="Druckplatte_Note2D" type="Node2D"]
+scale = Vector2(-10.8225, 8.02479)
+script = ExtResource("1_21j1b")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 4
+collision_mask = 7
+
+[node name="Area2D" type="Area2D" parent="StaticBody2D"]
+collision_layer = 4
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D/Area2D"]
+position = Vector2(-0.00563508, -1.29158)
+shape = SubResource("RectangleShape2D_tkm0j")
+
+[node name="Button" type="MeshInstance2D" parent="StaticBody2D"]
+modulate = Color(1, 0, 0, 1)
+self_modulate = Color(0.912271, 4.71681e-06, 6.73831e-07, 1)
+position = Vector2(0, -1.07912)
+scale = Vector2(2.45234, 1.40645)
+mesh = SubResource("QuadMesh_mhqvr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-0.000992571, -1.05837)
+scale = Vector2(2.45234, 1.40645)
+shape = SubResource("RectangleShape2D_21j1b")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2(1.53754e-14, -1.19643e-14)
+collision_layer = 4
+collision_mask = 7
+
+[node name="ButtonKörper" type="MeshInstance2D" parent="StaticBody2D2"]
+modulate = Color(0.400698, 0.400698, 0.400698, 1)
+position = Vector2(-5.12514e-15, 4.78573e-15)
+scale = Vector2(2.89269, 1.18266)
+mesh = SubResource("QuadMesh_mhqvr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(-4.31044e-08, 3.71082e-08)
+scale = Vector2(2.89269, 1.18266)
+shape = SubResource("RectangleShape2D_mhqvr")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_tkm0j")
+}
+
+[connection signal="body_entered" from="StaticBody2D/Area2D" to="." method="_on_area_2d_body_entered"]

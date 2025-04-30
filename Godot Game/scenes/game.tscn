@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=4 uid="uid://do06jyd211cx2"]
+[gd_scene load_steps=32 format=4 uid="uid://do06jyd211cx2"]
 
 [ext_resource type="PackedScene" uid="uid://dfayifn15m681" path="res://scenes/player.tscn" id="1_65wfv"]
 [ext_resource type="PackedScene" uid="uid://cmh0x4bf2dbff" path="res://scenes/WorldMapScene.tscn" id="1_ca42v"]
@@ -14,7 +14,9 @@
 [ext_resource type="Script" uid="uid://dapxng6qu6jef" path="res://scritps/falling_platform.gd" id="13_rysoc"]
 [ext_resource type="PackedScene" uid="uid://chyfwbm5ospvh" path="res://scenes/rigid_kiste.tscn" id="14_rysoc"]
 [ext_resource type="PackedScene" uid="uid://dj1002rdgnyr0" path="res://scenes/falling_down.tscn" id="17_dsp20"]
+[ext_resource type="PackedScene" uid="uid://dhyn4ff5jylg5" path="res://scenes/Druckplatte.tscn" id="18_264po"]
 [ext_resource type="PackedScene" uid="uid://rummwvk5lwrs" path="res://scenes/CheckPoint.tscn" id="18_ssvqc"]
+[ext_resource type="PackedScene" uid="uid://20f7d06dhmxr" path="res://scenes/Gate.tscn" id="19_1kice"]
 [ext_resource type="PackedScene" uid="uid://3326fvs3yc3a" path="res://scenes/HealHeart.tscn" id="19_264po"]
 [ext_resource type="PackedScene" uid="uid://chaos83omdewl" path="res://scenes/bounce_block.tscn" id="20_1kice"]
 
@@ -358,3 +360,11 @@ position = Vector2(67, -126)
 [node name="RigidKiste3" parent="." instance=ExtResource("14_rysoc")]
 position = Vector2(675, 8)
 mass = 10.827
+
+[node name="Gate" parent="." instance=ExtResource("19_1kice")]
+position = Vector2(1276, -155)
+scale = Vector2(0.548359, 2.91798)
+
+[node name="Druckplatte_Note2D" parent="." node_paths=PackedStringArray("gate") instance=ExtResource("18_264po")]
+position = Vector2(1229, -52)
+gate = NodePath("../Gate")
