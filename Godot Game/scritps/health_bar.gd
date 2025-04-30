@@ -11,7 +11,7 @@ var x = 10
 func _ready():
 	if spieler:
 		# Verbinde das Signal vom Spieler
-		spieler.connect("health_geaendert", Callable(self, "_on_health_geaendert"))
+		spieler.connect("health_changed", Callable(self, "_on_player_health_changed"))
 		health = spieler.health
 		
 	for i in spieler.health:
@@ -30,8 +30,8 @@ func _process(delta):
 	pass
 
 
-func _on_player_health_geaendert(effekttype, neue_health): 
-	health = neue_health
+func _on_player_health_changed(effekttype, new_health): 
+	health = new_health
 	if effekttype == "heal":
 		for i in health:
 			hearts[i].play("Full")

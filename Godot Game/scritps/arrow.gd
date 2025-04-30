@@ -5,6 +5,7 @@ extends CharacterBody2D
 const SPEED = 1000
 const ARROW_LAYER = 2  # Custom layer for arrows
 const BOX_IMPACT_FORCE = 200  # Kraft, mit der die Kiste weggeschleudert wird
+const PUSH_FORCE  = 1000.0
 
 var bounced = false
 var MIN_VELOCITY = 0.1
@@ -58,6 +59,12 @@ func _process(delta):
 		var collision = move_and_collide(velocity * delta)
 		if collision:
 			var body = collision.get_collider()
+			if  collision.get_collider() is RigidBody2D:
+				var box = collision.get_collider() as RigidBody2D
+				# Schiebe-Kraft in Bewegungsrichtung, Multiplikator je nach Geschwindigkeit:
+				var push_dir = Vector2(sign(velocity.x), 0)
+				box.apply_central_impulse(push_dir * PUSH_FORCE)
+			
 			# Box treffen -> wegschleudern
 			if body.is_in_group("moveByArrowBox"):
 				# Falls KinematicBody2D mit velocity-Property
@@ -66,7 +73,7 @@ func _process(delta):
 				elif body.has("velocity"):
 					body.velocity += saved_velocity.normalized() * BOX_IMPACT_FORCE
 				# Arrow abprallen lassen
-				body.is_impacting = true
+				#body.is_impacting = true
 				remove_from_group("projectile")
 				stick_to_body(body)
 			# Bouncy-Flächen weiterhin wie gehabt behandeln

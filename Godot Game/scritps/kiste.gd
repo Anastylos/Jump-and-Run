@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+signal player_pushed(player_velocity)
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 const IMPACT_FORCE = 100.0  # Stärke des Impakts
@@ -13,12 +14,11 @@ func _physics_process(delta: float) -> void:
 		velocity += get_gravity() * delta
 
 	# Wenn der Charakter einen Impact hatte, langsamer werden
-	if is_impacting:
-		# Reduziere die Geschwindigkeit mit einer Dämpfung
-		velocity.x = lerp(velocity.x, 0.0, DECELERATION * delta)  # 0.0 ist jetzt ein float
-		# Wenn die Geschwindigkeit fast 0 erreicht, stoppe den Dämpfungsprozess
-		if abs(velocity.x) < 0.01:
-			velocity.x = 0
-			is_impacting = false  # Dämpfung abgeschlossen
+	
+	velocity.x = lerp(velocity.x, 0.0, DECELERATION * delta)  # 0.0 ist jetzt ein float
+	# Wenn die Geschwindigkeit fast 0 erreicht, stoppe den Dämpfungsprozess
+	if abs(velocity.x) < 0.01:
+		velocity.x = 0
+		is_impacting = false  # Dämpfung abgeschlossen
 
 	move_and_slide()

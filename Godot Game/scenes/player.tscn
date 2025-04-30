@@ -465,6 +465,5 @@ limit_smoothed = true
 [node name="HealthBar" parent="CanvasLayer" node_paths=PackedStringArray("spieler") instance=ExtResource("2_y4r1p")]
 spieler = NodePath("../..")
 
-[connection signal="health_geaendert" from="." to="CanvasLayer/HealthBar" method="_on_player_health_geaendert"]
 [connection signal="animation_finished" from="shootAnim" to="." method="_on_shoot_anim_animation_finished"]
 [connection signal="timeout" from="dashDuration" to="." method="_on_dash_timer_timeout"]

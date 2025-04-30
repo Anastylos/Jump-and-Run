@@ -11,8 +11,8 @@
 [ext_resource type="PackedScene" uid="uid://uuylubojul0i" path="res://scenes/platform.tscn" id="10_awimq"]
 [ext_resource type="PackedScene" uid="uid://cqf4hg6nsi43d" path="res://scenes/killzone.tscn" id="11_lbcwo"]
 [ext_resource type="PackedScene" uid="uid://bypqyqj801t3t" path="res://scenes/FireTotem.tscn" id="12_ttt40"]
+[ext_resource type="PackedScene" uid="uid://djyxu4vw7rsbf" path="res://scenes/rigid_kiste.tscn" id="14_rysoc"]
 [ext_resource type="PackedScene" uid="uid://dj1002rdgnyr0" path="res://scenes/falling_down.tscn" id="17_dsp20"]
-[ext_resource type="PackedScene" uid="uid://cie0w42tjyv08" path="res://scenes/kiste.tscn" id="18_6geoh"]
 [ext_resource type="PackedScene" uid="uid://rummwvk5lwrs" path="res://scenes/CheckPoint.tscn" id="18_ssvqc"]
 [ext_resource type="PackedScene" uid="uid://3326fvs3yc3a" path="res://scenes/HealHeart.tscn" id="19_264po"]
 [ext_resource type="PackedScene" uid="uid://chaos83omdewl" path="res://scenes/bounce_block.tscn" id="20_1kice"]
@@ -149,6 +149,9 @@ scale = Vector2(0.248559, 0.242475)
 texture = ExtResource("6_akgxi")
 
 [node name="Enemy" type="Node" parent="."]
+
+[node name="Nahkampfgegner" parent="Enemy" instance=ExtResource("8_3kcqr")]
+position = Vector2(841, 18)
 
 [node name="CharacterBody2D" parent="Enemy" instance=ExtResource("8_3kcqr")]
 position = Vector2(247, 129)
@@ -292,16 +295,8 @@ position = Vector2(1, -17)
 [node name="Boxen" type="Node2D" parent="."]
 position = Vector2(79, -13)
 
-[node name="CharacterBody2D" parent="Boxen" instance=ExtResource("18_6geoh")]
-position = Vector2(-66, 146)
-
-[node name="CharacterBody2D3" parent="Boxen" instance=ExtResource("18_6geoh")]
-
-[node name="CharacterBody2D4" parent="Boxen" instance=ExtResource("18_6geoh")]
-position = Vector2(-16, -111)
-
-[node name="CharacterBody2D5" parent="Boxen" instance=ExtResource("18_6geoh")]
-position = Vector2(287, 81)
+[node name="RigidKiste" parent="Boxen" instance=ExtResource("14_rysoc")]
+position = Vector2(-60, 137)
 
 [node name="CheckPoint" parent="." instance=ExtResource("18_ssvqc")]
 position = Vector2(388, 81)
@@ -342,3 +337,13 @@ scale = Vector2(1.99021, 0.387951)
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("8_3kcqr")]
 position = Vector2(469, -202)
+
+[node name="RigidKiste" parent="." instance=ExtResource("14_rysoc")]
+position = Vector2(78, -14)
+
+[node name="RigidKiste2" parent="." instance=ExtResource("14_rysoc")]
+position = Vector2(67, -126)
+
+[node name="RigidKiste3" parent="." instance=ExtResource("14_rysoc")]
+position = Vector2(675, 8)
+mass = 10.827

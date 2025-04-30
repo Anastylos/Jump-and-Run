@@ -1,13 +1,13 @@
 extends CharacterBody2D
 
-signal health_geaendert(neue_health)
+signal health_changed(new_health)
 var health = 5
-var speed = 250.0
-const JUMP_VELOCITY = -400.0
+var speed = 150.0
+const JUMP_VELOCITY = -300.0
 var totem_status = "none"
 var direction
 
-var arrow = load("res://scenes/arrow.tscn")
+var arrow = load("res://scenes/Arrow_CharacterBody2D.tscn")
 var input_enabled = true
 # Der normale Zeitablauf
 const NORMAL_TIME_SCALE = 1.0
@@ -27,7 +27,7 @@ func _physics_process(delta):
 	if health == 0:
 		global_position = checkPoint_Pos
 		health = 5
-		emit_signal("health_geaendert", "heal", health)
+		emit_signal("health_changed", "heal", health)
 	
 	if input_enabled:
 		if shoot_anim.get_rotation_degrees() >= -90 and shoot_anim.get_rotation_degrees() <= 90:
@@ -91,6 +91,14 @@ func _physics_process(delta):
 		elif direction < 0:
 			animated_sprite_2d.scale.x = -1
 			rundust_anim.scale.x = -1
+			
+	# 4) Bewegung ausführen und Kollision abfragen
+	var col = move_and_collide(velocity * delta)
+	if col and col.get_collider() is RigidBody2D:
+		var box = col.get_collider() as RigidBody2D
+		# Schiebe-Kraft in Bewegungsrichtung, Multiplikator je nach Geschwindigkeit:
+		var push_dir = Vector2(sign(velocity.x), 0)
+		box.apply_central_impulse(push_dir * speed)
 	
 	move_and_slide()
 	
@@ -113,7 +121,7 @@ func _on_shoot_anim_animation_finished():
 
 
 func _on_dash_timer_timeout():
-	speed = 250
+	speed = 150
 	
 func set_totemStatus(status):
 	totem_status = status
@@ -121,12 +129,13 @@ func set_totemStatus(status):
 func get_totem_status():
 	return totem_status
 	
-func schaden_nehmen(damage: float ):
+func take_damage(damage: float ):
+	print("damage im player ausgeführt")
 	health -= damage
 	health = clamp(health, 0, 5)
-	emit_signal("health_geaendert", "damage" , health)
+	emit_signal("health_changed", "damage" , health)
 	
 func heal(healAmount: float):
 	health += 1
 	health = clamp(health, 0, 5)
-	emit_signal("health_geaendert", "heal" , health)
+	emit_signal("health_changed", "heal" , health)

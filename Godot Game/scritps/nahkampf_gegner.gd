@@ -5,13 +5,15 @@ enum State { PATROL, ATTACK, STUNNED }
 var state: State = State.PATROL
 var hp: int = 100
 const SPEED: float = 30.0
-const ATTACK_SPEED: float = 60.0
+const ATTACK_SPEED: float = 200.0
 var direction: int = 1
 var gravity: float
 
 var player_in_range: bool = false
 var target: Node = null
 var damage_dealt_this_attack: bool = false
+var player_in_hitbox: Node = null
+
 
 @onready var floor_checker: RayCast2D = $floor_checker
 @onready var detector: Area2D = $Player_DEC_Area
@@ -27,6 +29,7 @@ func _ready() -> void:
 	anim.animation_finished.connect(_on_enemy_AnimatedSprite2D_animation_finished)
 	effect_timer.timeout.connect(_on_effect_timeout)
 	attack_hitbox.body_entered.connect(_on_attack_hitbox_body_entered)
+	attack_hitbox.body_exited.connect(_on_attack_hitbox_body_exited)
 
 	anim.flip_h = direction < 0
 	floor_checker.position.x = collision_shape_2d.shape.size.x * direction
@@ -80,10 +83,6 @@ func _on_player_entered(body: Node) -> void:
 	if body.is_in_group("player"):
 		player_in_range = true
 		target = body
-		if state != State.ATTACK:
-			state = State.ATTACK
-			anim.play("atack")
-			damage_dealt_this_attack = false
 
 func _on_player_exited(body: Node) -> void:
 	if body.is_in_group("player"):
@@ -94,14 +93,27 @@ func _on_player_exited(body: Node) -> void:
 
 func _on_enemy_AnimatedSprite2D_animation_finished() -> void:
 	if anim.animation == "atack":
-		attack_hitbox.monitoring = false
-		state = State.PATROL
+		if player_in_hitbox and not damage_dealt_this_attack:
+			player_in_hitbox.take_damage(0.5)
+			damage_dealt_this_attack = true	
 		anim.play("Idle")
-
+		move_and_slide()
+		
 func _on_attack_hitbox_body_entered(body: Node) -> void:
+	player_in_hitbox = body
+	if state != State.ATTACK:
+			state = State.ATTACK
+			anim.play("atack")
+			damage_dealt_this_attack = false
 	if body.is_in_group("player") and not damage_dealt_this_attack and anim.animation == "atack":
-		body.schaden_nehmen(0.5)
+		body.take_damage(0.5)
 		damage_dealt_this_attack = true
+		
+func _on_attack_hitbox_body_exited(body: Node) -> void:
+	player_in_hitbox = null
+	if state == State.ATTACK:
+		state = State.PATROL
+		
 
 func _on_area_2d_body_entered(body: Node) -> void:
 	if body.is_in_group("projectile"):
