@@ -1,4 +1,6 @@
+class_name Player
 extends CharacterBody2D
+
 
 signal health_changed(new_health)
 var health = 5
@@ -135,6 +137,6 @@ func take_damage(damage: float ):
 	emit_signal("health_changed", "damage" , health)
 	
 func heal(healAmount: float):
-	health += 1
+	health += healAmount
 	health = clamp(health, 0, 5)
 	emit_signal("health_changed", "heal" , health)

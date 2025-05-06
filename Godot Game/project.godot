@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Jump n Run"
-run/main_scene="res://hauptmenü.tscn"
+run/main_scene="res://scenes/hauptmenü.tscn"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -25,6 +25,10 @@ window/stretch/mode="viewport"
 
 version_control/plugin_name="GitPlugin"
 version_control/autoload_on_startup=true
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/gut/plugin.cfg")
 
 [global_group]
 

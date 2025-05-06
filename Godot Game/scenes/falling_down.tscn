@@ -1,7 +1,32 @@
 [gd_scene load_steps=5 format=3 uid="uid://dj1002rdgnyr0"]
 
 [ext_resource type="Texture2D" uid="uid://bcvp1sws6irqq" path="res://assests/brackeys_platformer_assets/sprites/platforms.png" id="1_u4ech"]
-[ext_resource type="Script" uid="uid://s4kdpwupawfb" path="res://falling_platform.gd" id="1_xxnm7"]
+
+[sub_resource type="GDScript" id="GDScript_t8ihq"]
+script/source = "extends CharacterBody2D
+
+@onready var timer_drop_platform = $TimerDropPlatform
+@onready var player_colision_detection = $player_enter/CollisionShape2D
+
+@onready var is_falling = false;
+
+func _physics_process(delta):
+
+	# Add the gravity.
+	if is_falling:
+		velocity += get_gravity() * delta * 0.4
+	move_and_collide(velocity * delta * 0.4)
+
+
+func _on_timer_drop_platform_timeout():
+	is_falling = true
+
+
+func _on_player_enter_body_entered(body):
+	if body.is_in_group(\"player\"):
+		print(\"palyer on palt\")
+		timer_drop_platform.start()
+"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m8vnt"]
 size = Vector2(32, 8)
@@ -10,7 +35,7 @@ size = Vector2(32, 8)
 size = Vector2(30.0615, 10.9485)
 
 [node name="Falling_down" type="CharacterBody2D"]
-script = ExtResource("1_xxnm7")
+script = SubResource("GDScript_t8ihq")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_u4ech")
