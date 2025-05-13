@@ -1,4 +1,4 @@
-[gd_scene load_steps=64 format=3 uid="uid://dfayifn15m681"]
+[gd_scene load_steps=63 format=3 uid="uid://dfayifn15m681"]
 
 [ext_resource type="Script" uid="uid://dhqpq3vq42o1j" path="res://scritps/player.gd" id="1_27tse"]
 [ext_resource type="Texture2D" uid="uid://0cibdvijofxb" path="res://assests/tiny hero/2/Idle.png" id="1_neiha"]
@@ -10,7 +10,6 @@
 [ext_resource type="Texture2D" uid="uid://5lich53b2dv3" path="res://assests/tiny hero/2/Run.png" id="3_lmhut"]
 [ext_resource type="Texture2D" uid="uid://flhmba0lmcix" path="res://assests/tiny hero/2/Walk.png" id="3_wydyc"]
 [ext_resource type="Texture2D" uid="uid://crd2cjh5atrd0" path="res://assests/tiny hero/2/Walk_Run_Push_Dust_6.png" id="9_ejxnl"]
-[ext_resource type="PackedScene" uid="uid://yslu87mlaavi" path="res://scenes/Bugreport Button.tscn" id="10_d2wvv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3l2ph"]
 atlas = ExtResource("2_8m8l3")
@@ -465,14 +464,6 @@ limit_smoothed = true
 
 [node name="HealthBar" parent="CanvasLayer" node_paths=PackedStringArray("spieler") instance=ExtResource("2_y4r1p")]
 spieler = NodePath("../..")
-
-[node name="BugreportButton" parent="CanvasLayer" instance=ExtResource("10_d2wvv")]
-z_index = 3
-offset_left = -18.0
-offset_top = -60.0
-offset_right = 982.0
-offset_bottom = 940.0
-scale = Vector2(0.0347398, 0.0307598)
 
 [connection signal="animation_finished" from="shootAnim" to="." method="_on_shoot_anim_animation_finished"]
 [connection signal="timeout" from="dashDuration" to="." method="_on_dash_timer_timeout"]

@@ -1,0 +1,5 @@
+[gd_resource type="Theme" format=3 uid="uid://dktpkhied7t0h"]
+
+[resource]
+Button/colors/icon_focus_color = Color(1, 0.164706, 1, 1)
+Button/colors/icon_normal_color = Color(1, 1, 0.188235, 1)
