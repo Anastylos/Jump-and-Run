@@ -1,0 +1,192 @@
+[gd_scene load_steps=20 format=4 uid="uid://deqs0ca3i41eb"]
+
+[ext_resource type="PackedScene" uid="uid://cmh0x4bf2dbff" path="res://scenes/WorldMapScene.tscn" id="1_17a3d"]
+[ext_resource type="PackedScene" uid="uid://dfayifn15m681" path="res://scenes/player.tscn" id="2_o3tor"]
+[ext_resource type="Texture2D" uid="uid://jftvlo51fb5r" path="res://assests/nature-backgrounds-pixel-art/nature_1/8.png" id="3_2o7ru"]
+[ext_resource type="PackedScene" uid="uid://b8pcy0fjk51wb" path="res://scenes/Betatest_Umfrage Button.tscn" id="4_e2htm"]
+[ext_resource type="Theme" uid="uid://dktpkhied7t0h" path="res://assests/buttons text pack/standard_Button_theme.tres" id="5_g22i2"]
+[ext_resource type="TileSet" uid="uid://ds0uihgbfxlmd" path="res://scenes/worldTileSet.tres" id="6_o3tor"]
+[ext_resource type="PackedScene" uid="uid://chyfwbm5ospvh" path="res://scenes/rigid_kiste.tscn" id="7_2o7ru"]
+[ext_resource type="PackedScene" uid="uid://bypqyqj801t3t" path="res://scenes/FireTotem.tscn" id="8_e2htm"]
+[ext_resource type="PackedScene" uid="uid://cie0w42tjyv08" path="res://scenes/kiste.tscn" id="9_g22i2"]
+[ext_resource type="PackedScene" uid="uid://chaos83omdewl" path="res://scenes/bounce_block.tscn" id="10_ufhwr"]
+[ext_resource type="PackedScene" uid="uid://ddjmnr2qqkfkc" path="res://scenes/goal.tscn" id="11_fymqg"]
+[ext_resource type="PackedScene" uid="uid://rummwvk5lwrs" path="res://scenes/CheckPoint.tscn" id="12_5imtc"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ug8fe"]
+distance = 10.0
+
+[sub_resource type="Animation" id="Animation_usshu"]
+resource_name = "Platform"
+length = 2.5
+loop_mode = 2
+
+[sub_resource type="Animation" id="Animation_ti38u"]
+length = 0.001
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_taifr"]
+_data = {
+&"Platform": SubResource("Animation_usshu"),
+&"RESET": SubResource("Animation_ti38u")
+}
+
+[sub_resource type="Animation" id="Animation_r48hl"]
+resource_name = "Platform2"
+length = 3.5
+loop_mode = 2
+
+[sub_resource type="Animation" id="Animation_jru5t"]
+length = 0.001
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_r3nsh"]
+_data = {
+&"Platform2": SubResource("Animation_r48hl"),
+&"RESET": SubResource("Animation_jru5t")
+}
+
+[node name="Level1_Christoph_Node2D" type="Node2D"]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAAAAAAAAQAAAAEAAAAAAAEAAQAAAAEAAAAAAAIAAQAAAAEAAAAAAAMAAQABAAEAAAAAAAQAAQABAAAAAAAAAAUAAQABAAAAAAAAAAYAAQAAAAEAAAAAAAcAAQAAAAEAAAAAAAgAAQAAAAEAAAAAAAkAAQAAAAEAAAABAAkAAQAAAAEAAAABAAgAAQABAAEAAAABAAcAAQABAAEAAAABAAYAAQAAAAEAAAABAAUAAQAAAAEAAAABAAQAAQAAAAEAAAABAAMAAQAAAAEAAAABAAIAAQAAAAEAAAABAAEAAQABAAEAAAABAAAAAQAAAAEAAAACAAAAAQAAAAEAAAACAAEAAQAAAAEAAAACAAIAAQABAAAAAAACAAMAAQAAAAEAAAACAAQAAQABAAEAAAACAAUAAQAAAAEAAAACAAYAAQABAAAAAAACAAcAAQAAAAEAAAACAAgAAQAAAAEAAAACAAkAAQAAAAEAAAAAAP//AQAAAAEAAAAAAP7/AQAAAAEAAAAAAP3/AQAAAAAAAAABAP//AQAAAAAAAAACAP//AQAAAAAAAAD6/wcAAQABAAAAAAD6/wYAAQAAAAEAAAD6/wUAAQABAAEAAAD6/wQAAQAAAAEAAAD5/wQAAQAAAAEAAAD5/wUAAQABAAEAAAD5/wYAAQABAAEAAAD5/wcAAQAAAAEAAAD5/wMAAQAAAAAAAAD6/wMAAQAAAAAAAAAAAPr/AQAAAAEAAAAAAPn/AQAAAAEAAAAAAPj/AQABAAEAAAABAPn/AQABAAEAAAABAPj/AQAAAAEAAAAAAPf/AQAAAAAAAAABAPb/AQAAAAAAAAABAPf/AQAAAAEAAAADAAYAAQAEAAkAAAAEAAYAAQAEAAkAAAAFAAYAAQAEAAkAAAAGAAYAAQAEAAkAAAAHAAYAAQAEAAkAAAAIAAYAAQAEAAkAAAADAAcAAQAEAAoAAAADAAgAAQAEAAoAAAADAAkAAQAEAAoAAAAEAAkAAQAEAAoAAAAFAAkAAQAEAAoAAAAGAAkAAQAEAAoAAAAHAAkAAQAEAAoAAAAIAAkAAQAEAAoAAAAIAAgAAQAEAAoAAAAIAAcAAQAEAAoAAAAHAAcAAQAEAAoAAAAGAAcAAQAEAAoAAAAFAAcAAQAEAAoAAAAEAAcAAQAEAAoAAAAEAAgAAQAEAAoAAAAFAAgAAQAEAAoAAAAGAAgAAQAEAAoAAAAHAAgAAQAEAAoAAAAJAAMAAQAAAAEAAAAJAAQAAQAAAAEAAAAJAAUAAQAAAAEAAAAKAAUAAQAAAAEAAAAKAAQAAQABAAAAAAAKAAMAAQAAAAEAAAAJAAYAAQAAAAEAAAAJAAcAAQABAAEAAAAKAAcAAQAAAAEAAAAKAAYAAQABAAEAAAAJAAgAAQABAAAAAAAKAAgAAQABAAAAAAAKAAkAAQAAAAEAAAAJAAkAAQAAAAEAAAAJAAIAAQAAAAAAAAAKAAIAAQAAAAAAAAAIAPr/AQAAAAEAAAAIAPv/AQAAAAEAAAAPAP7/AQABAAEAAAAPAP//AQAAAAEAAAAPAAAAAQAAAAEAAAAPAAEAAQAAAAEAAAAPAAIAAQAAAAEAAAAPAAMAAQABAAAAAAAQAAMAAQAAAAEAAAAQAAIAAQAAAAEAAAAQAAEAAQAAAAEAAAAQAAAAAQABAAEAAAAQAP//AQAAAAEAAAAQAP7/AQABAAAAAAAQAP3/AQAAAAEAAAAQAPz/AQAAAAEAAAAQAPv/AQAAAAEAAAAQAPr/AQABAAEAAAAQAPn/AQAAAAEAAAAPAPn/AQAAAAEAAAAPAPr/AQAAAAEAAAAPAPv/AQAAAAEAAAAPAPz/AQABAAEAAAAPAP3/AQAAAAEAAAAPAAQAAQAAAAEAAAAPAAUAAQAAAAEAAAAPAAYAAQABAAAAAAAPAAcAAQAAAAEAAAAPAAgAAQAAAAEAAAAPAAkAAQAAAAEAAAAQAAQAAQAAAAEAAAAQAAUAAQABAAAAAAAQAAYAAQAAAAEAAAAQAAcAAQAAAAEAAAAQAAgAAQAAAAEAAAAQAAkAAQAAAAEAAAALAAYAAQAEAAkAAAAMAAYAAQAEAAkAAAANAAYAAQAEAAkAAAAOAAYAAQAEAAkAAAALAAcAAQAEAAoAAAAMAAcAAQAEAAoAAAANAAcAAQAEAAoAAAAOAAcAAQAEAAoAAAAOAAgAAQAEAAoAAAAOAAkAAQAEAAoAAAANAAkAAQAEAAoAAAAMAAkAAQAEAAoAAAALAAkAAQAEAAoAAAALAAgAAQAEAAoAAAAMAAgAAQAEAAoAAAANAAgAAQAEAAoAAAACAPn/AQAAAAAAAAADAPn/AQAAAAAAAAAEAPn/AQAAAAAAAAAFAPn/AQAAAAAAAAAGAPn/AQAAAAAAAAAHAPn/AQAAAAAAAAAIAPn/AQAAAAAAAAAJAPv/AQAAAAAAAAAKAPv/AQAAAAAAAAALAPv/AQAAAAAAAAD7//f/AQABAAAAAAD7//b/AQABAAAAAAD7//j/AQABAAAAAAD7//n/AQABAAAAAAD7//r/AQABAAAAAAD6//r/AQABAAAAAAD6//n/AQABAAAAAAD6//j/AQABAAAAAAD6//f/AQABAAAAAAD6//b/AQABAAAAAAD7//P/AQABAAAAAAD6//P/AQABAAAAAAD6//L/AQAAAAAAAAD7//L/AQAAAAAAAAD5//b/AQAAAAEAAAD4//b/AQAAAAEAAAD3//b/AQAAAAEAAAD3//X/AQAAAAEAAAD3//T/AQAAAAAAAAAOAPP/AQAAAAAAAAAPAPP/AQAAAAAAAAAPAPT/AQAAAAEAAAAQAPT/AQAAAAEAAAAQAPP/AQAAAAAAAAAQAPX/AQAAAAEAAAAQAPb/AQAAAAEAAAAQAPf/AQAAAAEAAAAQAPj/AQAAAAEAAAAFAPT/AQAAAAAAAAAGAPT/AQAAAAAAAAAHAPT/AQAAAAEAAAAEAPT/AQAAAAAAAAAEAPL/AQAAAAEAAAAEAPH/AQAAAAEAAAAEAPD/AQAAAAAAAAADAPD/AQAAAAAAAAACAPD/AQAAAAAAAAABAPD/AQAAAAAAAAAAAPD/AQAAAAAAAAD5//H/AQAAAAEAAAD5//D/AQAAAAEAAAD5/+//AQAAAAEAAAD5/+7/AQAAAAEAAAD5/+3/AQAAAAAAAAD6/+3/AQAAAAAAAAD7/+3/AQAAAAAAAAD8/+3/AQAAAAAAAAAIAPT/AQAAAAAAAAAJAPP/AQAAAAAAAAAFAO//AQAAAAAAAAAGAO//AQAAAAAAAAAHAO//AQAAAAAAAAAIAO//AQAAAAAAAAALAPD/AQAAAAAAAAALAOv/AQAGAAEAAAAJAO//AQAAAAAAAAAKAO//AQAAAAAAAAAKAPP/AQAAAAAAAAALAPP/AQAAAAAAAAAMAPP/AQAAAAAAAAANAPP/AQAAAAAAAAD8//n/AQAAAAEAAAD9//n/AQAAAAEAAAD+//n/AQAAAAEAAAD///n/AQAAAAEAAAAPAO3/AQAAAAAAAAAQAO3/AQAAAAAAAAARAO3/AQAAAAAAAAASAO3/AQAAAAAAAAATAO3/AQAAAAAAAAAFAO7/AQAAAAEAAAAFAO3/AQAAAAEAAAAFAOz/AQAAAAEAAAAFAOv/AQAAAAEAAAAFAOr/AQAAAAEAAAAGAO7/AQAGAAEAAAAGAO3/AQAGAAEAAAAGAOz/AQAGAAEAAAAGAOv/AQAGAAEAAAAGAOr/AQAGAAEAAAAFAOn/AQAAAAAAAAAGAOn/AQAAAAAAAAALAOr/AQAGAAEAAAALAOn/AQAGAAEAAAALAOj/AQAGAAEAAAALAOf/AQAGAAEAAAALAOb/AQAHAAEAAAAMAOb/AQAHAAEAAAAMAOf/AQAGAAEAAAAMAOj/AQAGAAEAAAAMAOn/AQAGAAEAAAAMAOr/AQAGAAEAAAAMAOv/AQAGAAEAAAAMAOz/AQAGAAEAAAALAOz/AQAGAAEAAAD5////AQAAAAEAAAD4////AQAAAAEAAAD3////AQAAAAEAAAD2////AQAAAAEAAAD1////AQAAAAEAAAD0////AQAAAAEAAADz////AQAAAAEAAADy////AQAAAAEAAADx////AQAAAAEAAADw////AQAAAAEAAAD6////AQAAAAEAAAD6//7/AQAAAAEAAAD6//3/AQAAAAEAAAD6//z/AQAAAAEAAAD6//v/AQAAAAEAAAANAOv/AQAAAAAAAAAOAOv/AQAAAAAAAAAOAOz/AQAAAAEAAAANAOz/AQAAAAEAAAASAPP/AQAAAAAAAAATAPP/AQAAAAAAAAAUAPP/AQAAAAAAAAAVAPP/AQAAAAAAAAAWAPP/AQAAAAAAAAAXAPP/AQAAAAEAAAAXAPL/AQAGAAEAAAAXAPD/AQAGAAEAAAAXAO//AQAGAAEAAAAXAO7/AQAGAAEAAAAXAO3/AQAGAAEAAAAXAOz/AQAGAAEAAAAXAOv/AQAGAAEAAAAXAOr/AQAGAAEAAAAXAOn/AQAGAAEAAAAXAOj/AQAAAAAAAAARAPP/AQAAAAAAAAAUAOz/AQAAAAAAAADx//b/AQAAAAAAAADw//b/AQAAAAAAAADv//b/AQAAAAAAAADu//b/AQAAAAAAAADu//f/AQAAAAEAAADy//b/AQAAAAEAAADy//X/AQAAAAAAAADz//X/AQAAAAEAAADz//T/AQAAAAAAAAD0//T/AQAAAAAAAAD1//T/AQAAAAEAAAD1//P/AQAAAAEAAAD1//L/AQAAAAEAAAD1//H/AQAAAAEAAAD1//D/AQAAAAEAAAD1/+//AQAAAAAAAAD2/+//AQAAAAEAAAD2/+7/AQAAAAAAAAD3/+7/AQAAAAEAAAD3/+3/AQAAAAEAAAD3/+z/AQAAAAEAAAD3/+v/AQAAAAAAAAD4/+v/AQAAAAAAAADv//H/AQAAAAEAAADw//H/AQAAAAEAAADw//D/AQAAAAEAAADw/+//AQAAAAEAAADw/+7/AQAAAAAAAADv/+7/AQAAAAAAAADv/+//AQAAAAEAAADv//D/AQAAAAEAAAA=")
+tile_set = ExtResource("6_o3tor")
+
+[node name="WorldScene" parent="." instance=ExtResource("1_17a3d")]
+position = Vector2(-4, 2)
+
+[node name="ControllGuide" type="Node" parent="."]
+
+[node name="Enemy" type="Node" parent="."]
+
+[node name="KillZones" type="Node" parent="."]
+
+[node name="Totems" type="Node" parent="."]
+
+[node name="MainPlayer" parent="." instance=ExtResource("2_o3tor")]
+unique_name_in_owner = true
+position = Vector2(-41, 139)
+
+[node name="FloorBordre" type="StaticBody2D" parent="."]
+position = Vector2(-20, 147)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FloorBordre"]
+position = Vector2(6, 21)
+shape = SubResource("WorldBoundaryShape2D_ug8fe")
+
+[node name="LeftBorder" type="StaticBody2D" parent="."]
+position = Vector2(-305, -1)
+rotation = 1.57079
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftBorder"]
+position = Vector2(6, 21)
+shape = SubResource("WorldBoundaryShape2D_ug8fe")
+
+[node name="RigthBorder" type="StaticBody2D" parent="."]
+position = Vector2(2021, 162)
+rotation = -1.5708
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigthBorder"]
+shape = SubResource("WorldBoundaryShape2D_ug8fe")
+
+[node name="AnimationPlatform" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_taifr")
+}
+autoplay = "Platform"
+
+[node name="AnimationPlatformr2" type="AnimationPlayer" parent="."]
+root_node = NodePath("../AnimationPlatform")
+libraries = {
+&"": SubResource("AnimationLibrary_r3nsh")
+}
+autoplay = "Platform2"
+
+[node name="ForeGround" type="Node" parent="."]
+
+[node name="11" type="Sprite2D" parent="ForeGround"]
+z_index = 1
+position = Vector2(5, 55)
+texture = ExtResource("3_2o7ru")
+
+[node name="12" type="Sprite2D" parent="ForeGround"]
+z_index = 1
+position = Vector2(581, 55)
+texture = ExtResource("3_2o7ru")
+
+[node name="13" type="Sprite2D" parent="ForeGround"]
+z_index = 1
+position = Vector2(1157, 55)
+texture = ExtResource("3_2o7ru")
+
+[node name="14" type="Sprite2D" parent="ForeGround"]
+z_index = 1
+position = Vector2(1733, 55)
+texture = ExtResource("3_2o7ru")
+
+[node name="TutorialText" type="Node" parent="."]
+
+[node name="Boxen" type="Node2D" parent="."]
+position = Vector2(79, -13)
+
+[node name="Betatest_Button2" parent="." instance=ExtResource("4_e2htm")]
+offset_left = 1892.0
+offset_top = -62.0
+offset_right = 1956.0
+offset_bottom = 2.0
+scale = Vector2(0.804916, 0.820993)
+theme = ExtResource("5_g22i2")
+
+[node name="RigidKiste" parent="." instance=ExtResource("7_2o7ru")]
+position = Vector2(-87, -167)
+
+[node name="RigidKiste2" parent="." instance=ExtResource("7_2o7ru")]
+position = Vector2(-73, -184)
+
+[node name="RigidKiste3" parent="." instance=ExtResource("7_2o7ru")]
+position = Vector2(-73, -167)
+
+[node name="RigidKiste4" parent="." instance=ExtResource("7_2o7ru")]
+position = Vector2(-90, -184)
+
+[node name="RigidKiste5" parent="." instance=ExtResource("7_2o7ru")]
+position = Vector2(-104, -167)
+
+[node name="RigidKiste6" parent="." instance=ExtResource("7_2o7ru")]
+position = Vector2(-119, -168)
+
+[node name="RigidKiste7" parent="." instance=ExtResource("7_2o7ru")]
+position = Vector2(-105, -183)
+
+[node name="RigidKiste8" parent="." instance=ExtResource("7_2o7ru")]
+position = Vector2(-121, -184)
+
+[node name="FireTotem" parent="." instance=ExtResource("8_e2htm")]
+position = Vector2(111, -209)
+
+[node name="Kiste" parent="." instance=ExtResource("9_g22i2")]
+position = Vector2(185, -261)
+
+[node name="Kiste2" parent="." instance=ExtResource("9_g22i2")]
+position = Vector2(186, -278)
+
+[node name="leftBorder" parent="." instance=ExtResource("10_ufhwr")]
+light_mask = 4
+position = Vector2(104, -270)
+scale = Vector2(2.5, 0.5)
+
+[node name="leftBorder" parent="leftBorder" instance=ExtResource("10_ufhwr")]
+light_mask = 4
+position = Vector2(-8.50071, -527.96)
+scale = Vector2(1.005, 2)
+
+[node name="leftBorder2" parent="." instance=ExtResource("10_ufhwr")]
+position = Vector2(192, -304)
+scale = Vector2(3.5, 1)
+
+[node name="Goal" parent="." instance=ExtResource("11_fymqg")]
+position = Vector2(-271, -132)
+
+[node name="CheckPoint" parent="." instance=ExtResource("12_5imtc")]
+position = Vector2(159, -209)
+
+[node name="CheckPoint2" parent="." instance=ExtResource("12_5imtc")]
+position = Vector2(160, 32)
