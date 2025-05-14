@@ -379,8 +379,9 @@ offset_right = -211.0
 offset_bottom = -83.0
 
 [node name="Betatest_Button2" parent="." instance=ExtResource("21_5newe")]
-offset_left = 1883.0
-offset_top = -66.0
-offset_right = 1947.0
-offset_bottom = -2.0
+offset_left = 1892.0
+offset_top = -62.0
+offset_right = 1956.0
+offset_bottom = 2.0
+scale = Vector2(0.804916, 0.820993)
 theme = ExtResource("22_37s47")

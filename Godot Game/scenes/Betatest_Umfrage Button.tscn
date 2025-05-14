@@ -1,8 +1,21 @@
-[gd_scene load_steps=3 format=3 uid="uid://b8pcy0fjk51wb"]
+[gd_scene load_steps=4 format=3 uid="uid://b8pcy0fjk51wb"]
 
 [ext_resource type="Theme" uid="uid://dktpkhied7t0h" path="res://assests/buttons text pack/standard_Button_theme.tres" id="1_j5srd"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_v5o42"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j5srd"]
+bg_color = Color(0, 0, 0, 0.341176)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
 
 [node name="Betatest_Button" type="Control"]
 material = SubResource("CanvasItemMaterial_v5o42")
@@ -15,9 +28,18 @@ offset_left = -8.0
 offset_bottom = 8.0
 grow_horizontal = 0
 
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 0
+offset_left = -11.0
+offset_right = 29.0
+offset_bottom = 40.0
+scale = Vector2(1.87255, 0.672367)
+theme_override_styles/panel = SubResource("StyleBoxFlat_j5srd")
+
 [node name="TextureButton" type="TextureButton" parent="."]
 layout_mode = 0
-offset_right = 40.0
+offset_left = -5.0
+offset_right = 35.0
 offset_bottom = 40.0
 
 [node name="Betatest_LinkButton" type="LinkButton" parent="TextureButton"]
