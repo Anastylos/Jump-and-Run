@@ -226,7 +226,7 @@ tile_set = ExtResource("8_qpi0n")
 
 [node name="MainPlayer" parent="." instance=ExtResource("1_65wfv")]
 unique_name_in_owner = true
-position = Vector2(1183, -77)
+position = Vector2(-79, 97)
 
 [node name="FloorBordre" type="StaticBody2D" parent="."]
 position = Vector2(-20, 147)
