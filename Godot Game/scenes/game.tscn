@@ -226,7 +226,7 @@ tile_set = ExtResource("8_qpi0n")
 
 [node name="MainPlayer" parent="." instance=ExtResource("1_65wfv")]
 unique_name_in_owner = true
-position = Vector2(-106, 122)
+position = Vector2(1183, -77)
 
 [node name="FloorBordre" type="StaticBody2D" parent="."]
 position = Vector2(-20, 147)
@@ -369,7 +369,7 @@ position = Vector2(1276, -155)
 scale = Vector2(0.548359, 2.91798)
 
 [node name="Druckplatte_Note2D" parent="." node_paths=PackedStringArray("gate") instance=ExtResource("18_264po")]
-position = Vector2(1229, -52)
+position = Vector2(1227, -48)
 gate = NodePath("../Gate")
 
 [node name="BugreportButton" parent="." instance=ExtResource("20_5newe")]

@@ -79,6 +79,8 @@ func _process(delta):
 			# Bouncy-Flächen weiterhin wie gehabt behandeln
 			elif body.is_in_group("Bouncy"):
 				do_bounce(collision)
+			elif body.is_in_group("Gate"):
+				queue_free()
 			# Sonstige Flächen -> Pfeil stecken
 			elif should_stick_to(body):
 				stick_to_body(body)
