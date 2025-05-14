@@ -1,0 +1,57 @@
+[gd_scene load_steps=4 format=3 uid="uid://buufs6jrapvhw"]
+
+[ext_resource type="Texture2D" uid="uid://b8865idw0j4ue" path="res://assests/InstuctionPicture-removebg-preview.png" id="1_1cr32"]
+[ext_resource type="Texture2D" uid="uid://ddstk6xxi0ybg" path="res://assests/left-click-icon.png" id="2_1d42k"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1cr32"]
+bg_color = Color(0.446777, 0.446777, 0.446777, 0.341176)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+corner_radius_top_left = 1
+corner_radius_top_right = 1
+corner_radius_bottom_right = 1
+corner_radius_bottom_left = 1
+
+[node name="ControllGuide" type="Node2D"]
+
+[node name="Panel" type="Panel" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(3.43492, 1.71849)
+theme_override_styles/panel = SubResource("StyleBoxFlat_1cr32")
+
+[node name="InstuctionPicture-removebg-preview" type="Sprite2D" parent="Panel"]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+z_index = 5
+texture_filter = 1
+position = Vector2(14.8475, 31.423)
+scale = Vector2(0.0545254, 0.117985)
+texture = ExtResource("1_1cr32")
+
+[node name="Left-click-icon" type="Sprite2D" parent="Panel"]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+position = Vector2(34.0619, 26.1858)
+scale = Vector2(0.0144864, 0.0277986)
+texture = ExtResource("2_1d42k")
+
+[node name="ShootText" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 3.25395
+anchor_top = -0.574726
+anchor_right = 3.25395
+anchor_bottom = -0.574726
+offset_left = -99.2985
+offset_top = 34.6272
+offset_right = -46.2985
+offset_bottom = 57.6272
+scale = Vector2(0.14613, 0.276071)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Shoot"
+metadata/_edit_use_anchors_ = true
