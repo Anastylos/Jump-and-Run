@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cs5jouq38vr2f"]
+
+[ext_resource type="TileSet" uid="uid://4luv5aqsefls" path="res://scenes/BounceBlocTileSet.tres" id="1_mc58w"]
+
+[node name="BounceBlockLayer" type="TileMapLayer" groups=["Bouncy"]]
+tile_set = ExtResource("1_mc58w")
