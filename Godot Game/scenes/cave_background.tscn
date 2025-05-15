@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://b4tgthj68msx4"]
+
+[ext_resource type="Texture2D" uid="uid://dtinfntvfpc8t" path="res://assests/caveBackground/cave_seamless.png" id="1_2kdn1"]
+
+[node name="CaveBackground" type="Node2D"]
+z_index = -3
+
+[node name="CaveSeamless" type="Sprite2D" parent="."]
+texture = ExtResource("1_2kdn1")
+offset = Vector2(512, 512)
+
+[node name="CaveSeamless2" type="Sprite2D" parent="."]
+position = Vector2(1024, 0)
+texture = ExtResource("1_2kdn1")
+offset = Vector2(512, 512)
+
+[node name="CaveSeamless3" type="Sprite2D" parent="."]
+position = Vector2(2048, 0)
+texture = ExtResource("1_2kdn1")
+offset = Vector2(512, 512)
