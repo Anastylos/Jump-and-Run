@@ -1,16 +1,60 @@
-[gd_scene load_steps=3 format=3 uid="uid://chyfwbm5ospvh"]
+[gd_scene load_steps=11 format=3 uid="uid://chyfwbm5ospvh"]
 
+[ext_resource type="Script" uid="uid://ce2udfifeubom" path="res://scritps/kiste.gd" id="1_410qe"]
 [ext_resource type="TileSet" uid="uid://ds0uihgbfxlmd" path="res://scenes/worldTileSet.tres" id="1_kra75"]
+[ext_resource type="Texture2D" uid="uid://0lm2j5bf6nhu" path="res://assests/arrow animations/Fire_Spreadsheet.png" id="3_h3yno"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k2p8i"]
 size = Vector2(16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fcxpa"]
+atlas = ExtResource("3_h3yno")
+region = Rect2(0, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v700a"]
+atlas = ExtResource("3_h3yno")
+region = Rect2(512, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a55jt"]
+atlas = ExtResource("3_h3yno")
+region = Rect2(0, 512, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_700w8"]
+atlas = ExtResource("3_h3yno")
+region = Rect2(512, 512, 512, 512)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cfxe0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fcxpa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v700a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a55jt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_700w8")
+}],
+"loop": true,
+"name": &"Burning",
+"speed": 8.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_unwpp"]
+size = Vector2(18, 18)
 
 [node name="RigidKiste" type="RigidBody2D"]
 collision_layer = 4
 collision_mask = 7
 mass = 4.252
 gravity_scale = 1.5
+contact_monitor = true
+max_contacts_reported = 4
 linear_damp = 4.0
+script = ExtResource("1_410qe")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 position = Vector2(-8, 8)
@@ -19,3 +63,25 @@ tile_set = ExtResource("1_kra75")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_k2p8i")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(0, -11)
+scale = Vector2(0.0819765, 0.0737772)
+sprite_frames = SubResource("SpriteFrames_cfxe0")
+animation = &"Burning"
+frame_progress = 0.581443
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_unwpp")
+
+[node name="DestroyTimer" type="Timer" parent="."]
+wait_time = 3.0
+
+[node name="SpreadTimer" type="Timer" parent="."]
+
+[connection signal="child_entered_tree" from="." to="." method="_on_child_entered_tree"]
+[connection signal="timeout" from="DestroyTimer" to="." method="_on_destroy_timer_timeout"]
+[connection signal="timeout" from="SpreadTimer" to="." method="_on_spread_timer_timeout"]

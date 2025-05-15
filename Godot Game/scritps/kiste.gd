@@ -1,24 +1,37 @@
-extends CharacterBody2D
+extends RigidBody2D
+class_name RigidKiste
 
-signal player_pushed(player_velocity)
-const SPEED = 300.0
-const JUMP_VELOCITY = -400.0
-const IMPACT_FORCE = 100.0  # Stärke des Impakts
-const DECELERATION = 4.25  # Dämpfungsfaktor (wie schnell er stoppt)
+@onready var is_burning = false
+@onready var can_spread = false
 
-var is_impacting = false  # Flag, um zu prüfen, ob ein Impact stattgefunden hat
+@onready var animated_sprite_2d = $AnimatedSprite2D
+@onready var destroyTimer = $DestroyTimer
+@onready var spread_timer = $SpreadTimer
 
-func _physics_process(delta: float) -> void:
-	# Add the gravity.
-	if not is_on_floor():
-		velocity += get_gravity() * delta
 
-	# Wenn der Charakter einen Impact hatte, langsamer werden
-	
-	velocity.x = lerp(velocity.x, 0.0, DECELERATION * delta)  # 0.0 ist jetzt ein float
-	# Wenn die Geschwindigkeit fast 0 erreicht, stoppe den Dämpfungsprozess
-	if abs(velocity.x) < 0.01:
-		velocity.x = 0
-		is_impacting = false  # Dämpfung abgeschlossen
+func _process(delta):
+	for body in get_colliding_bodies():
+		if body is RigidKiste:
+			if  !body.is_burning and is_burning and can_spread:
+				body.is_burning = true
+				body.start_burn_anim(body)
 
-	move_and_slide()
+func _on_child_entered_tree(node):
+	if node.is_in_group("projectile"):
+		if node.fire:
+			is_burning = true
+			start_burn_anim(self)
+			
+
+func start_burn_anim(body):
+	body.animated_sprite_2d.visible = true
+	body.animated_sprite_2d.play("Burning")
+	spread_timer.start()
+	destroyTimer.start()
+
+func _on_destroy_timer_timeout():
+	queue_free() # Replace with function body.
+
+
+func _on_spread_timer_timeout():
+	can_spread = true

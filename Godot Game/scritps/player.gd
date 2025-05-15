@@ -25,6 +25,9 @@ const SLOW_MOTION_SCALE = 0.3
 @onready var dash_timer = $dashDuration
 @onready var dash_cooldown = $dashCooldown
 
+func _ready():
+	Global.player = self
+
 func _physics_process(delta):
 	if health == 0:
 		global_position = checkPoint_Pos

@@ -20,7 +20,7 @@ var saved_velocity
 var last_direction : int
 
 @onready var timer: Timer = $Timer
-@onready var player = get_node("/root/Game/MainPlayer")
+@onready var player = Global.player
 
 @onready var fire_animated_sprite_2d = $Sprite2D/fire_AnimatedSprite2D
 @onready var ice_animated_sprite_2d_2 = $Sprite2D/ice_AnimatedSprite2D2
