@@ -65,19 +65,7 @@ func _process(delta):
 				var push_dir = Vector2(sign(velocity.x), 0)
 				box.apply_central_impulse(push_dir * PUSH_FORCE)
 			
-			# Box treffen -> wegschleudern
-			if body.is_in_group("moveByArrowBox"):
-				# Falls KinematicBody2D mit velocity-Property
-				if body.has_method("set_velocity"):
-					body.set_velocity(body.velocity + saved_velocity.normalized() * BOX_IMPACT_FORCE)
-				elif body.has("velocity"):
-					body.velocity += saved_velocity.normalized() * BOX_IMPACT_FORCE
-				# Arrow abprallen lassen
-				#body.is_impacting = true
-				remove_from_group("projectile")
-				stick_to_body(body)
-			# Bouncy-Flächen weiterhin wie gehabt behandeln
-			elif body.is_in_group("Bouncy"):
+			if body.is_in_group("Bouncy"):
 				do_bounce(collision)
 			elif body.is_in_group("Gate"):
 				queue_free()

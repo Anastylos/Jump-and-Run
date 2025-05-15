@@ -157,11 +157,10 @@ collision_mask = 7
 position = Vector2(0, -17)
 scale = Vector2(0.955358, 0.97025)
 collision_layer = 4
-collision_mask = 7
+collision_mask = 15
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D/Area2D"]
 position = Vector2(-9.67043e-07, 0)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_tkm0j")
 
 [node name="Button" type="MeshInstance2D" parent="StaticBody2D"]
