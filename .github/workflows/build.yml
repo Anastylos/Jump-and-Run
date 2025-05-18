@@ -1,28 +1,34 @@
-name: Godot CI/CD Build & Test & Export
+name: Build and Test Godot Game
 
 on:
   push:
-    branches:
-      - main
+    branches: [ main ]
   pull_request:
+    branches: [ main ]
 
 jobs:
-  build-test-export:
+  build-and-test:
     runs-on: ubuntu-latest
 
     steps:
     - name: Checkout repository
       uses: actions/checkout@v3
 
-    - name: Download Godot 4.4.1 Standard
+    - name: Download Godot 4.4.1 Headless
       run: |
-        curl -L -o godot.zip https://github.com/godotengine/godot-builds/releases/download/4.4.1-stable/Godot_v4.4.1-stable_linux.x86_64.zip
-        unzip -q godot.zip -d godot
-        chmod +x godot/Godot_v4.4.1-stable_linux.x86_64
+        wget https://github.com/godotengine/godot-builds/releases/download/4.4.1-stable/Godot_v4.4.1-stable_linux.x86_64.zip -O godot.zip
+        unzip godot.zip
+        chmod +x Godot_v4.4.1-stable_linux.x86_64
+        sudo mv Godot_v4.4.1-stable_linux.x86_64 /usr/local/bin/godot
+
+    - name: Run Godot (editor check)
+      run: |
+        godot --headless --path "Godot Game" --editor --quit
 
     - name: Run GUT Unit Tests
       run: |
-        godot/Godot_v4.4.1-stable_linux.x86_64 --headless --path "Godot Game" \
+        godot --headless --path "Godot Game" -s addons/gut/gut_cmdln.gd -d -gdir=res://tests/unit
+        godot --headless --path "Godot Game" \
           -s addons/gut/gut_cmdln.gd \
           -d \
           -gdir=res://tests/unit \
