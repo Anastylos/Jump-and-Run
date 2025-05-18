@@ -19,8 +19,10 @@ jobs:
 
     - name: Calculate GDScript Cyclomatic Complexity
       run: |
-        # alle .gd-Dateien im Projekt prüfen
-        gdradon cc "Godot Game"/"scripts"/*.gd
+        # ins Projektverzeichnis wechseln
+        cd "Godot Game"
+        # alle .gd in scritps
+        gdradon cc scritps
 
 
     - name: Download Godot 4.4.1 Headless
