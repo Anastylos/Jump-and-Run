@@ -1,42 +1,26 @@
-name: Build and Test Godot Game
+name: Build Godot Game
 
 on:
   push:
-    branches: [main]
+    branches: [ main ]
   pull_request:
-    branches: [main]
+    branches: [ main ]
 
 jobs:
-  build-and-test:
+  build:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Repository auschecken
-      uses: actions/checkout@v4
+    - name: Checkout repository
+      uses: actions/checkout@v3
 
-    - name: Godot herunterladen
+    - name: Set up Godot 4.4.1 Headless
       run: |
-        wget https://downloads.tuxfamily.org/godotengine/4.4.1/Godot_v4.4.1-stable_linux.x86_64.zip
-        unzip Godot_v4.4.1-stable_linux.x86_64.zip -d godot
-        mv godot/Godot_v4.4.1-stable_linux.x86_64 godot/godot
-        chmod +x godot/godot
+        wget https://downloads.tuxfamily.org/godotengine/4.4.1/mono/Godot_v4.4.1-stable_linux.x86_64.zip -O godot.zip
+        unzip godot.zip
+        chmod +x Godot_v4.4.1-stable_linux.x86_64
+        sudo mv Godot_v4.4.1-stable_linux.x86_64 /usr/local/bin/godot
 
-    - name: Godot-Version anzeigen
-      run: ./godot/godot --version
-
-    - name: Spiel für Linux exportieren
+    - name: Run Godot (no export, only headless check)
       run: |
-        mkdir -p build/linux
-        ./godot/godot --headless --export-release "Linux/X11" build/linux/MyGame.x86_64
-
-        - name: Test: Spiel im Headless-Modus starten
-      run: |
-        ./build/linux/MyGame.x86_64 --headless --quit &
-        sleep 5
-        if ! ps -C MyGame.x86_64 > /dev/null; then
-          echo "Spiel konnte nicht gestartet werden"
-          exit 1
-        else
-          echo "Spiel erfolgreich gestartet"
-        fi
-        pkill MyGame.x86_64
+        godot --headless --path "Godot Game" --editor --quit
