@@ -41,7 +41,7 @@ jobs:
 
     - name: Export Windows EXE
       run: |
-        godot/Godot_v4.4.1-stable_linux.x86_64 --headless --path "Godot Game" --export-release "Windows"
+        godot --headless --path "Godot Game" --export-release "Windows"
 
     - name: Upload Windows Build
       uses: actions/upload-artifact@v4
