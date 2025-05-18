@@ -20,9 +20,13 @@ jobs:
         unzip -q godot.zip -d godot
         chmod +x godot/Godot_v4.4.1-stable_linux.x86_64
 
-    - name: Run GUT tests
+    - name: Run GUT Unit Tests
       run: |
-        godot/Godot_v4.4.1-stable_linux.x86_64 --headless --path "Godot Game" --script "res://tests/unit/test_Unit_tests.gd"
+        godot/Godot_v4.4.1-stable_linux.x86_64 --headless --path "Godot Game" \
+          -s addons/gut/gut_cmdln.gd \
+          -d \
+          -gdir=res://tests/unit \
+          -gexit
 
     - name: Download export templates (Standard)
       run: |
