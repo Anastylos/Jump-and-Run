@@ -23,3 +23,11 @@ Die Spielerzufriedenheit ist ein elementarer Wert eines Spiels, wenn es keinen S
 ## Mindestens fünf Personen sollen an der Umfrage teilnehmen
 
 Eine zugeringe Teilnahme an der Umfrage macht diese unbrauchbar, da die Aussagekraft gering ist.
+
+
+# Metrik 5: Zyklomatische Komplexität
+## Die zyklomatische Komplexität jedes einzelnen Scripts soll maximal bei 10 liegen
+
+Die zyklomatische Komplexität ist ein Maß für die Anzahl der unabhängig voneinander ausführbaren Pfade in einem Programm. Sie gibt Aufschluss darüber, wie komplex ein Script in Bezug auf seine Verzweigungen und Kontrollstrukturen ist. Ein hoher Wert erschwert das Testen und Verstehen des Codes und erhöht die Fehleranfälligkeit.
+
+Ein Wert von maximal 10 stellt sicher, dass Scripte noch gut wartbar, testbar und verständlich bleiben.
