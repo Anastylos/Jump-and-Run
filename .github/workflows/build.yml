@@ -20,7 +20,7 @@ jobs:
     - name: Add gdtoolkit to PATH
       run: echo "$HOME/.local/bin" >> $GITHUB_PATH
 
-    - name: Run gdmetrics and store results
+    - name: Run gdmetrics and save result
       run: |
         mkdir -p Metriks
         gdmetrics "Godot Game/scripts" > Metriks/cyclomatic_complexity.txt
