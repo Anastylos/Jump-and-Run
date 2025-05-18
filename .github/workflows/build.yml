@@ -16,13 +16,15 @@ jobs:
 
     - name: Install GDScript Toolkit (gdtoolkit) globally
       run: |
-        python3 -m pip install --upgrade pip
-        pip3 install "gdtoolkit==4.*"
+        sudo apt-get update
+        sudo apt-get install -y python3-pip
+        sudo pip3 install --upgrade pip
+        sudo pip3 install "gdtoolkit==4.*"
 
     - name: Run gdmetrics and save results
       run: |
         mkdir -p Metriks
-        # 'gdmetrics' liegt jetzt in /usr/local/bin und ist im PATH
+        # gdmetrics ist jetzt in /usr/local/bin und im PATH verfügbar
         gdmetrics "Godot Game/scripts" > Metriks/cyclomatic_complexity.txt
 
     - name: Commit and push metrics
@@ -30,10 +32,11 @@ jobs:
         git config --global user.name "github-actions[bot]"
         git config --global user.email "github-actions[bot]@users.noreply.github.com"
         git add Metriks/cyclomatic_complexity.txt
-        git commit -m "Update cyclomatic complexity metrics [skip ci]" || echo "No changes"
+        git commit -m "Update cyclomatic complexity metrics [skip ci]" || echo "No changes to commit"
         git push origin main
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
 
     - name: Download Godot 4.4.1 Headless
       run: |
