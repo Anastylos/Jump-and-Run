@@ -27,5 +27,10 @@ jobs:
 
     - name: Run GUT Unit Tests
       run: |
-        godot --headless --path "Godot Game" -s addons/gut/gut_cmdln.gd -d -gdir=res://tests/unit
+        godot --headless --path "Godot Game" \
+          -s addons/gut/gut_cmdln.gd \
+          -d \
+          -gdir=res://tests/unit \
+          -gexit
+
 
