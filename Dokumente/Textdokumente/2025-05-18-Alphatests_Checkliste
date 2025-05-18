@@ -1,0 +1,37 @@
+## 🎮 SPIELMECHANIKEN
+- [ ] Funktioniert das Springen (inkl. Doppelsprünge)?
+- [ ] Funktioniert das Laufen/Bewegen des Spielers reibungslos?
+- [ ] Reagieren die Kollisionen mit Plattformen korrekt?
+- [ ] Funktioniert der Schussmechanismus mit Pfeilen?
+- [ ] Wird der Spieler bei Kollision mit Gegnern oder Fallen korrekt verletzt?
+- [ ] Kann der Spieler sterben und korrekt respawnen?
+- [ ] Wird das Hauptmenü und Pausenmenü korrekt angezeigt?
+- [ ] Sind Spielstände korrekt speicher- und ladbar?
+
+## ☠️ FALLEN & HINDERNISSE
+- [ ] Funktionieren fallende Plattformen korrekt?
+- [ ] Können Energiebarrieren deaktiviert werden und blockieren korrekt?
+
+## ⚡ POWER-UPS & RÄTSEL
+- [ ] Funktioniert das Gesundheitsherz (richtige Heilung, Platzierung)?
+- [ ] Wirkt der Effekt von „Doppelter Schaden“ korrekt für 10 Sekunden?
+- [ ] Macht „Unbesiegbarkeit“ den Spieler immun gegen alle Schäden?
+- [ ] Funktioniert das Seilzugrätsel (Plattformen bewegen sich logisch)?
+- [ ] Können Holzkisten korrekt geschoben, zerstört oder verwendet werden?
+- [ ] Löst die Druckplatte korrekt Events aus?
+
+## 🔮 TOTEMS UND SPEZIALEFFEKTE
+- [ ] Brennen Pfeile beim Feuer-Totem und verursachen Kistenbrand?
+- [ ] Frieren Pfeile beim Eis-Totem Gegner/Fallen/Wasserflächen korrekt ein?
+
+## 🧩 UI & SPIELFLUSS
+- [ ] Wird die Lebensanzeige (Healthbar) korrekt angezeigt und bei Schaden aktualisiert?
+- [ ] Funktioniert das HUD korrekt, auch bei Levelwechseln und Respawn?
+- [ ] Wird beim Sammeln von Power-Ups ein Feedback angezeigt (Animation)?
+- [ ] Erscheint beim Spieler-Tod ein Respawn- oder Game-Over-Bildschirm?
+- [ ] Lässt sich das Spiel pausieren (z. B. ESC)?
+- [ ] Werden Totem-Effekte visuell dargestellt (z. B. brennende Pfeile)?
+- [ ] Gibt es eine Rückmeldung beim Lösen von Rätseln (z. B. Tür öffnet sich sichtbar)?
+- [ ] Wird die Animation der Spielfigur korrekt je nach Zustand angezeigt (Laufen, Springen, Schießen, Sterben)?
+- [ ] Wird das Startmenü korrekt geladen und kann man von dort starten?
+- [ ] Funktioniert das Zurücksetzen des Levels (z. B. nach Scheitern)?
