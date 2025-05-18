@@ -19,10 +19,15 @@ jobs:
 
     - name: Calculate GDScript Cyclomatic Complexity
       run: |
+        # Zielordner im Root erstellen (überschreibt nicht, aber existiert immer)
+        mkdir -p Metriken
+        # Report-Datei definieren
+        REPORT_PATH="Metriken/cyclomatic-complexity.txt"
+        
         # ins Projektverzeichnis wechseln
         cd "Godot Game"
         # alle .gd in scritps
-        gdradon cc scritps
+        gdradon cc scritps > "../$REPORT_PATH"
 
 
     - name: Download Godot 4.4.1 Headless
@@ -116,3 +121,26 @@ jobs:
       with:
         name: Windows-Build
         path: Build Exports/windows
+
+    - name: Commit and Push Cyclomatic Complexity Report
+      run: |
+        git config --global user.name "github-actions[bot]"
+        git config --global user.email "github-actions[bot]@users.noreply.github.com"
+        
+        # Stelle sicher, dass du im Root-Verzeichnis bist
+        cd $GITHUB_WORKSPACE
+        
+        # Stage und commit
+        git add Metriken/cyclomatic-complexity.txt
+        
+        # Prüfe, ob Änderungen vorhanden sind
+        if git diff --cached --quiet; then
+          echo "🟢 Keine Änderungen an Metriken – nichts zu committen."
+        else
+          git commit -m "🔁 Update Cyclomatic Complexity Report [ci skip]"
+          git push
+        fi
+      env:
+        # Damit der Push funktioniert
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
