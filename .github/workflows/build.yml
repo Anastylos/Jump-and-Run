@@ -79,6 +79,7 @@ jobs:
         if [ ! -d "$EXPORT_DIR" ]; then
           echo "⚠️  Zielverzeichnis $EXPORT_DIR nicht vorhanden. Wird erstellt."
           mkdir -p "$EXPORT_DIR"
+          MISSING=1
         else
           echo "✅ Zielverzeichnis für Windows-Export vorhanden."
         fi
