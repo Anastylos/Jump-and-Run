@@ -1,36 +1,41 @@
-name: Build and Test Godot Game
+name: Godot CI/CD Build & Test & Export
 
 on:
   push:
-    branches: [ main ]
+    branches:
+      - main
   pull_request:
-    branches: [ main ]
 
 jobs:
-  build-and-test:
+  build-test-export:
     runs-on: ubuntu-latest
 
     steps:
     - name: Checkout repository
       uses: actions/checkout@v3
 
-    - name: Download Godot 4.4.1 Headless
+    - name: Download Godot 4.4.1 Standard
       run: |
-        wget https://github.com/godotengine/godot-builds/releases/download/4.4.1-stable/Godot_v4.4.1-stable_linux.x86_64.zip -O godot.zip
-        unzip godot.zip
-        chmod +x Godot_v4.4.1-stable_linux.x86_64
-        sudo mv Godot_v4.4.1-stable_linux.x86_64 /usr/local/bin/godot
+        curl -L -o godot.zip https://github.com/godotengine/godot-builds/releases/download/4.4.1-stable/Godot_v4.4.1-stable_linux.x86_64.zip
+        unzip -q godot.zip -d godot
+        chmod +x godot/Godot_v4.4.1-stable_linux.x86_64
 
-    - name: Run Godot (editor check)
+    - name: Run GUT tests
       run: |
-        godot --headless --path "Godot Game" --editor --quit
+        godot/Godot_v4.4.1-stable_linux.x86_64 --headless --path "Godot Game" --script "res://tests/unit/test_Unit_tests.gd"
 
-    - name: Run GUT Unit Tests
+    - name: Download export templates (Standard)
       run: |
-        godot --headless --path "Godot Game" \
-          -s addons/gut/gut_cmdln.gd \
-          -d \
-          -gdir=res://tests/unit \
-          -gexit
+        mkdir -p ~/.local/share/godot/templates/4.4.1.stable
+        curl -L -o templates.tpz https://github.com/godotengine/godot-builds/releases/download/4.4.1-stable/Godot_v4.4.1-stable_export_templates.tpz
+        unzip -q templates.tpz -d ~/.local/share/godot/templates/4.4.1.stable
 
+    - name: Export Windows EXE
+      run: |
+        godot/Godot_v4.4.1-stable_linux.x86_64 --headless --path "Godot Game" --export-release "Windows"
 
+    - name: Upload Windows Build
+      uses: actions/upload-artifact@v4
+      with:
+        name: Windows-Build
+        path: Godot Game/build/windows/
