@@ -1,4 +1,4 @@
-name: Build Godot Game
+name: Build and Test Godot Game
 
 on:
   push:
@@ -7,7 +7,7 @@ on:
     branches: [ main ]
 
 jobs:
-  build:
+  build-and-test:
     runs-on: ubuntu-latest
 
     steps:
@@ -21,6 +21,10 @@ jobs:
         chmod +x Godot_v4.4.1-stable_linux.x86_64
         sudo mv Godot_v4.4.1-stable_linux.x86_64 /usr/local/bin/godot
 
-    - name: Run Godot (headless editor check)
+    - name: Run Godot (editor check)
       run: |
         godot --headless --path "Godot Game" --editor --quit
+
+    - name: Run Godot Unit Tests
+      run: |
+        godot --headless --path "Godot Game" --run-tests
