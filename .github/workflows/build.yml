@@ -14,6 +14,27 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v3
 
+    - name: Install gdtoolkit
+      run: |
+        pip3 install "gdtoolkit==4.*"
+
+    - name: Run gdmetrics and store results
+      run: |
+        mkdir -p Metriks
+        gdmetrics "Godot Game/scripts" > Metriks/cyclomatic_complexity.txt
+
+    - name: Commit and push metrics if changed
+      run: |
+        git config --global user.name "github-actions[bot]"
+        git config --global user.email "github-actions[bot]@users.noreply.github.com"
+        git add Metriks/cyclomatic_complexity.txt
+        if ! git diff --cached --quiet; then
+          git commit -m "Update cyclomatic complexity metrics"
+          git push
+        else
+          echo "Keine Änderungen an den Metriken – kein Commit notwendig."
+        fi
+
     - name: Download Godot 4.4.1 Headless
       run: |
         wget https://github.com/godotengine/godot-builds/releases/download/4.4.1-stable/Godot_v4.4.1-stable_linux.x86_64.zip -O godot.zip
