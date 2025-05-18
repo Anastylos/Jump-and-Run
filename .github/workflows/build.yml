@@ -14,17 +14,16 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v3
 
-    - name: Install GDScript Toolkit (gdtoolkit) globally
+    - name: Install GDScript Toolkit (gdtoolkit)
       run: |
-        sudo apt-get update
-        sudo apt-get install -y python3-pip
-        sudo pip3 install --upgrade pip
-        sudo pip3 install "gdtoolkit==4.*"
+        python3 -m pip install --user "gdtoolkit==4.*"
+
+    - name: Add user-local bin to PATH
+      run: echo "$HOME/.local/bin" >> $GITHUB_PATH
 
     - name: Run gdmetrics and save results
       run: |
         mkdir -p Metriks
-        # gdmetrics ist jetzt in /usr/local/bin und im PATH verfügbar
         gdmetrics "Godot Game/scripts" > Metriks/cyclomatic_complexity.txt
 
     - name: Commit and push metrics
