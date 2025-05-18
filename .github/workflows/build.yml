@@ -41,6 +41,24 @@ jobs:
         mv ~/.local/share/godot/export_templates/4.4.1.stable/templates/* ~/.local/share/godot/export_templates/4.4.1.stable/
         rmdir ~/.local/share/godot/export_templates/4.4.1.stable/templates
 
+    - name: Check export templates exist
+      run: |
+        TEMPLATE_DIR="$HOME/.local/share/godot/export_templates/4.4.1.stable"
+        DEBUG_TEMPLATE="$TEMPLATE_DIR/windows_debug_x86_64.exe"
+        RELEASE_TEMPLATE="$TEMPLATE_DIR/windows_release_x86_64.exe"
+
+        echo "Checking export templates..."
+        if [ ! -f "$DEBUG_TEMPLATE" ] || [ ! -f "$RELEASE_TEMPLATE" ]; then
+          echo "❌ Export templates for Windows are missing!"
+          echo "Expected files:"
+          echo "  - $DEBUG_TEMPLATE"
+          echo "  - $RELEASE_TEMPLATE"
+          exit 1
+        else
+          echo "✅ Export templates found."
+        fi
+
+
     - name: Export Windows EXE
       run: |
         godot --headless --path "Godot Game" --export-release "Windows"
