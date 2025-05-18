@@ -14,6 +14,9 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v3
 
+    - name: Install GDScript ToolKit
+      run: pip3 install "gdtoolkit==4.*"
+
     - name: Download Godot 4.4.1 Headless
       run: |
         wget https://github.com/godotengine/godot-builds/releases/download/4.4.1-stable/Godot_v4.4.1-stable_linux.x86_64.zip -O godot.zip
