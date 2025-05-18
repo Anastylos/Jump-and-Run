@@ -1,52 +1,36 @@
-name: Godot CI/CD Pipeline
+name: Build and Test Godot Game
 
 on:
   push:
-    branches:
-      - main
+    branches: [ main ]
   pull_request:
-    branches:
-      - main
+    branches: [ main ]
 
 jobs:
-  build:
+  build-and-test:
     runs-on: ubuntu-latest
 
     steps:
-    # 1. Repository klonen
     - name: Checkout repository
       uses: actions/checkout@v3
 
-    # 2. Godot herunterladen und installieren
-    - name: Download Godot
+    - name: Download Godot 4.4.1 Headless
       run: |
-        curl -sSL https://github.com/godotengine/godot/releases/download/4.3-stable/Godot_v4.3-stable_linux.x86_64.zip -o godot.zip
-        unzip godot.zip -d godot
-        ls godot  # Zeigt den Inhalt des Verzeichnisses an, um sicherzustellen, dass die Datei korrekt entpackt wurde
-        chmod +x godot/Godot_v4.3-stable_linux.x86_64  # Macht die entpackte Datei ausführbar
+        wget https://github.com/godotengine/godot-builds/releases/download/4.4.1-stable/Godot_v4.4.1-stable_linux.x86_64.zip -O godot.zip
+        unzip godot.zip
+        chmod +x Godot_v4.4.1-stable_linux.x86_64
+        sudo mv Godot_v4.4.1-stable_linux.x86_64 /usr/local/bin/godot
 
-    # 3. Projekt validieren (Syntax- und Szenenprüfung)
-    - name: Validate Project
+    - name: Run Godot (editor check)
       run: |
-        ./godot/Godot_v4.3-stable_linux.x86_64 --headless --check-syntax --path .  # Pfad zur entpackten Linux-Version
+        godot --headless --path "Godot Game" --editor --quit
 
-    # 4. Build für Plattformen erstellen
-    - name: Export Game (Linux)
+    - name: Run GUT Unit Tests
       run: |
-        ./godot/Godot_v4.3-stable_linux.x86_64 --headless --export "Linux/X11" build/MyGame.x86_64
-    - name: Export Game (Windows)
-      run: |
-        ./godot/Godot_v4.3-stable_linux.x86_64 --headless --export "Windows Desktop" build/MyGame.exe
+        godot --headless --path "Godot Game" \
+          -s addons/gut/gut_cmdln.gd \
+          -d \
+          -gdir=res://tests/unit \
+          -gexit
 
-  deploy:
-    runs-on: ubuntu-latest
-    needs: build
 
-    steps:
-    # 1. Artifact hochladen
-    - name: Upload Build to GitHub Releases
-      uses: softprops/action-gh-release@v1
-      with:
-        files: |
-          build/MyGame.x86_64
-          build/MyGame.exe
