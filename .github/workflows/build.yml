@@ -43,7 +43,7 @@ jobs:
 
     - name: Ensure Windows export output directory exists
       run: |
-        mkdir -p "Godot Game/Build Exports/windows"
+        mkdir -p "Build Exports/windows"
 
     - name: Check Windows export prerequisites
       run: |
@@ -57,7 +57,7 @@ jobs:
         # Projektverzeichnis
         PROJECT_DIR="Godot Game"
         EXPORT_PRESETS="$PROJECT_DIR/export_presets.cfg"
-        EXPORT_DIR="$PROJECT_DIR/Build Exports/windows"
+        EXPORT_DIR="Build Exports/windows"
         
         MISSING=0
         
