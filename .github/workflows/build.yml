@@ -49,4 +49,4 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: Windows-Build
-        path: Godot Game/Build/Windows/
+        path: Build Exports/Windows Export
