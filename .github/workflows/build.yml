@@ -41,6 +41,10 @@ jobs:
         mv ~/.local/share/godot/export_templates/4.4.1.stable/templates/* ~/.local/share/godot/export_templates/4.4.1.stable/
         rmdir ~/.local/share/godot/export_templates/4.4.1.stable/templates
 
+    - name: Ensure Windows export output directory exists
+      run: |
+        mkdir -p "Godot Game/Build Exports/windows"
+
     - name: Check Windows export prerequisites
       run: |
         echo "🔍 Prüfe Windows-Export-Voraussetzungen..."
@@ -53,7 +57,7 @@ jobs:
         # Projektverzeichnis
         PROJECT_DIR="Godot Game"
         EXPORT_PRESETS="$PROJECT_DIR/export_presets.cfg"
-        EXPORT_DIR="$PROJECT_DIR/build/windows"
+        EXPORT_DIR="$PROJECT_DIR/Build Exports/windows"
         
         MISSING=0
         
@@ -100,4 +104,4 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: Windows-Build
-        path: Build Export/Windows Export
+        path: Build Exports/windows
