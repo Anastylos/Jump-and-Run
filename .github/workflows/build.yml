@@ -29,7 +29,7 @@ jobs:
         mkdir -p build/linux
         ./godot/godot --headless --export-release "Linux/X11" build/linux/MyGame.x86_64
 
-    - name: Test: Spiel im Headless-Modus starten
+        - name: Test: Spiel im Headless-Modus starten
       run: |
         ./build/linux/MyGame.x86_64 --headless --quit &
         sleep 5
