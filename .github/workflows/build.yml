@@ -35,9 +35,10 @@ jobs:
 
     - name: Download export templates (Standard)
       run: |
-        mkdir -p ~/.local/share/godot/templates/4.4.1.stable
+        mkdir -p ~/.local/share/godot/export_templates/4.4.1.stable
         curl -L -o templates.tpz https://github.com/godotengine/godot-builds/releases/download/4.4.1-stable/Godot_v4.4.1-stable_export_templates.tpz
-        unzip -q templates.tpz -d ~/.local/share/godot/templates/4.4.1.stable
+        unzip -q templates.tpz -d ~/.local/share/godot/export_templates/4.4.1.stable
+
 
     - name: Export Windows EXE
       run: |
