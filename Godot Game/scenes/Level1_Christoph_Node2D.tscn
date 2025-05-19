@@ -74,7 +74,7 @@ position = Vector2(-1, 1)
 
 [node name="MainPlayer" parent="." instance=ExtResource("2_o3tor")]
 unique_name_in_owner = true
-position = Vector2(98, -214)
+position = Vector2(-174, 119)
 
 [node name="FloorBordre" type="StaticBody2D" parent="."]
 position = Vector2(-20, 147)
