@@ -63,6 +63,9 @@ jobs:
     - name: Ensure Windows export output directory exists
       run: |
         mkdir -p "Build Exports/windows"
+        
+    - name: Ensure Linux export output directory exists
+      run: mkdir -p "Build Exports/linux"
 
     - name: Check Windows export prerequisites
       run: |
@@ -124,6 +127,16 @@ jobs:
       with:
         name: Windows-Build
         path: Build Exports/windows
+
+    - name: Export Linux Build
+      run: |
+        godot --headless --path "Godot Game" --export-release "Linux/X11"
+
+    - name: Upload Linux Build
+      uses: actions/upload-artifact@v4
+      with:
+        name: Linux-Build
+        path: GodotGame_Linux.zip
 
     - name: Commit and Push Cyclomatic Complexity Report
       run: |
