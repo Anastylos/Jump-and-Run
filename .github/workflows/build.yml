@@ -131,6 +131,12 @@ jobs:
     - name: Export Linux Build
       run: |
         godot --headless --path "Godot Game" --export-release "Linux"
+        
+    - name: Zip Linux Build
+      run: |
+        cd "Build Exports/linux"
+        zip -r ../../GodotGame_Linux.zip .
+        cd ../../
 
     - name: Upload Linux Build
       uses: actions/upload-artifact@v4
