@@ -46,4 +46,6 @@ func _on_orange_explo_animation_finished():
 
 
 func _on_next_lvl_load_timer_timeout():
+	await Fade.fade_out(0.5, Color.BLACK, "Diamond").finished
 	get_tree().change_scene_to_packed(next_lvl)
+	Fade.fade_in(0.5, Color.BLACK, "Diamond")
