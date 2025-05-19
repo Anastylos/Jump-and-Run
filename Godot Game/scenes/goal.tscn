@@ -1917,6 +1917,7 @@ scale = Vector2(0.705, 0.705)
 sprite_frames = SubResource("SpriteFrames_rj36l")
 
 [node name="NextLvlLoadTimer" type="Timer" parent="."]
+wait_time = 2.0
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="animation_finished" from="blueRocket" to="." method="_on_animated_sprite_2d_animation_finished"]
