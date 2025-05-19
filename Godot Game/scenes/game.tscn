@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=4 uid="uid://do06jyd211cx2"]
+[gd_scene load_steps=36 format=4 uid="uid://do06jyd211cx2"]
 
 [ext_resource type="PackedScene" uid="uid://dfayifn15m681" path="res://scenes/player.tscn" id="1_65wfv"]
 [ext_resource type="PackedScene" uid="uid://cmh0x4bf2dbff" path="res://scenes/WorldMapScene.tscn" id="1_ca42v"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://bc2otyvk6ohr3" path="res://scenes/Ice_Totem.tscn" id="9_dhcip"]
 [ext_resource type="PackedScene" uid="uid://uuylubojul0i" path="res://scenes/platform.tscn" id="10_awimq"]
 [ext_resource type="PackedScene" uid="uid://cqf4hg6nsi43d" path="res://scenes/killzone.tscn" id="11_lbcwo"]
+[ext_resource type="PackedScene" uid="uid://bdl6llfdghtha" path="res://scenes/Level1_Christoph_Node2D.tscn" id="12_bt5mj"]
 [ext_resource type="PackedScene" uid="uid://bypqyqj801t3t" path="res://scenes/FireTotem.tscn" id="12_ttt40"]
 [ext_resource type="Script" uid="uid://dapxng6qu6jef" path="res://scritps/falling_platform.gd" id="13_rysoc"]
 [ext_resource type="PackedScene" uid="uid://chyfwbm5ospvh" path="res://scenes/rigid_kiste.tscn" id="14_rysoc"]
@@ -282,6 +283,7 @@ texture = ExtResource("4_w8pn0")
 
 [node name="Goal" parent="." instance=ExtResource("7_mdry6")]
 position = Vector2(1593, -102)
+next_lvl = ExtResource("12_bt5mj")
 
 [node name="Falling" type="Node2D" parent="."]
 position = Vector2(454, 49)

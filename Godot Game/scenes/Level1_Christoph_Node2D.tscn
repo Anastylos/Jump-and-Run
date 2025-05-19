@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=4 uid="uid://bdl6llfdghtha"]
+[gd_scene load_steps=23 format=4 uid="uid://bdl6llfdghtha"]
 
 [ext_resource type="PackedScene" uid="uid://cmh0x4bf2dbff" path="res://scenes/WorldMapScene.tscn" id="1_17a3d"]
 [ext_resource type="PackedScene" uid="uid://cs5jouq38vr2f" path="res://scenes/bounce_block_layer.tscn" id="2_5imtc"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://chyfwbm5ospvh" path="res://scenes/rigid_kiste.tscn" id="7_2o7ru"]
 [ext_resource type="PackedScene" uid="uid://bypqyqj801t3t" path="res://scenes/FireTotem.tscn" id="8_e2htm"]
 [ext_resource type="PackedScene" uid="uid://ddjmnr2qqkfkc" path="res://scenes/goal.tscn" id="11_fymqg"]
+[ext_resource type="PackedScene" uid="uid://ccnx80bxo8awy" path="res://scenes/Level2_Michis_level.tscn" id="11_pmkja"]
 [ext_resource type="PackedScene" uid="uid://rummwvk5lwrs" path="res://scenes/CheckPoint.tscn" id="12_5imtc"]
 [ext_resource type="PackedScene" uid="uid://cqf4hg6nsi43d" path="res://scenes/killzone.tscn" id="13_pmkja"]
 
@@ -174,6 +175,7 @@ position = Vector2(111, -209)
 
 [node name="Goal" parent="." instance=ExtResource("11_fymqg")]
 position = Vector2(-271, -132)
+next_lvl = ExtResource("11_pmkja")
 
 [node name="CheckPoint" parent="." instance=ExtResource("12_5imtc")]
 position = Vector2(159, -209)

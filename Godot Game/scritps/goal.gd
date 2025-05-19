@@ -1,5 +1,7 @@
 extends Area2D
 
+@export var next_lvl: PackedScene
+
 var anim_was_played = false
 
 @onready var animation_player = $AnimationPlayer
@@ -7,6 +9,8 @@ var anim_was_played = false
 @onready var blueExplosionAnimSprite2d = $BlueExplosion
 @onready var orange_rocket_anim = $orangeRocket
 @onready var orange_explo_anim = $orangeExplo
+@onready var next_lvl_load_timer = $NextLvlLoadTimer
+
 
 
 func _on_body_entered(body):
@@ -17,6 +21,8 @@ func _on_body_entered(body):
 			blueRocketAnimSprite2d.play("default")
 			orange_rocket_anim.play("default")
 			anim_was_played = true
+			if next_lvl != null:
+				next_lvl_load_timer.start()
 
 
 func _on_animated_sprite_2d_animation_finished():
@@ -37,3 +43,7 @@ func _on_orange_rocket_animation_finished():
 
 func _on_orange_explo_animation_finished():
 	orange_explo_anim.visible = false
+
+
+func _on_next_lvl_load_timer_timeout():
+	get_tree().change_scene_to_packed(next_lvl)
