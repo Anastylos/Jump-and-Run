@@ -18,11 +18,12 @@ scritps/arrow.gd
     F 84:0 _on_timer_timeout - A (1)
     F 86:0 _on_bounce_cooldown_timeout - A (1)
 scritps/goal.gd
-    F 8:0 _on_body_entered - A (2)
-    F 16:0 _on_animated_sprite_2d_animation_finished - A (1)
-    F 20:0 _on_animated_sprite_2d_2_animation_finished - A (1)
-    F 22:0 _on_orange_rocket_animation_finished - A (1)
-    F 26:0 _on_orange_explo_animation_finished - A (1)
+    F 10:0 _on_body_entered - A (3)
+    F 20:0 _on_animated_sprite_2d_animation_finished - A (1)
+    F 24:0 _on_animated_sprite_2d_2_animation_finished - A (1)
+    F 26:0 _on_orange_rocket_animation_finished - A (1)
+    F 30:0 _on_orange_explo_animation_finished - A (1)
+    F 32:0 _on_next_lvl_load_timer_timeout - A (1)
 scritps/gate.gd
     F 4:0 openGate - A (1)
 scritps/heal_heart.gd
