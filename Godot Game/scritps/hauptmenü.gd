@@ -1,6 +1,6 @@
 extends Node2D
 
-@onready var level_scene = preload("res://scenes/game.tscn")
+@onready var level_scene = preload("res://scenes/Level0_game.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -14,6 +14,6 @@ func _process(delta):
 
 func _on_start_button_pressed():
 	await Fade.fade_out(0.5, Color.BLACK, "Diamond").finished
-	get_tree().change_scene_to_file("res://scenes/game.tscn")
+	get_tree().change_scene_to_file("res://scenes/Level0_game.tscn")
 	Fade.fade_in(0.5, Color.BLACK, "Diamond")
 	
