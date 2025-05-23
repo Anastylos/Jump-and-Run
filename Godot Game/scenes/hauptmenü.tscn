@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://bgcah8tec6b8i"]
+[gd_scene load_steps=19 format=4 uid="uid://bgcah8tec6b8i"]
 
 [ext_resource type="Texture2D" uid="uid://dyxbbngvnbjni" path="res://assests/nature-backgrounds-pixel-art/nature_1/1.png" id="1_a2jr2"]
 [ext_resource type="Script" uid="uid://bxsk4jfprhv0h" path="res://scritps/hauptmenü.gd" id="1_wmwxv"]
@@ -10,6 +10,8 @@
 [ext_resource type="FontFile" uid="uid://ch1uofdanh1js" path="res://assests/brackeys_platformer_assets/fonts/PixelOperator8.ttf" id="7_jy35f"]
 [ext_resource type="PackedScene" uid="uid://dfayifn15m681" path="res://scenes/player.tscn" id="9_ukli8"]
 [ext_resource type="PackedScene" uid="uid://cqf4hg6nsi43d" path="res://scenes/killzone.tscn" id="10_oj7d3"]
+[ext_resource type="PackedScene" uid="uid://b8pcy0fjk51wb" path="res://scenes/Betatest_Umfrage Button.tscn" id="11_pfbxt"]
+[ext_resource type="PackedScene" uid="uid://yslu87mlaavi" path="res://scenes/Bugreport Button.tscn" id="12_is7kv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6vs1e"]
 size = Vector2(240.312, 87.5663)
@@ -176,5 +178,17 @@ Kai: 400
 Anna: 380"
 autowrap_mode = 2
 drag_and_drop_selection_enabled = false
+
+[node name="Betatest_Button" parent="." instance=ExtResource("11_pfbxt")]
+offset_left = 169.946
+offset_top = -102.368
+offset_right = 233.946
+offset_bottom = -38.3679
+
+[node name="BugreportButton" parent="." instance=ExtResource("12_is7kv")]
+offset_left = -263.526
+offset_top = -6.35387
+offset_right = -199.526
+offset_bottom = 57.6461
 
 [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]

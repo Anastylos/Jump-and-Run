@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://ccnx80bxo8awy"]
+[gd_scene load_steps=16 format=4 uid="uid://ccnx80bxo8awy"]
 
 [ext_resource type="PackedScene" uid="uid://b4tgthj68msx4" path="res://scenes/cave_background.tscn" id="1_ge2rq"]
 [ext_resource type="PackedScene" uid="uid://dfayifn15m681" path="res://scenes/player.tscn" id="2_1plbk"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://bigntvpsusogv" path="res://scenes/nahkampfGegner.tscn" id="9_nkr1j"]
 [ext_resource type="PackedScene" uid="uid://cqf4hg6nsi43d" path="res://scenes/killzone.tscn" id="10_nkr1j"]
 [ext_resource type="PackedScene" uid="uid://ddjmnr2qqkfkc" path="res://scenes/goal.tscn" id="11_mb1og"]
+[ext_resource type="PackedScene" uid="uid://b8pcy0fjk51wb" path="res://scenes/Betatest_Umfrage Button.tscn" id="12_3nn1g"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_3gjp1"]
 
@@ -153,3 +154,9 @@ shape = SubResource("RectangleShape2D_mb1og")
 
 [node name="Goal" parent="." instance=ExtResource("11_mb1og")]
 position = Vector2(1549, -117)
+
+[node name="Betatest_Button" parent="." instance=ExtResource("12_3nn1g")]
+offset_left = 1773.0
+offset_top = -117.0
+offset_right = 1837.0
+offset_bottom = -53.0
