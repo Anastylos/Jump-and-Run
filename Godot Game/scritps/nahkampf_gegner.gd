@@ -18,6 +18,8 @@ var player_in_hitbox: Node = null
 @onready var floor_checker: RayCast2D = $floor_checker
 @onready var detector: Area2D = $Player_DEC_Area
 @onready var anim: AnimatedSprite2D = $enemy_AnimatedSprite2D
+@onready var fire_anim = $enemy_AnimatedSprite2D/fire_AnimatedSprite2D
+@onready var ice_anim = $enemy_AnimatedSprite2D/ice_AnimatedSprite2D
 @onready var effect_timer: Timer = $enemy_AnimatedSprite2D/animation_Timer
 @onready var collision_shape_2d = $ArrowDetectArea/CollisionShape2D
 @onready var attack_hitbox: Area2D = $AttackHitbox
@@ -119,19 +121,29 @@ func _on_area_2d_body_entered(body: Node) -> void:
 	if body.is_in_group("projectile"):
 		hp -= 50
 		if body.ice:
-			_apply_effect("ice", 2.0)
+			velocity.x = 0
+			_apply_effect("ice", 5.0)
 		elif body.fire:
-			_apply_effect("fire", 2.0)
+			_apply_effect("fire", 5.0)
 		if hp <= 0:
 			queue_free()
 
 func _apply_effect(effect_type: String, duration: float) -> void:
 	state = State.STUNNED
-	anim.play(effect_type)
+	if effect_type == "fire":
+		fire_anim.play()
+		fire_anim.visible = true
+	elif effect_type == "ice":
+		ice_anim.play()
+		ice_anim.visible = true
+	else:
+		anim.play(effect_type)
 	effect_timer.start(duration)
 
 func _on_effect_timeout() -> void:
 	state = State.PATROL
+	fire_anim.visible = false
+	ice_anim.visible = false
 	anim.play("Idle")
 
 func _update_sprite_flip() -> void:
