@@ -1,7 +1,6 @@
 class_name Player
 extends CharacterBody2D
 
-
 signal health_changed(new_health)
 var health = 5
 var speed = 150.0
@@ -29,17 +28,12 @@ func _ready():
 	Global.player = self
 
 func _physics_process(delta):
-	if health == 0:
-		global_position = checkPoint_Pos
-		health = 5
-		emit_signal("health_changed", "heal", health)
+	death_check()
+	
 	
 	if input_enabled:
-		if shoot_anim.get_rotation_degrees() >= -90 and shoot_anim.get_rotation_degrees() <= 90:
-			shoot_anim.scale.y = 1
-		else:
-			shoot_anim.scale.y = -1
-
+		rotate_shoot_anim()
+		
 		 # Hole die aktuelle Position der Maus
 		var mouse_position = get_global_mouse_position()
 	
@@ -124,7 +118,6 @@ func enable_input():
 func _on_shoot_anim_animation_finished():
 	shoot_anim.visible = false
 
-
 func _on_dash_timer_timeout():
 	speed = 150
 	
@@ -143,3 +136,16 @@ func heal(healAmount: float):
 	health += healAmount
 	health = clamp(health, 0, 5)
 	emit_signal("health_changed", "heal" , health)
+	
+func death_check():
+	if health == 0:
+		global_position = checkPoint_Pos
+		health = 5
+		emit_signal("health_changed", "heal", health)
+
+func rotate_shoot_anim():
+	# rotation handling Schießarm
+	if shoot_anim.get_rotation_degrees() >= -90 and shoot_anim.get_rotation_degrees() <= 90:
+		shoot_anim.scale.y = 1
+	else:
+		shoot_anim.scale.y = -1
