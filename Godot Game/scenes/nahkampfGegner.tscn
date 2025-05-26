@@ -344,7 +344,7 @@ collision_layer = 4
 collision_mask = 2
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Player_DEC_Area"]
-polygon = PackedVector2Array(-12.0525, -35.2308, -13.775, 264.231, 74.0366, 261.715, 29.2705, 22.6485, 15.4962, -22.6483)
+polygon = PackedVector2Array(-12.0525, -35.2308, -13.775, 264.231, 32.7134, 296.945, 79.2018, 329.66, 99.8636, 229, 29.2705, 22.6485, 15.4962, -22.6483)
 
 [node name="AttackHitbox" type="Area2D" parent="."]
 collision_layer = 2
