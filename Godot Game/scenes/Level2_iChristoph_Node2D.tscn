@@ -1,19 +1,20 @@
-[gd_scene load_steps=22 format=4 uid="uid://bdl6llfdghtha"]
+[gd_scene load_steps=23 format=4 uid="uid://bdl6llfdghtha"]
 
-[ext_resource type="TileSet" uid="uid://ds0uihgbfxlmd" path="res://scenes/worldTileSet.tres" id="1_5t40v"]
-[ext_resource type="PackedScene" uid="uid://cs5jouq38vr2f" path="res://scenes/bounce_block_layer.tscn" id="2_v4fbp"]
-[ext_resource type="PackedScene" uid="uid://cmh0x4bf2dbff" path="res://scenes/WorldMapScene.tscn" id="3_7d7oq"]
-[ext_resource type="PackedScene" uid="uid://dfayifn15m681" path="res://scenes/player.tscn" id="4_7bxia"]
-[ext_resource type="Texture2D" uid="uid://jftvlo51fb5r" path="res://assests/nature-backgrounds-pixel-art/nature_1/8.png" id="5_y56qp"]
-[ext_resource type="PackedScene" uid="uid://b8pcy0fjk51wb" path="res://scenes/Betatest_Umfrage Button.tscn" id="6_u8srx"]
-[ext_resource type="Theme" uid="uid://dktpkhied7t0h" path="res://assests/buttons text pack/standard_Button_theme.tres" id="7_ctms4"]
-[ext_resource type="PackedScene" uid="uid://bigntvpsusogv" path="res://scenes/nahkampfGegner.tscn" id="8_qn0gb"]
-[ext_resource type="PackedScene" uid="uid://bc2otyvk6ohr3" path="res://scenes/Ice_Totem.tscn" id="9_eiw3t"]
-[ext_resource type="PackedScene" uid="uid://rummwvk5lwrs" path="res://scenes/CheckPoint.tscn" id="10_wxyj5"]
-[ext_resource type="PackedScene" uid="uid://bypqyqj801t3t" path="res://scenes/FireTotem.tscn" id="11_7bxia"]
-[ext_resource type="PackedScene" uid="uid://chyfwbm5ospvh" path="res://scenes/rigid_kiste.tscn" id="12_y56qp"]
-[ext_resource type="PackedScene" uid="uid://ddjmnr2qqkfkc" path="res://scenes/goal.tscn" id="13_u8srx"]
-[ext_resource type="PackedScene" uid="uid://3326fvs3yc3a" path="res://scenes/HealHeart.tscn" id="14_y56qp"]
+[ext_resource type="TileSet" uid="uid://ds0uihgbfxlmd" path="res://scenes/worldTileSet.tres" id="1_rmajy"]
+[ext_resource type="PackedScene" uid="uid://cs5jouq38vr2f" path="res://scenes/bounce_block_layer.tscn" id="2_uqjed"]
+[ext_resource type="PackedScene" uid="uid://cmh0x4bf2dbff" path="res://scenes/WorldMapScene.tscn" id="3_rmd5a"]
+[ext_resource type="PackedScene" uid="uid://dfayifn15m681" path="res://scenes/player.tscn" id="4_h15y4"]
+[ext_resource type="Texture2D" uid="uid://jftvlo51fb5r" path="res://assests/nature-backgrounds-pixel-art/nature_1/8.png" id="5_r3i1l"]
+[ext_resource type="PackedScene" uid="uid://b8pcy0fjk51wb" path="res://scenes/Betatest_Umfrage Button.tscn" id="6_xer4s"]
+[ext_resource type="Theme" uid="uid://dktpkhied7t0h" path="res://assests/buttons text pack/standard_Button_theme.tres" id="7_yq2j8"]
+[ext_resource type="PackedScene" uid="uid://bigntvpsusogv" path="res://scenes/nahkampfGegner.tscn" id="8_18nix"]
+[ext_resource type="PackedScene" uid="uid://bc2otyvk6ohr3" path="res://scenes/Ice_Totem.tscn" id="9_5xq7g"]
+[ext_resource type="PackedScene" uid="uid://rummwvk5lwrs" path="res://scenes/CheckPoint.tscn" id="10_xwwp7"]
+[ext_resource type="PackedScene" uid="uid://bypqyqj801t3t" path="res://scenes/FireTotem.tscn" id="11_0uet2"]
+[ext_resource type="PackedScene" uid="uid://chyfwbm5ospvh" path="res://scenes/rigid_kiste.tscn" id="12_8f7se"]
+[ext_resource type="PackedScene" uid="uid://ddjmnr2qqkfkc" path="res://scenes/goal.tscn" id="13_rgmcr"]
+[ext_resource type="PackedScene" uid="uid://ccnx80bxo8awy" path="res://scenes/Level3_Michis_level.tscn" id="14_urhkc"]
+[ext_resource type="PackedScene" uid="uid://3326fvs3yc3a" path="res://scenes/HealHeart.tscn" id="15_o5rj2"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ug8fe"]
 distance = 10.0
@@ -51,13 +52,13 @@ _data = {
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 z_index = 1
 tile_map_data = PackedByteArray("AAADAAkAAQAEAAoAAAD+//L/AQABAAAAAAABAPL/AQABAAAAAAD1//n/AQABAAAAAAD2//n/AQABAAAAAAD3//n/AQABAAAAAAD4//n/AQABAAAAAAD5//n/AQABAAAAAAD6//n/AQABAAAAAAD7//n/AQABAAAAAAD8//n/AQABAAAAAAD9//n/AQABAAAAAAD+//n/AQABAAAAAAD+//j/AQABAAAAAAD+//f/AQABAAAAAAABAPf/AQABAAAAAAABAPj/AQABAAAAAAABAPn/AQABAAAAAAACAPn/AQABAAAAAAADAPn/AQABAAAAAAAEAPn/AQABAAAAAAAFAPn/AQABAAAAAAAGAPn/AQABAAAAAAAHAPn/AQABAAAAAAAIAPn/AQABAAAAAAAJAPn/AQABAAAAAAAKAPn/AQABAAAAAAALAPn/AQABAAAAAAAMAPn/AQABAAAAAAANAPj/AQABAAAAAAAOAPb/AQABAAAAAAANAPf/AQABAAAAAAD0//j/AQABAAAAAAD0//f/AQABAAAAAADz//b/AQABAAAAAAD+//b/AQABAAAAAAD+//X/AQABAAAAAAD+//T/AQABAAAAAAD+//P/AQABAAAAAAABAPb/AQABAAAAAAABAPX/AQABAAAAAAABAPT/AQABAAAAAAABAPP/AQABAAAAAAABAPH/AQABAAAAAAABAPD/AQABAAAAAAABAO//AQABAAAAAAABAO7/AQABAAAAAAAAAO7/AQABAAAAAAD//+7/AQABAAAAAAD+/+7/AQABAAAAAAD+/+//AQABAAAAAAD3//3/AQAAAAAAAAD4//3/AQAAAAAAAAD5//3/AQAAAAAAAAD6//3/AQAAAAAAAAD7//3/AQAAAAAAAAD8//3/AQAAAAAAAAD9//3/AQAAAAAAAAD+//3/AQAAAAAAAAD///3/AQAAAAAAAAAAAP3/AQAAAAAAAAABAP3/AQAAAAAAAAACAP3/AQAAAAAAAAADAP3/AQAAAAAAAAAEAP3/AQAAAAAAAAAEAPz/AQAAAAAAAAAFAPz/AQAAAAAAAAAGAPz/AQAAAAAAAAAHAPz/AQAAAAAAAAAIAPz/AQAAAAAAAAAIAP3/AQAAAAEAAAAJAP3/AQAAAAEAAAAJAPz/AQAAAAAAAAAKAPz/AQAAAAAAAAALAPz/AQAAAAAA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AAAjAO3/AQAAAAEAAAAjAO7/AQAAAAEAAAAjAO//AQAAAAEAAAAjAPD/AQABAAEAAAAgAPP/AQAAAAEAAAAfAPP/AQAAAAEAAAAeAPP/AQAAAAEAAAAdAPP/AQAAAAEAAAAcAPP/AQAAAAEAAAAbAPP/AQAAAAEAAAAtAPL/AQAAAAEAAAAuAPL/AQAAAAEAAAAvAPL/AQAAAAEAAAAvAPH/AQAAAAEAAAAvAPD/AQAAAAEAAAAvAO//AQAAAAEAAAAvAO7/AQAAAAEAAAAkAOv/AQAAAAEAAAAlAOv/AQAAAAEAAAAmAOv/AQAAAAEAAAAnAOv/AQAAAAEAAAAoAOv/AQAAAAEAAAApAOv/AQABAAEAAAAqAOv/AQAAAAEAAAArAOv/AQAAAAEAAAAsAOv/AQABAAEAAAAtAOv/AQAAAAEAAAAuAOv/AQAAAAEAAAAvAOv/AQAAAAEAAAAvAOz/AQAAAAEAAAAvAO3/AQAAAAEAAAAiAO7/AQABAAEAAAAhAO7/AQABAAEAAAAgAO7/AQABAAEAAAAgAO//AQABAAEAAAAgAPD/AQABAAEAAAAhAPD/AQABAAEAAAAiAPD/AQABAAEAAAAkAPD/AQABAAEAAAAlAPD/AQABAAEAAAAmAPD/AQABAAEAAAAnAPD/AQABAAEAAAAoAPD/AQABAAEAAAApAPD/AQABAAEAAAAhAPT/AQABAAEAAAAiAPT/AQABAAEAAAAjAPT/AQABAAEAAAAkAPT/AQABAAEAAAAlAPT/AQABAAEAAAAmAPT/AQABAAEAAAAnAPT/AQABAAEAAAAoAPT/AQABAAEAAAApAPT/AQABAAEAAAAqAPT/AQABAAEAAAArAPT/AQABAAEAAAAsAPT/AQABAAEAAAAtAPP/AQABAAEAAAAtAPT/AQABAAEAAAAYAPn/AQAAAAAAAAAZAPn/AQAAAAAAAAAaAPn/AQAAAAAAAAAbAPn/AQAAAAAAAAAcAPn/AQAAAAAAAAAdAPn/AQAAAAAAAAAeAPn/AQAAAAAAAAAfAPn/AQAAAAAAAAAgAPn/AQAAAAAAAAAhAPn/AQAAAAAAAAAiAPn/AQAAAAAAAAAjAPn/AQAAAAAAAAAkAPn/AQAAAAAAAAAlAPn/AQAAAAAAAAAmAPn/AQAAAAAAAAApAPv/AQAAAAAAAAAvAPr/AQABAAEAAAAvAPn/AQABAAEAAAAvAPj/AQABAAEAAAAvAPf/AQABAAEAAAAvAPb/AQABAAEAAAAvAPX/AQABAAEAAAAvAPT/AQABAAEAAAAvAPP/AQABAAEAAAAuAPP/AQABAAEAAAAuAPT/AQABAAEAAAAuAPX/AQABAAEAAAAuAPb/AQABAAEAAAAtAPb/AQABAAEAAAAtAPX/AQABAAEAAAAsAPX/AQABAAEAAAAuAPf/AQABAAEAAAAvAPv/AQABAAEAAAAXAP//AQAAAAEAAAAXAAAAAQAAAAEAAAAXAAEAAQAAAAEAAAAXAAIAAQAAAAEAAAAXAAMAAQAAAAEAAAAXAAQAAQAAAAEAAAAXAAUAAQAAAAEAAAAXAAkAAQAAAAEAAAAXAAgAAQAAAAEAAAAXAAcAAQAAAAEAAAAXAAYAAQAAAAEAAAAsAAkAAQAAAAEAAAAsAAgAAQAAAAEAAAAsAAcAAQAAAAEAAAAsAAYAAQAAAAEAAAAsAAUAAQAAAAEAAAAsAAQAAQAAAAEAAAAsAAMAAQAAAAEAAAAsAAIAAQAAAAEAAAAvAPz/AQAAAAEAAAAvAP3/AQAAAAEAAAAvAP7/AQAAAAEAAAAvAP//AQAAAAEAAAAvAAAAAQAAAAEAAAAvAAEAAQAAAAEAAAAuAAEAAQAAAAEAAAAtAAEAAQAAAAEAAAAsAAEAAQAAAAEAAAApAP7/AQAAAAEAAAAqAP7/AQAAAAEAAAArAP7/AQAAAAEAAAAoAP7/AQAAAAEAAAAnAP7/AQAAAAEAAAAmAP7/AQAAAAEAAAAlAP7/AQAAAAEAAAAkAP7/AQAAAAEAAAAjAP7/AQAAAAEAAAAiAP7/AQAAAAEAAAAhAP7/AQAAAAEAAAAgAP7/AQAAAAEAAAAfAP7/AQAAAAEAAAAeAP7/AQAAAAEAAAAdAP7/AQAAAAEAAAAcAP7/AQAAAAEAAAAbAP7/AQAAAAEAAAAaAP7/AQAAAAEAAAAZAP7/AQAAAAEAAAAYAP7/AQAAAAEAAAArAAEAAQAAAAEAAAAqAAEAAQAAAAEAAAApAAEAAQAAAAEAAAAoAAEAAQAAAAEAAAAnAAEAAQAAAAEAAAAmAAEAAQAAAAEAAAAlAAEAAQAAAAEAAAAkAAEAAQAAAAEAAAAjAAEAAQAAAAEAAAAiAAEAAQAAAAEAAAAhAAEAAQAAAAEAAAAgAAEAAQAAAAEAAAAfAAEAAQAAAAEAAAAeAAEAAQAAAAEAAAAdAAEAAQAAAAEAAAAcAAEAAQAAAAEAAAAbAAEAAQAAAAEAAAAqAPr/AQAAAAAAAAArAPr/AQAAAAAAAAAsAPr/AQAAAAAAAAAtAPr/AQAAAAAAAAAuAPr/AQAAAAAAAAAYAPb/AQAAAAAAAAAZAPb/AQAAAAAAAAAaAPb/AQAAAAAAAADy//X/AQAAAAAAAADx//X/AQAAAAAAAADw//X/AQAAAAAAAADv//X/AQAAAAAAAADu//X/AQAAAAAAAADt//X/AQAAAAEAAADt//T/AQAAAAEAAADt//P/AQAAAAEAAADt//L/AQAAAAEAAADt//H/AQAAAAEAAADt//D/AQAAAAEAAADt/+//AQAAAAEAAADt/+7/AQAAAAEAAAA=")
-tile_set = ExtResource("1_5t40v")
+tile_set = ExtResource("1_rmajy")
 
-[node name="BounceBlockLayer" parent="." instance=ExtResource("2_v4fbp")]
+[node name="BounceBlockLayer" parent="." instance=ExtResource("2_uqjed")]
 
 [node name="Enemy" type="Node" parent="."]
 
-[node name="WorldScene" parent="." instance=ExtResource("3_7d7oq")]
+[node name="WorldScene" parent="." instance=ExtResource("3_rmd5a")]
 position = Vector2(-1, 1)
 
 [node name="ControllGuide" type="Node" parent="."]
@@ -66,7 +67,7 @@ position = Vector2(-1, 1)
 
 [node name="Totems" type="Node" parent="."]
 
-[node name="MainPlayer" parent="." instance=ExtResource("4_7bxia")]
+[node name="MainPlayer" parent="." instance=ExtResource("4_h15y4")]
 unique_name_in_owner = true
 position = Vector2(2, -289)
 
@@ -110,182 +111,183 @@ autoplay = "Platform2"
 [node name="11" type="Sprite2D" parent="ForeGround"]
 z_index = 1
 position = Vector2(5, 55)
-texture = ExtResource("5_y56qp")
+texture = ExtResource("5_r3i1l")
 
 [node name="12" type="Sprite2D" parent="ForeGround"]
 z_index = 1
 position = Vector2(581, 55)
-texture = ExtResource("5_y56qp")
+texture = ExtResource("5_r3i1l")
 
 [node name="13" type="Sprite2D" parent="ForeGround"]
 z_index = 1
 position = Vector2(1157, 55)
-texture = ExtResource("5_y56qp")
+texture = ExtResource("5_r3i1l")
 
 [node name="14" type="Sprite2D" parent="ForeGround"]
 z_index = 1
 position = Vector2(1733, 55)
-texture = ExtResource("5_y56qp")
+texture = ExtResource("5_r3i1l")
 
 [node name="TutorialText" type="Node" parent="."]
 
 [node name="Boxen" type="Node2D" parent="."]
 position = Vector2(79, -13)
 
-[node name="Betatest_Button2" parent="." instance=ExtResource("6_u8srx")]
+[node name="Betatest_Button2" parent="." instance=ExtResource("6_xer4s")]
 offset_left = 1892.0
 offset_top = -62.0
 offset_right = 1956.0
 offset_bottom = 2.0
 scale = Vector2(0.804916, 0.820993)
-theme = ExtResource("7_ctms4")
+theme = ExtResource("7_yq2j8")
 
-[node name="Nahkampfgegner" parent="." instance=ExtResource("8_qn0gb")]
+[node name="Nahkampfgegner" parent="." instance=ExtResource("8_18nix")]
 position = Vector2(-160, -110)
 
-[node name="Nahkampfgegner2" parent="." instance=ExtResource("8_qn0gb")]
+[node name="Nahkampfgegner2" parent="." instance=ExtResource("8_18nix")]
 position = Vector2(-119, -112)
 
-[node name="Nahkampfgegner3" parent="." instance=ExtResource("8_qn0gb")]
+[node name="Nahkampfgegner3" parent="." instance=ExtResource("8_18nix")]
 position = Vector2(58, -110)
 
-[node name="Nahkampfgegner4" parent="." instance=ExtResource("8_qn0gb")]
+[node name="Nahkampfgegner4" parent="." instance=ExtResource("8_18nix")]
 position = Vector2(104, -113)
 
-[node name="Nahkampfgegner5" parent="." instance=ExtResource("8_qn0gb")]
+[node name="Nahkampfgegner5" parent="." instance=ExtResource("8_18nix")]
 position = Vector2(163, -115)
 
-[node name="Nahkampfgegner6" parent="." instance=ExtResource("8_qn0gb")]
+[node name="Nahkampfgegner6" parent="." instance=ExtResource("8_18nix")]
 position = Vector2(-123, -48)
 
-[node name="Nahkampfgegner7" parent="." instance=ExtResource("8_qn0gb")]
+[node name="Nahkampfgegner7" parent="." instance=ExtResource("8_18nix")]
 position = Vector2(-75, -50)
 
-[node name="Nahkampfgegner8" parent="." instance=ExtResource("8_qn0gb")]
+[node name="Nahkampfgegner8" parent="." instance=ExtResource("8_18nix")]
 position = Vector2(7, -48)
 
-[node name="Nahkampfgegner9" parent="." instance=ExtResource("8_qn0gb")]
+[node name="Nahkampfgegner9" parent="." instance=ExtResource("8_18nix")]
 position = Vector2(86, -64)
 
-[node name="Nahkampfgegner10" parent="." instance=ExtResource("8_qn0gb")]
+[node name="Nahkampfgegner10" parent="." instance=ExtResource("8_18nix")]
 position = Vector2(124, -66)
 
-[node name="Nahkampfgegner11" parent="." instance=ExtResource("8_qn0gb")]
+[node name="Nahkampfgegner11" parent="." instance=ExtResource("8_18nix")]
 position = Vector2(178, -64)
 
-[node name="IceTotem" parent="." instance=ExtResource("9_eiw3t")]
+[node name="IceTotem" parent="." instance=ExtResource("9_5xq7g")]
 position = Vector2(-9, -58)
 
-[node name="CheckPoint" parent="." instance=ExtResource("10_wxyj5")]
+[node name="CheckPoint" parent="." instance=ExtResource("10_xwwp7")]
 position = Vector2(280, -80)
 
-[node name="FireTotem" parent="." instance=ExtResource("11_7bxia")]
+[node name="FireTotem" parent="." instance=ExtResource("11_0uet2")]
 position = Vector2(719, -240)
 
-[node name="RigidKiste" parent="." instance=ExtResource("12_y56qp")]
+[node name="RigidKiste" parent="." instance=ExtResource("12_8f7se")]
 position = Vector2(439, -214)
 
-[node name="RigidKiste2" parent="." instance=ExtResource("12_y56qp")]
+[node name="RigidKiste2" parent="." instance=ExtResource("12_8f7se")]
 position = Vector2(438, -230)
 
-[node name="RigidKiste3" parent="." instance=ExtResource("12_y56qp")]
+[node name="RigidKiste3" parent="." instance=ExtResource("12_8f7se")]
 position = Vector2(438, -246)
 
-[node name="RigidKiste4" parent="." instance=ExtResource("12_y56qp")]
+[node name="RigidKiste4" parent="." instance=ExtResource("12_8f7se")]
 position = Vector2(438, -262)
 
-[node name="RigidKiste5" parent="." instance=ExtResource("12_y56qp")]
+[node name="RigidKiste5" parent="." instance=ExtResource("12_8f7se")]
 position = Vector2(438, -277)
 
-[node name="RigidKiste6" parent="." instance=ExtResource("12_y56qp")]
+[node name="RigidKiste6" parent="." instance=ExtResource("12_8f7se")]
 position = Vector2(437, -293)
 
-[node name="RigidKiste7" parent="." instance=ExtResource("12_y56qp")]
+[node name="RigidKiste7" parent="." instance=ExtResource("12_8f7se")]
 position = Vector2(437, -308)
 
-[node name="RigidKiste8" parent="." instance=ExtResource("12_y56qp")]
+[node name="RigidKiste8" parent="." instance=ExtResource("12_8f7se")]
 position = Vector2(454, -216)
 
-[node name="RigidKiste9" parent="." instance=ExtResource("12_y56qp")]
+[node name="RigidKiste9" parent="." instance=ExtResource("12_8f7se")]
 position = Vector2(471, -216)
 
-[node name="RigidKiste10" parent="." instance=ExtResource("12_y56qp")]
+[node name="RigidKiste10" parent="." instance=ExtResource("12_8f7se")]
 position = Vector2(456, -232)
 
-[node name="Nahkampfgegner12" parent="." instance=ExtResource("8_qn0gb")]
+[node name="Nahkampfgegner12" parent="." instance=ExtResource("8_18nix")]
 position = Vector2(594, -255)
 
-[node name="Nahkampfgegner13" parent="." instance=ExtResource("8_qn0gb")]
+[node name="Nahkampfgegner13" parent="." instance=ExtResource("8_18nix")]
 position = Vector2(624, -256)
 
-[node name="Nahkampfgegner14" parent="." instance=ExtResource("8_qn0gb")]
+[node name="Nahkampfgegner14" parent="." instance=ExtResource("8_18nix")]
 position = Vector2(658, -256)
 
-[node name="Nahkampfgegner15" parent="." instance=ExtResource("8_qn0gb")]
+[node name="Nahkampfgegner15" parent="." instance=ExtResource("8_18nix")]
 position = Vector2(554, -192)
 
-[node name="Nahkampfgegner16" parent="." instance=ExtResource("8_qn0gb")]
+[node name="Nahkampfgegner16" parent="." instance=ExtResource("8_18nix")]
 position = Vector2(602, -192)
 
-[node name="Nahkampfgegner17" parent="." instance=ExtResource("8_qn0gb")]
+[node name="Nahkampfgegner17" parent="." instance=ExtResource("8_18nix")]
 position = Vector2(661, -193)
 
-[node name="Goal" parent="." instance=ExtResource("13_u8srx")]
+[node name="Goal" parent="." instance=ExtResource("13_rgmcr")]
 position = Vector2(411, 44)
+next_lvl = ExtResource("14_urhkc")
 
-[node name="Nahkampfgegner18" parent="." instance=ExtResource("8_qn0gb")]
+[node name="Nahkampfgegner18" parent="." instance=ExtResource("8_18nix")]
 position = Vector2(400, -112)
 
-[node name="Nahkampfgegner19" parent="." instance=ExtResource("8_qn0gb")]
+[node name="Nahkampfgegner19" parent="." instance=ExtResource("8_18nix")]
 position = Vector2(436, -112)
 
-[node name="Nahkampfgegner20" parent="." instance=ExtResource("8_qn0gb")]
+[node name="Nahkampfgegner20" parent="." instance=ExtResource("8_18nix")]
 position = Vector2(479, -110)
 
-[node name="Nahkampfgegner21" parent="." instance=ExtResource("8_qn0gb")]
+[node name="Nahkampfgegner21" parent="." instance=ExtResource("8_18nix")]
 position = Vector2(737, -79)
 
-[node name="Nahkampfgegner22" parent="." instance=ExtResource("8_qn0gb")]
+[node name="Nahkampfgegner22" parent="." instance=ExtResource("8_18nix")]
 position = Vector2(401, -32)
 
-[node name="Nahkampfgegner23" parent="." instance=ExtResource("8_qn0gb")]
+[node name="Nahkampfgegner23" parent="." instance=ExtResource("8_18nix")]
 position = Vector2(445, -32)
 
-[node name="Nahkampfgegner24" parent="." instance=ExtResource("8_qn0gb")]
+[node name="Nahkampfgegner24" parent="." instance=ExtResource("8_18nix")]
 position = Vector2(495, -33)
 
-[node name="Nahkampfgegner25" parent="." instance=ExtResource("8_qn0gb")]
+[node name="Nahkampfgegner25" parent="." instance=ExtResource("8_18nix")]
 position = Vector2(556, -31)
 
-[node name="FireTotem2" parent="." instance=ExtResource("11_7bxia")]
+[node name="FireTotem2" parent="." instance=ExtResource("11_0uet2")]
 position = Vector2(410, -47)
 
-[node name="RigidKiste11" parent="." instance=ExtResource("12_y56qp")]
+[node name="RigidKiste11" parent="." instance=ExtResource("12_8f7se")]
 position = Vector2(664, -40)
 
-[node name="RigidKiste12" parent="." instance=ExtResource("12_y56qp")]
+[node name="RigidKiste12" parent="." instance=ExtResource("12_8f7se")]
 position = Vector2(680, -40)
 
-[node name="RigidKiste13" parent="." instance=ExtResource("12_y56qp")]
+[node name="RigidKiste13" parent="." instance=ExtResource("12_8f7se")]
 position = Vector2(696, -40)
 
-[node name="RigidKiste14" parent="." instance=ExtResource("12_y56qp")]
+[node name="RigidKiste14" parent="." instance=ExtResource("12_8f7se")]
 position = Vector2(671, -56)
 
-[node name="RigidKiste15" parent="." instance=ExtResource("12_y56qp")]
+[node name="RigidKiste15" parent="." instance=ExtResource("12_8f7se")]
 position = Vector2(688, -57)
 
-[node name="CheckPoint2" parent="." instance=ExtResource("10_wxyj5")]
+[node name="CheckPoint2" parent="." instance=ExtResource("10_xwwp7")]
 position = Vector2(414, -161)
 
-[node name="HealHart" parent="." instance=ExtResource("14_y56qp")]
+[node name="HealHart" parent="." instance=ExtResource("15_o5rj2")]
 position = Vector2(259, -65)
 
-[node name="HealHart2" parent="." instance=ExtResource("14_y56qp")]
+[node name="HealHart2" parent="." instance=ExtResource("15_o5rj2")]
 position = Vector2(310, -96)
 
-[node name="HealHart3" parent="." instance=ExtResource("14_y56qp")]
+[node name="HealHart3" parent="." instance=ExtResource("15_o5rj2")]
 position = Vector2(326, -145)
 
-[node name="HealHart4" parent="." instance=ExtResource("14_y56qp")]
+[node name="HealHart4" parent="." instance=ExtResource("15_o5rj2")]
 position = Vector2(231, -143)
