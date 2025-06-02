@@ -1,6 +1,5 @@
-[gd_scene load_steps=42 format=3 uid="uid://c54dibv7dpi4k"]
+[gd_scene load_steps=41 format=3 uid="uid://c54dibv7dpi4k"]
 
-[ext_resource type="Script" uid="uid://jqr517yjsa2b" path="res://scritps/nahkampf_gegner.gd" id="1_o5g40"]
 [ext_resource type="Texture2D" uid="uid://col5ko2plvjjy" path="res://assests/EnemySprites/Intellect Devourer Sprites.png" id="2_6sh78"]
 [ext_resource type="Texture2D" uid="uid://0lm2j5bf6nhu" path="res://assests/arrow animations/Fire_Spreadsheet.png" id="3_7jiep"]
 [ext_resource type="Texture2D" uid="uid://ba05y2ndepur5" path="res://assests/arrow animations/Water_01.png" id="4_4c7ql"]
@@ -274,10 +273,9 @@ size = Vector2(23, 16.1667)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fl2v2"]
 size = Vector2(55, 52.5)
 
-[node name="Nahkampfgegner" type="CharacterBody2D"]
+[node name="NahkampfBoss" type="CharacterBody2D"]
 collision_layer = 4
 collision_mask = 7
-script = ExtResource("1_o5g40")
 
 [node name="enemy_AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
