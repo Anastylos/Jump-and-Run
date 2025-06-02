@@ -384,5 +384,5 @@ position = Vector2(-210, -144)
 [node name="RigidKiste4" parent="." instance=ExtResource("15_fi324")]
 position = Vector2(167, -10)
 
-[node name="Nahkampfgegner3" parent="." instance=ExtResource("24_rupy7")]
-position = Vector2(1434, 14)
+[node name="NahkampfBoss" parent="." instance=ExtResource("24_rupy7")]
+position = Vector2(1533, 13)
