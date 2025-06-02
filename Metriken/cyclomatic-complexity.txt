@@ -1,13 +1,19 @@
-scritps/killzone.gd
-    F 4:0 _on_body_entered - A (2)
-    F 9:0 _on_timer_timeout - A (2)
+scritps/check_point.gd
+    F 5:0 _ready - A (1)
+    F 7:0 _process - A (1)
+    F 9:0 _on_body_entered - A (3)
+scritps/health_bar.gd
+    F 7:0 _ready - A (4)
+    F 19:0 _process - A (1)
+    F 21:0 _on_player_health_changed - A (4)
 scritps/ice_totem.gd
     F 3:0 _on_body_entered - A (2)
     F 7:0 _on_body_exited - A (2)
-scritps/hauptmenü.gd
-    F 3:0 _ready - A (1)
-    F 5:0 _process - A (1)
-    F 7:0 _on_start_button_pressed - A (1)
+scritps/heal_heart.gd
+    F 8:0 _ready - A (1)
+    F 10:0 _process - A (1)
+    F 12:0 _on_area_2d_body_entered - A (2)
+    F 19:0 _on_rocketanim_animation_finished - A (1)
 scritps/arrow.gd
     F 22:0 _ready - A (5)
     F 41:0 _process - B (8)
@@ -17,6 +23,27 @@ scritps/arrow.gd
     F 76:0 do_bounce - A (2)
     F 84:0 _on_timer_timeout - A (1)
     F 86:0 _on_bounce_cooldown_timeout - A (1)
+scritps/hauptmenü.gd
+    F 3:0 _ready - A (1)
+    F 5:0 _process - A (1)
+    F 7:0 _on_start_button_pressed - A (1)
+scritps/gate.gd
+    F 4:0 openGate - A (1)
+scritps/nahkampf_Boss.gd
+    F 21:0 _ready - A (1)
+    F 32:0 _physics_process - B (6)
+    F 43:0 _patrol - A (4)
+    F 57:0 _attack - A (4)
+    F 69:0 _on_player_entered - A (2)
+    F 73:0 _on_player_exited - A (3)
+    F 79:0 _on_enemy_AnimatedSprite2D_animation_finished - A (3)
+    F 86:0 _on_attack_hitbox_body_entered - A (3)
+    F 95:0 _on_attack_hitbox_body_exited - A (2)
+    F 99:0 _on_area_2d_body_entered - A (5)
+    F 109:0 _apply_effect - A (3)
+    F 120:0 _on_effect_timeout - A (1)
+    F 125:0 _update_sprite_flip - A (1)
+    F 127:0 _update_floor_checker - A (1)
 scritps/goal.gd
     F 10:0 _on_body_entered - A (3)
     F 20:0 _on_animated_sprite_2d_animation_finished - A (1)
@@ -24,27 +51,15 @@ scritps/goal.gd
     F 26:0 _on_orange_rocket_animation_finished - A (1)
     F 30:0 _on_orange_explo_animation_finished - A (1)
     F 32:0 _on_next_lvl_load_timer_timeout - A (1)
-scritps/gate.gd
-    F 4:0 openGate - A (1)
-scritps/heal_heart.gd
-    F 8:0 _ready - A (1)
-    F 10:0 _process - A (1)
-    F 12:0 _on_area_2d_body_entered - A (2)
-    F 19:0 _on_rocketanim_animation_finished - A (1)
 scritps/kiste.gd
     F 8:0 _process - A (4)
     F 14:0 _on_child_entered_tree - A (3)
     F 19:0 start_burn_anim - A (1)
     F 24:0 _on_destroy_timer_timeout - A (1)
     F 26:0 _on_spread_timer_timeout - A (1)
-scritps/falling_platform.gd
-    F 5:0 _physics_process - A (2)
-    F 9:0 _on_timer_drop_platform_timeout - A (1)
-    F 11:0 _on_player_enter_body_entered - A (2)
-scritps/health_bar.gd
-    F 7:0 _ready - A (4)
-    F 19:0 _process - A (1)
-    F 21:0 _on_player_health_changed - A (4)
+scritps/fire_totem.gd
+    F 3:0 _on_body_entered - A (2)
+    F 7:0 _on_body_exited - A (2)
 scritps/player.gd
     F 20:0 _ready - A (1)
     F 22:0 _physics_process - C (13)
@@ -59,16 +74,10 @@ scritps/player.gd
     F 92:0 heal - A (1)
     F 96:0 death_check - A (2)
     F 101:0 rotate_shoot_anim - A (2)
-scritps/check_point.gd
-    F 5:0 _ready - A (1)
-    F 7:0 _process - A (1)
-    F 9:0 _on_body_entered - A (3)
-scritps/fire_totem.gd
-    F 3:0 _on_body_entered - A (2)
-    F 7:0 _on_body_exited - A (2)
-scritps/druckplatte.gd
-    F 6:0 _on_area_2d_body_entered - A (3)
-    F 11:0 open_gate - A (1)
+scritps/falling_platform.gd
+    F 5:0 _physics_process - A (2)
+    F 9:0 _on_timer_drop_platform_timeout - A (1)
+    F 11:0 _on_player_enter_body_entered - A (2)
 scritps/nahkampf_gegner.gd
     F 21:0 _ready - A (1)
     F 32:0 _physics_process - B (6)
@@ -84,3 +93,9 @@ scritps/nahkampf_gegner.gd
     F 120:0 _on_effect_timeout - A (1)
     F 125:0 _update_sprite_flip - A (1)
     F 127:0 _update_floor_checker - A (1)
+scritps/killzone.gd
+    F 4:0 _on_body_entered - A (2)
+    F 9:0 _on_timer_timeout - A (2)
+scritps/druckplatte.gd
+    F 6:0 _on_area_2d_body_entered - A (3)
+    F 11:0 open_gate - A (1)
