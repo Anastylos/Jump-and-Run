@@ -96,7 +96,7 @@ func _on_player_exited(body: Node) -> void:
 func _on_enemy_AnimatedSprite2D_animation_finished() -> void:
 	if anim.animation == "atack":
 		if player_in_hitbox and not damage_dealt_this_attack:
-			player_in_hitbox.take_damage(0.5)
+			player_in_hitbox.take_damage(1)
 			damage_dealt_this_attack = true	
 		anim.play("Idle")
 		move_and_slide()
