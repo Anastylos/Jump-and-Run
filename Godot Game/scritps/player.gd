@@ -15,6 +15,15 @@ const NORMAL_TIME_SCALE = 1.0
 # Der Zeitablauf währenKid der Zeitlupe
 const SLOW_MOTION_SCALE = 0.3
 
+
+@export var camera_limit_top: int = -480
+@export var camera_limit_bottom: int = 210
+@export var camera_limit_left: int = -282
+@export var camera_limit_right: int = 2020
+
+@onready var camera: Camera2D = $Camera2D # Stelle sicher, dass der Pfad zu deiner Camera2D korrekt ist
+
+
 @onready var checkPoint_Pos = global_position
 
 @onready var animated_sprite_2d = $AnimatedSprite2D
@@ -26,6 +35,11 @@ const SLOW_MOTION_SCALE = 0.3
 
 func _ready():
 	Global.player = self
+	if camera:
+		camera.limit_top = camera_limit_top
+		camera.limit_bottom = camera_limit_bottom
+		camera.limit_left = camera_limit_left
+		camera.limit_right = camera_limit_right
 
 func _physics_process(delta):
 	death_check()

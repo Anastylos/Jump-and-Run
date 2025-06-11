@@ -186,9 +186,9 @@ offset_right = 233.946
 offset_bottom = -38.3679
 
 [node name="BugreportButton" parent="." instance=ExtResource("12_is7kv")]
-offset_left = -263.526
-offset_top = -6.35387
-offset_right = -199.526
-offset_bottom = 57.6461
+offset_left = -183.751
+offset_top = 45.889
+offset_right = -119.751
+offset_bottom = 109.889
 
 [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]

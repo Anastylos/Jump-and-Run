@@ -1,0 +1,63 @@
+[gd_scene load_steps=5 format=3 uid="uid://2nwiekereqs1"]
+
+[ext_resource type="Texture2D" uid="uid://bcvp1sws6irqq" path="res://assests/brackeys_platformer_assets/sprites/platforms.png" id="1_ng0is"]
+
+[sub_resource type="GDScript" id="GDScript_t8ihq"]
+script/source = "extends CharacterBody2D
+
+@onready var timer_drop_platform = $TimerDropPlatform
+@onready var player_colision_detection = $player_enter/CollisionShape2D
+
+@onready var is_falling = false;
+
+func _physics_process(delta):
+
+	# Add the gravity.
+	if is_falling:
+		velocity += get_gravity() * delta * 0.4
+	move_and_collide(velocity * delta * 0.4)
+
+
+func _on_timer_drop_platform_timeout():
+	is_falling = true
+
+
+func _on_player_enter_body_entered(body):
+	if body.is_in_group(\"player\"):
+		print(\"palyer on palt\")
+		timer_drop_platform.start()
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m8vnt"]
+size = Vector2(32, 5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bojjt"]
+size = Vector2(30.0615, 8.75881)
+
+[node name="Falling_down" type="CharacterBody2D"]
+script = SubResource("GDScript_t8ihq")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_ng0is")
+region_enabled = true
+region_rect = Rect2(16, 44.68, 32, 8)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1.5)
+shape = SubResource("RectangleShape2D_m8vnt")
+
+[node name="player_enter" type="Area2D" parent="."]
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player_enter"]
+position = Vector2(0, -5.72205e-06)
+scale = Vector2(1.06448, 0.913365)
+shape = SubResource("RectangleShape2D_bojjt")
+
+[node name="TimerDropPlatform" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[connection signal="body_entered" from="player_enter" to="." method="_on_player_enter_body_entered"]
+[connection signal="timeout" from="TimerDropPlatform" to="." method="_on_timer_drop_platform_timeout"]
