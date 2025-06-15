@@ -135,3 +135,5 @@ shape = SubResource("RectangleShape2D_i744v")
 material = SubResource("ShaderMaterial_l7q6r")
 scale = Vector2(25.4429, 73.9652)
 mesh = SubResource("QuadMesh_uwq7d")
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

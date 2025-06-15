@@ -14,7 +14,9 @@ func _on_area_2d_body_entered(body):
 		open_gate()
 
 func open_gate():
-	animation_player.play("Button_Move")
-	gate.openGate()
-	triggered = true
-	
+	if gate != null:
+		animation_player.play("Button_Move")
+		gate.openGate()
+		triggered = true
+	else:
+		animation_player.play("Button_Move")
