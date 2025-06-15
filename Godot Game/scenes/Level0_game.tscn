@@ -14,7 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://ddjmnr2qqkfkc" path="res://scenes/goal.tscn" id="11_43cl4"]
 [ext_resource type="PackedScene" uid="uid://bhs2vnfg7cvck" path="res://scenes/Level1_Christoph_Node2D.tscn" id="12_rupy7"]
 [ext_resource type="PackedScene" uid="uid://dj1002rdgnyr0" path="res://scenes/falling_down.tscn" id="13_vb2co"]
-[ext_resource type="Script" path="res://scritps/falling_platform.gd" id="14_drwvm"]
+[ext_resource type="Script" uid="uid://dapxng6qu6jef" path="res://scritps/falling_platform.gd" id="14_drwvm"]
 [ext_resource type="PackedScene" uid="uid://chyfwbm5ospvh" path="res://scenes/rigid_kiste.tscn" id="15_fi324"]
 [ext_resource type="PackedScene" uid="uid://rummwvk5lwrs" path="res://scenes/CheckPoint.tscn" id="16_gnfwt"]
 [ext_resource type="PackedScene" uid="uid://3326fvs3yc3a" path="res://scenes/HealHeart.tscn" id="17_oh3ir"]

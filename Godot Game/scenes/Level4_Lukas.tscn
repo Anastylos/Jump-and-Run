@@ -43,7 +43,7 @@ position = Vector2(4914, -80)
 position = Vector2(3750, 327)
 
 [node name="player" parent="." instance=ExtResource("5_7mimc")]
-position = Vector2(-1086, 614)
+position = Vector2(-1101, 589)
 camera_limit_right = 7250
 
 [node name="killzone" parent="." instance=ExtResource("6_1uuh6")]
