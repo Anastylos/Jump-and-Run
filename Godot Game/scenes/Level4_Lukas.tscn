@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://djym57gl0gm21"]
+[gd_scene load_steps=21 format=4 uid="uid://djym57gl0gm21"]
 
 [ext_resource type="PackedScene" uid="uid://dh84d74id7q60" path="res://scenes/tile_map_welt_bau.tscn" id="2_nhpc0"]
 [ext_resource type="PackedScene" uid="uid://cs5jouq38vr2f" path="res://scenes/bounce_block_layer.tscn" id="3_qnlln"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://1pbixve68gf" path="res://assests/snowBackground/snowyforest.png" id="8_lyjvo"]
 [ext_resource type="PackedScene" uid="uid://bc2otyvk6ohr3" path="res://scenes/Ice_Totem.tscn" id="9_bk8h6"]
 [ext_resource type="PackedScene" uid="uid://dxrnxws7wx2sy" path="res://scenes/falling_down_snow.tscn" id="10_2u5gx"]
+[ext_resource type="PackedScene" uid="uid://c8e8tqt4wklcw" path="res://scenes/level_5_don.tscn" id="11_e4aag"]
 [ext_resource type="PackedScene" uid="uid://chyfwbm5ospvh" path="res://scenes/rigid_kiste.tscn" id="13_e4aag"]
 [ext_resource type="PackedScene" uid="uid://3326fvs3yc3a" path="res://scenes/HealHeart.tscn" id="14_fepm7"]
 [ext_resource type="PackedScene" uid="uid://bypqyqj801t3t" path="res://scenes/FireTotem.tscn" id="15_lslpl"]
@@ -49,8 +50,6 @@ camera_limit_right = 7250
 light_mask = 4
 visibility_layer = 1022
 position = Vector2(4180, 659)
-collision_layer = 4
-collision_mask = 254
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="killzone"]
 position = Vector2(829, 43.5)
@@ -60,8 +59,6 @@ shape = SubResource("RectangleShape2D_pt7jb")
 light_mask = 4
 visibility_layer = 1022
 position = Vector2(4180, 659)
-collision_layer = 4
-collision_mask = 254
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="killzone2"]
 position = Vector2(-2066.5, 57)
@@ -71,8 +68,6 @@ shape = SubResource("RectangleShape2D_pt7jb")
 light_mask = 4
 visibility_layer = 1022
 position = Vector2(4180, 659)
-collision_layer = 4
-collision_mask = 254
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="killzone3"]
 position = Vector2(-4227.25, 63)
@@ -260,6 +255,7 @@ position = Vector2(5473, 595)
 [node name="Goal" parent="." instance=ExtResource("8_2u5gx")]
 position = Vector2(5525, 413)
 scale = Vector2(2.1462, 2.14116)
+next_lvl = ExtResource("11_e4aag")
 
 [node name="Falling_down33" parent="." instance=ExtResource("8_bk8h6")]
 position = Vector2(1665, 611)
