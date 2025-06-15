@@ -43,6 +43,7 @@ scritps/nahkampf_gegner.gd
     F 127:0 _update_floor_checker - A (1)
 scritps/gate.gd
     F 4:0 openGate - A (1)
+    F 6:0 _on_animation_player_animation_finished - A (1)
 scritps/check_point.gd
     F 5:0 _ready - A (1)
     F 7:0 _process - A (1)
@@ -81,7 +82,7 @@ scritps/nahkampf_Boss.gd
     F 127:0 _update_floor_checker - A (1)
 scritps/druckplatte.gd
     F 6:0 _on_area_2d_body_entered - A (3)
-    F 11:0 open_gate - A (1)
+    F 11:0 open_gate - A (2)
 scritps/hauptmenü.gd
     F 3:0 _ready - A (1)
     F 5:0 _process - A (1)
