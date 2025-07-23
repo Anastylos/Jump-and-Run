@@ -7,11 +7,15 @@ script/source = "extends CharacterBody2D
 
 @onready var timer_drop_platform = $TimerDropPlatform
 @onready var player_colision_detection = $player_enter/CollisionShape2D
+@onready var respawn_timer = $RespawnTimer
 
 @onready var is_falling = false;
+@onready var spawn_pos;
+
+func _ready():
+	spawn_pos = global_position
 
 func _physics_process(delta):
-
 	# Add the gravity.
 	if is_falling:
 		velocity += get_gravity() * delta * 0.4
@@ -20,12 +24,24 @@ func _physics_process(delta):
 
 func _on_timer_drop_platform_timeout():
 	is_falling = true
+	respawn_timer.start()
+	
 
 
 func _on_player_enter_body_entered(body):
 	if body.is_in_group(\"player\"):
 		print(\"palyer on palt\")
 		timer_drop_platform.start()
+
+func respawn():
+	is_falling = false;
+	global_position = spawn_pos;
+	velocity = Vector2(0,0)
+	
+
+
+func _on_respawn_timer_timeout():
+	respawn()
 "
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m8vnt"]
@@ -57,5 +73,10 @@ shape = SubResource("RectangleShape2D_bojjt")
 [node name="TimerDropPlatform" type="Timer" parent="."]
 one_shot = true
 
+[node name="RespawnTimer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
 [connection signal="body_entered" from="player_enter" to="." method="_on_player_enter_body_entered"]
 [connection signal="timeout" from="TimerDropPlatform" to="." method="_on_timer_drop_platform_timeout"]
+[connection signal="timeout" from="RespawnTimer" to="." method="_on_respawn_timer_timeout"]
